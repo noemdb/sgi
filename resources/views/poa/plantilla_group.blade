@@ -1,0 +1,44 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm p-1">
+            <strong>Problema:</strong> {{$mproblema->problema or ''}}
+        </div>        
+    </div>
+
+    <div class="row alert alert-secondary p-1 mb-0">
+        <div class="col-sm p-1">
+            Objetivo
+        </div>
+        <div class="col-sm p-1">
+            Indicadores
+        </div>
+        <div class="col-sm p-1">
+            Verificadores
+        </div>
+        <div class="col-sm p-1">
+            Supuestos
+        </div>
+    </div>
+
+
+    @foreach($mobjetivos as $mobjetivo)
+        <div class="row pt-1">
+            <div class="col-sm p-1">
+                Objetivo
+            </div>
+            <div class="col-sm p-1">
+                Indicadores
+            </div>
+            <div class="col-sm p-1">
+                Verificadores
+            </div>
+            <div class="col-sm p-1">
+                Supuestos
+            </div>
+        </div>
+    @endforeach
+
+</div>
+
+<div class="dropdown-divider"></div>
