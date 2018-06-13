@@ -8,7 +8,7 @@
       {!! Form::open(['route' => 'presupuestarias.store', 'method' => 'POST', 'id'=>'form-presupuestarias-create', 'class'=>'form-signin']) !!}
 
             {{-- partial con el formulario y campos --}}
-            @include('admin.poa.presupuestarias.presupuestarias.forms.fields')
+            @include('poa.presupuestarias.presupuestarias.forms.fields')
 
             <button type="submit" class="btn-presupuestarias-create btn btn-primary btn-block" value="create" data-id="create" id="btn-create-presupuestarias">
 

@@ -33,7 +33,7 @@
 
                                     @if($mproblema->pdeterminantes->count()>0)
                                         @php($pdeterminantes = $mproblema->pdeterminantes)
-                                        @include('admin.poa.mproblemas.pdeterminantes.show.list')
+                                        @include('poa.mproblemas.pdeterminantes.show.list')
                                     @endif
 
                                     @component('admin.poa.elementos.botones.edit')
@@ -49,7 +49,7 @@
                                 <td {{-- class="align-middle" --}} style="width: 20%">
                                     @if($mproblema->pcausaefectos->count()>0)
                                         @php($pcausaefectos = $mproblema->pcausaefectos)
-                                        @include('admin.poa.mproblemas.pcausaefectos.show.list')
+                                        @include('poa.mproblemas.pcausaefectos.show.list')
                                     @endif
 
                                     @component('admin.poa.elementos.botones.edit')
@@ -59,14 +59,14 @@
                                         @slot('route',route('pdeterminante.createWithid',$mproblema->id))
                                         @slot('icon','nuevo')
                                     @endcomponent
-                                    
+
                                 </td>
 
                                 <td {{-- class="align-middle" --}} style="width: 20%">
 
                                     @if($mproblema->mobjetivos->count()>0)
                                         @php($mobjetivos = $mproblema->mobjetivos)
-                                        @include('admin.poa.mobjetivos.mobjetivos.show.list',['not_product'=>true])
+                                        @include('poa.mobjetivos.mobjetivos.show.list',['not_product'=>true])
                                     @endif
 
                                     @component('admin.poa.elementos.botones.edit')
@@ -76,7 +76,7 @@
                                         @slot('route',route('pdeterminante.createWithid',$mproblema->id))
                                         @slot('icon','nuevo')
                                     @endcomponent
-                                    
+
                                 </td>
 
                                 <td {{-- class="align-middle" --}} style="width: 20%">
@@ -87,7 +87,7 @@
                                             @php($loop_obj = $loop->iteration.'.')
                                             @if($mobjetivo->mproductos->count()>0)
                                                 @php($mproductos = $mobjetivo->mproductos)
-                                                @include('admin.poa.mproductos.mproductos.show.list')
+                                                @include('poa.mproductos.mproductos.show.list')
                                                 <div class="dropdown-divider"></div>
                                             @endif
                                         @endforeach
@@ -100,19 +100,19 @@
                                         @slot('route',route('pdeterminante.createWithid',$mproblema->id))
                                         @slot('icon','nuevo')
                                     @endcomponent
-                                    
+
                                 </td>
 
                             </tr>
 
                         </tbody>
 
-                    @endforeach 
-                
+                    @endforeach
+
                 </table>
-                                  
-            </td>                
-        </tr>            
+
+            </td>
+        </tr>
     </tbody>
 </table>
 

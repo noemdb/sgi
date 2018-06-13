@@ -1,4 +1,4 @@
-@extends('admin.layouts.dashboard.app')
+@extends('poa.layouts.dashboard.app')
 
 @section('main')
 
@@ -11,11 +11,11 @@
                     <small class="text-default">
                         <strong><span id="user_counter">{{$institucions->count()}}</span> Instituciones</strong>
                     </small>
-                    
+
                     {{-- INI Menu rapido --}}
                     <div class="btn-group float-right pt-2">
 
-                        @include('admin.poa.institucions.menus.index')
+                        @include('poa.institucions.menus.index')
 
                     </div>
                     {{-- FIN Menu rapido --}}
@@ -26,10 +26,10 @@
             <div class="card-body">
 
                 {{-- Mensaje session-flash sobre operaciones con base de datos --}}
-                @include('admin.elements.messeges.oper_ok')             
+                @include('elements.messeges.oper_ok')
 
                 {{-- Partial con el listado de los usuarios --}}
-                @include('admin.poa.institucions.table.list')
+                @include('poa.institucions.table.list')
 
             </div>
         </div>

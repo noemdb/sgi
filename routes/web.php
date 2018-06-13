@@ -46,7 +46,7 @@ Route::group(['prefix'=>'poa','middleware'=>['auth','is_admin','is_poa'],'namesp
 //FIN rutas para Poa
 
 //rutas para admin
-Route::group(['prefix'=>'admin','middleware'=>['auth','is_admin'],'namespace'=>'Admin'], function(){    
+Route::group(['prefix'=>'admin','middleware'=>['auth','is_admin'],'namespace'=>'Admin'], function(){
 
     //INI Route iniciales
     require (__DIR__ . '/admin/iniciales.php');
@@ -58,9 +58,4 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','is_admin'],'namespace'=>'
     require (__DIR__ . '/admin/crud/createwithid.php');
     //FIN CRUD modelos
 
-});
-
-
-Route::group(['prefix'=>'dir','middleware'=>['auth'],'namespace'=>'Dir'], function(){
-	// Route::get('/home', 'HomeController@index')->name('home');
 });

@@ -8,8 +8,8 @@
       {!! Form::model($pdeterminante,['route' => ['pdeterminantes.update', $pdeterminante->id], 'method' => 'PUT', 'id'=>'form-update-pdeterminante_'.$pdeterminante->id, 'role'=>'form']) !!}
 
             {{-- partial con el formulario y campos --}}
-            {{-- @include('admin.poa.mproblemas.pdeterminantes.forms.fields') --}}
-            @include('admin.poa.mproblemas.pdeterminantes.forms.fields')
+            {{-- @include('poa.mproblemas.pdeterminantes.forms.fields') --}}
+            @include('poa.mproblemas.pdeterminantes.forms.fields')
 
             <button type="submit" class="btn-pdeterminante-update btn btn-primary btn-block" value="update" data-id="update" id="btn-update-pdeterminante-{{$pdeterminante->id}}">
 

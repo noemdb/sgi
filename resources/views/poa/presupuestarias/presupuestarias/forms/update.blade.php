@@ -8,7 +8,7 @@
       {!! Form::model($presupuestaria,['route' => ['presupuestarias.update', $presupuestaria->id], 'method' => 'PUT', 'id'=>'form-update-presupuestaria_'.$presupuestaria->id, 'role'=>'form']) !!}
 
             {{-- partial con el formulario y campos --}}
-            @include('admin.poa.presupuestarias.presupuestarias.forms.fields')
+            @include('poa.presupuestarias.presupuestarias.forms.fields')
 
             <button type="submit" class="btn-presupuestaria-update btn btn-primary btn-block" value="update" data-id="update" id="btn-update-presupuestaria-{{$presupuestaria->id}}">
 

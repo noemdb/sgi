@@ -1,4 +1,4 @@
-@extends('admin.layouts.dashboard.app')
+@extends('poa.layouts.dashboard.app')
 
 @section('main')
 
@@ -11,11 +11,11 @@
                     <small class="text-default">
                         <strong>Total de registros: <span id="pindicadors_counter">{{$aestados->count()}}</span></strong>
                     </small>
-                    
+
                     {{-- INI Menu rapido --}}
                     <div class="btn-group float-right pt-2">
 
-                        @include('admin.poa.mactividads.aestados.menus.index')
+                        @include('poa.mactividads.aestados.menus.index')
 
                     </div>
                     {{-- FIN Menu rapido --}}
@@ -25,10 +25,10 @@
             <div class="card-body">
 
                 {{-- Mensaje session-flash sobre operaciones con base de datos --}}
-                @include('admin.elements.messeges.oper_ok')             
+                @include('elements.messeges.oper_ok')
 
                 {{-- Partial con el listado de los usuarios --}}
-                @include('admin.poa.mactividads.aestados.table.list')
+                @include('poa.mactividads.aestados.table.list')
 
             </div>
         </div>

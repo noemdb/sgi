@@ -8,7 +8,7 @@
       {!! Form::open(['route' => 'psupuestos.store', 'method' => 'POST', 'id'=>'form-psupuestos-create', 'class'=>'form-signin']) !!}
 
             {{-- partial con el formulario y campos --}}
-            @include('admin.poa.mproductos.psupuestos.forms.fields')
+            @include('poa.mproductos.psupuestos.forms.fields')
 
             <button type="submit" class="btn-psupuestos-create btn btn-primary btn-block" value="create" data-id="create" id="btn-create-psupuestos">
 

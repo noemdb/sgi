@@ -1,18 +1,18 @@
-@include('admin.elements.forms.errors')
+@include('elements.forms.errors')
 
-@include('admin.elements.messeges.oper_ok')
+@include('elements.messeges.oper_ok')
 
 <div class="input-group mb-3">
      <div class="input-group-prepend">
         <label class="input-group-text" for="mactividad_id">Actividad</label>
-    </div>           
+    </div>
     {!! Form::select('mactividad_id',$mactividads_list,old('mactividad_id'),['class' => 'form-control','id'=>'mactividad_id','placeholder' => 'Seleccionar','title'=>'Objetivo']); !!}
 </div>
 
 <div class="input-group mb-3">
      <div class="input-group-prepend">
         <label class="input-group-text" for="mactividad_id">Estado&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    </div>           
+    </div>
     {!! Form::select('estado',$estados_list,old('estado'),['class' => 'form-control','id'=>'estado','placeholder' => 'Seleccionar','title'=>'Objetivo']); !!}
 </div>
 

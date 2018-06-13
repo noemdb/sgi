@@ -17,7 +17,7 @@
 
         <tbody>
             <th class="align-middle w-25">
-                {{ $loop->iteration or '' }}.                                    
+                {{ $loop->iteration or '' }}.
                 {{ $mproducto->producto or ''}}
                 @component('admin.poa.elementos.botones.edit')
                     @slot('title','Nuevo')
@@ -26,14 +26,14 @@
                     {{-- @slot('route',route('mobjetivos.createWithid',$mproblema->id)) --}}
                     @slot('icon','nuevo')
                 @endcomponent
-            </th> 
+            </th>
 
             {{-- INI indicadores --}}
             <td class="w-25">
                 @if($mproducto->pindicadors->count()>0)
                     @php($pindicadors = $mproducto->pindicadors)
                     {{-- {{$pindicadors}} --}}
-                    @include('admin.poa.mproductos.pindicadors.show.list')
+                    @include('poa.mproductos.pindicadors.show.list')
                 @endif
 
                 @component('admin.poa.elementos.botones.edit')
@@ -43,14 +43,14 @@
                     {{-- @slot('route',route('pverificadors.createWithid',$mproducto->id)) --}}
                     @slot('icon','nuevo')
                 @endcomponent
-            </td>  
+            </td>
             {{-- FIN indicadores --}}
 
             {{-- INI pverificadors --}}
             <td class="w-25">
                 @if($mproducto->pverificadors->count()>0)
                     @php($pverificadors = $mproducto->pverificadors)
-                    @include('admin.poa.mproductos.pverificadors.show.list')
+                    @include('poa.mproductos.pverificadors.show.list')
                 @endif
 
                 @component('admin.poa.elementos.botones.edit')
@@ -60,14 +60,14 @@
                     {{-- @slot('route',route('pverificadors.createWithid',$mproducto->id)) --}}
                     @slot('icon','nuevo')
                 @endcomponent
-            </td>            
+            </td>
             {{-- FIN pverificadors --}}
 
             {{-- INI psupuestos --}}
             <td class="w-25">
                 @if($mproducto->psupuestos->count()>0)
                     @php($psupuestos = $mproducto->psupuestos)
-                    @include('admin.poa.mproductos.psupuestos.show.list')
+                    @include('poa.mproductos.psupuestos.show.list')
                 @endif
 
                 @component('admin.poa.elementos.botones.edit')

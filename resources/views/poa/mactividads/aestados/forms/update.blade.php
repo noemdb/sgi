@@ -8,7 +8,7 @@
       {!! Form::model($aestado,['route' => ['aestados.update', $aestado->id], 'method' => 'PUT', 'id'=>'form-update-pindicador_'.$aestado->id, 'role'=>'form']) !!}
 
             {{-- partial con el formulario y campos --}}
-            @include('admin.poa.mactividads.aestados.forms.fields')
+            @include('poa.mactividads.aestados.forms.fields')
 
             <button type="submit" class="btn-aestado-update btn btn-primary btn-block" value="update" data-id="update" id="btn-update-aestado-{{$aestado->id}}">
 

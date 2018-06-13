@@ -8,8 +8,8 @@
       {!! Form::model($mobjetivo,['route' => ['mobjetivos.update', $mobjetivo->id], 'method' => 'PUT', 'id'=>'form-update-pcausaefecto_'.$mobjetivo->id, 'role'=>'form']) !!}
 
             {{-- partial con el formulario y campos --}}
-            {{-- @include('admin.poa.mobjetivos.mobjetivos.forms.fields') --}}
-            @include('admin.poa.mobjetivos.mobjetivos.forms.fields')
+            {{-- @include('poa.mobjetivos.mobjetivos.forms.fields') --}}
+            @include('poa.mobjetivos.mobjetivos.forms.fields')
 
             <button type="submit" class="btn-mobjetivo-update btn btn-primary btn-block" value="update" data-id="update" id="btn-update-mobjetivo-{{$mobjetivo->id}}">
 

@@ -5,6 +5,24 @@ namespace App\Http\Controllers\Poa\Crud\actividades;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+//validation request
+use App\Http\Requests\Poa\actividades\CreateAfrecuenciaRequest;
+use App\Http\Requests\Poa\actividades\UpdateAfrecuenciaRequest;
+
+//Helpers
+// use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
+
+//models
+// use App\Models\poa\Direccion;
+// use App\Models\poa\Poa;
+// use App\Models\poa\Responsable;
+use App\Models\poa\producto\Mproducto;
+use App\Models\poa\actividades\Afrecuencia;
+use App\Models\poa\actividades\Mactividad;
+use App\Models\sys\SelectOpt;
+
 class AfrecuenciaController extends Controller
 {
     /**
@@ -14,7 +32,13 @@ class AfrecuenciaController extends Controller
      */
     public function index()
     {
-        //
+        $afrecuencias = Afrecuencia::OrderBy('afrecuencias.id','DESC')
+            ->with('mactividad')
+            ->get();
+
+        // dd($mactividads);
+
+        return view('poa.mactividads.afrecuencias.index', compact('afrecuencias'));
     }
 
     /**
@@ -46,7 +70,14 @@ class AfrecuenciaController extends Controller
      */
     public function show($id)
     {
-        //
+        $afrecuencia = Afrecuencia::OrderBy('afrecuencias.id','DESC')
+            ->with('mactividad')
+            ->where('id',$id)
+            ->first();
+
+        // dd($mactividad);
+
+        return view('poa.mactividads.afrecuencias.show', compact('afrecuencia'));
     }
 
     /**
@@ -57,7 +88,23 @@ class AfrecuenciaController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $afrecuencia = Afrecuencia::OrderBy('afrecuencias.id','DESC')
+            ->with('mactividad')
+            ->where('id',$id)
+            ->first();
+
+        $mactividads_list = Mactividad::Select('mactividads.*')
+                ->orderby('mactividads.id','asc')
+                ->pluck('descripcion', 'id');
+
+        $lapsos_list = SelectOpt::select('select_opts.*')
+            ->where('table','afrecuencias')
+            ->where('view','afrecuencias.create')
+            // ->orderby('value')
+            ->pluck('name','value');
+
+        return view('poa.mactividads.afrecuencias.edit', compact('afrecuencia','mactividads_list', 'lapsos_list'));
     }
 
     /**
@@ -67,9 +114,21 @@ class AfrecuenciaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateAfrecuenciaRequest $request, $id)
     {
-        //
+        $afrecuencia = Afrecuencia::findOrFail($id);
+
+        $afrecuencia->fill($request->all());
+
+        $afrecuencia->save();
+
+        $messenge = trans('db_oper_result.update_ok');
+
+        Session::flash('operp_ok',$messenge);
+
+        Session::flash('class_oper','success');
+
+        return redirect()->route('afrecuencias.edit',$id);
     }
 
     /**

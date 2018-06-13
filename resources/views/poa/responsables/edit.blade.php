@@ -1,13 +1,13 @@
-@extends('admin.layouts.dashboard.app')
+@extends('poa.layouts.dashboard.app')
 {{-- @section('page_heading','Listado de Usuarios') --}}
 @section('main')
 
     <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
-        
+
         <div class="card card-primary mt-2 bd-callout bd-callout-warning">
 
             <div class="card-header">
-                
+
                 <h2>
 
                     Actualizar responsable
@@ -15,7 +15,7 @@
                         {{-- INI Menu rapido --}}
                         <div class="btn-group float-right">
 
-                            @include('admin.poa.responsables.menus.edit')
+                            @include('poa.responsables.menus.edit')
 
                         </div>
                         {{-- FIN Menu rapido --}}
@@ -26,7 +26,7 @@
 
             <div class="card-body">
 
-                @include('admin.poa.responsables.forms.update')
+                @include('poa.responsables.forms.update')
 
             </div>
 

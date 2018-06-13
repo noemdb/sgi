@@ -23,7 +23,7 @@
                             @slot('icon','mostrar')
                         @endcomponent
                     </div>
-                    
+
                 </div>
 
                 <div class="row">
@@ -32,17 +32,17 @@
 
                         @isset($mobjetivo->mproductos)
                             @php($mproductos = $mobjetivo->mproductos)
-                            @include('admin.poa.mproductos.mproductos.show.list')
+                            @include('poa.mproductos.mproductos.show.list')
                         @endisset
-                        
+
                     </div>
-                    
-                </div>                
-                
+
+                </div>
+
             </td>
 
         </tr>
-        
+
       </tbody>
     </table>
 @endisset

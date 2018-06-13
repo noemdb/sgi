@@ -8,7 +8,7 @@
       {!! Form::open(['route' => 'mobjetivos.store', 'method' => 'POST', 'id'=>'form-mobjetivos-create', 'class'=>'form-signin']) !!}
 
             {{-- partial con el formulario y campos --}}
-            @include('admin.poa.mobjetivos.mobjetivos.forms.fields')
+            @include('poa.mobjetivos.mobjetivos.forms.fields')
 
             <button type="submit" class="btn-mobjetivos-create btn btn-primary btn-block" value="create" data-id="create" id="btn-create-mobjetivos">
 

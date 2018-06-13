@@ -6,9 +6,9 @@
 
       {{-- INI form --}}
       {!! Form::open(['route' => 'direccions.store', 'method' => 'POST', 'id'=>'form-direccion-create', 'class'=>'form-signin']) !!}
-            
+
             {{-- partial con el formulario y campos --}}
-            @include('admin.poa.direccions.forms.fields')
+            @include('poa.direccions.forms.fields')
 
             <button type="submit" class="btn-direccion-create btn btn-primary btn-block" value="create" data-id="create" id="btn-create-direccion">
 
@@ -19,13 +19,13 @@
 
             <button type="reset" class="btn-direccion-reset btn btn-info btn-block" value="Reset">
 
-                <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>Reset 
+                <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>Reset
 
             </button>
 
             {{-- INI Menu modelos realcionados --}}
             <div class="btn-group d-flex pt-2" style="width: 100%;" role="group" aria-label="Basic example">
-              
+
               <a class="btn btn-dark w-100" href="{{ route('direccions.index') }}" role="button">
                 Mostrar
                 <i class="fas fa-warehouse"></i>
@@ -40,9 +40,9 @@
             {{-- FIN Menu modelos realcionados --}}
 
 
-            
-      
-      {!! Form::close() !!}    
+
+
+      {!! Form::close() !!}
       {{-- FIN form --}}
 
   </div>

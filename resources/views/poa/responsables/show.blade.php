@@ -1,4 +1,4 @@
-@extends('admin.layouts.dashboard.app')
+@extends('poa.layouts.dashboard.app')
 
 {{-- @section('page_heading','Listado de Usuarios') --}}
 
@@ -17,7 +17,7 @@
                     {{-- INI Menu rapido --}}
                     <div class="btn-group float-right border border-white rounded">
 
-                        @include('admin.poa.responsables.menus.show')
+                        @include('poa.responsables.menus.show')
 
                     </div>
                     {{-- FIN Menu rapido --}}
@@ -35,7 +35,7 @@
                         <div class="col-12">
 
                             {{-- Partial con los tabs de usuario (perfiles, roles) --}}
-                            @include('admin.poa.responsables.show.responsable')
+                            @include('poa.responsables.show.responsable')
 
                             {{-- INI Menu modelos realcionados --}}
                             <div class="btn-group d-flex pt-2" style="width: 100%;" role="group" aria-label="Basic example">

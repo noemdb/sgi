@@ -8,9 +8,9 @@
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active pt-2" id="home" role="tabpanel" aria-labelledby="home-tab">
-      @include('admin.poa.responsables.show.responsable')
+      @include('poa.responsables.show.responsable')
   </div>
   <div class="tab-pane fade pt-2" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      @include('admin.poa.institucions.show.institucion')
+      @include('poa.institucions.show.institucion')
   </div>
-</div> 
+</div>

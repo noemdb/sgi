@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\poa;
+namespace App\Http\Requests\Poa;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -25,7 +25,7 @@ class UpdateResponsableRequest extends FormRequest
     {
         return [
             'direccion_id' => 'required',
-            'nombre' => 'required|max:64|min:5',          
+            'nombre' => 'required|max:64|min:5',
         ];
     }
 }

@@ -10,7 +10,7 @@
                 {{-- <th rowspan="6" class="align-middle">{{ $loop->iteration or '' }}</th> --}}
                 <th class="align-middle" colspan="2">
                     Producto
-                    {{ $loop->iteration or '' }}.                                    
+                    {{ $loop->iteration or '' }}.
                    {{ $mproducto->producto or ''}}
                 </th>
             </tr>
@@ -23,14 +23,14 @@
             @if($mproducto->pindicadors->count()>0)
 
                 @php($pindicadors = $mproducto->pindicadors)
-                
+
                 <tr>
-                            
+
                     <th class="align-middle">Indicadores</th>
 
                     <td>
 
-                        @include('admin.poa.mproductos.pindicadors.show.list')
+                        @include('poa.mproductos.pindicadors.show.list')
 
                         @component('admin.poa.elementos.botones.edit')
                             @slot('title','Nuevo')
@@ -51,14 +51,14 @@
             @if($mproducto->pverificadors->count()>0)
 
                 @php($pverificadors = $mproducto->pverificadors)
-                
+
                 <tr>
-                            
+
                     <th class="align-middle">Verificación</th>
 
                     <td>
 
-                        @include('admin.poa.mproductos.pverificadors.show.list')
+                        @include('poa.mproductos.pverificadors.show.list')
 
                         @component('admin.poa.elementos.botones.edit')
                             @slot('title','Nuevo')
@@ -79,14 +79,14 @@
             @if($mproducto->psupuestos->count()>0)
 
                 @php($psupuestos = $mproducto->psupuestos)
-                
+
                 <tr>
-                            
+
                     <th class="align-middle">Supuestos</th>
 
                     <td>
 
-                        @include('admin.poa.mproductos.psupuestos.show.list')
+                        @include('poa.mproductos.psupuestos.show.list')
 
                         @component('admin.poa.elementos.botones.edit')
                             @slot('title','Nuevo')
@@ -111,7 +111,7 @@
 
     @endforeach
 
-    
+
 
 </table>
 

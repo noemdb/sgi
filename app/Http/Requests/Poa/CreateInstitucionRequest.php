@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\poa;
+namespace App\Http\Requests\Poa;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Routing\Route;

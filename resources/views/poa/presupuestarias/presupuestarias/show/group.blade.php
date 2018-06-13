@@ -21,7 +21,7 @@
     <div class="row p-1">
         <div class="col-sm p-1 text-secondary">
             <strong>Problema:</strong> {{$mproblema->problema or ''}}
-        </div>        
+        </div>
     </div>
 
     <div class="row p-1 ml-1">
@@ -29,7 +29,7 @@
         <div class="col-sm p-1 text-secondary">
             <strong>Objetivo:</strong>
             {{ $mobjetivo->objetivo or ''}}
-        </div>        
+        </div>
     </div>
 
     @foreach($mobjetivos as $mobjetivo)
@@ -50,7 +50,7 @@
             </div>
             <div class="{{$class['ubicaion'] or ''}}">
                 Ubicación
-            </div>            
+            </div>
             <div class="{{$class['afrecuencia'] or ''}}">
                 Frecuencia
             </div>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="row pr-0 mr-0">
                         <div class="col-sm  border-bottom align-items-center text-nowrap">
-                            <span class="text text-success" title="Lapso">Lapso</span>/<span class="text text-primary" title="Cantidad">Canti.</span>                        
+                            <span class="text text-success" title="Lapso">Lapso</span>/<span class="text text-primary" title="Cantidad">Canti.</span>
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
         <div class="row  p-0 m-0">
             <div class="{{$class['mproducto'] or ''}}" title="Productos">
                 @foreach($mproductos as $mproducto)
-                    @include('admin.poa.mproductos.mproductos.show.list')
+                    @include('poa.mproductos.mproductos.show.list')
                 @endforeach
                 @component('admin.poa.elementos.botones.edit')
                     @slot('title','Nuevo')
@@ -88,14 +88,14 @@
                     @slot('align','right')
                     {{-- @slot('route',route('pindicadors.createWithid',$mproducto->id)) --}}
                     @slot('icon','nuevo')
-                @endcomponent                    
+                @endcomponent
             </div>
 
             <div class="{{$class['mactividads'] or ''}}" title="Actividades">
                 @foreach($mproductos as $mproducto)
                     @if($mproducto->mactividads->count()>0)
                         @php($mactividads = $mproducto->mactividads)
-                        @include('admin.poa.mactividads.mactividads.show.listsimple')
+                        @include('poa.mactividads.mactividads.show.listsimple')
                     @endif
                 @endforeach
                 @component('admin.poa.elementos.botones.edit')
@@ -114,8 +114,8 @@
                         @foreach($pindicadors as $pindicador)
                             {{$loop->iteration or ''}}.
                             {{$pindicador->indicador or ''}}<br>
-                        @endforeach 
-                        {{-- @include('admin.poa.mproductos.pindicadors.show.list') --}}
+                        @endforeach
+                        {{-- @include('poa.mproductos.pindicadors.show.list') --}}
                     @endif
                 @endforeach
                 @component('admin.poa.elementos.botones.edit')
@@ -132,17 +132,17 @@
                     @php($mactividads = $mproducto->mactividads)
                     @foreach($mactividads as $mactividad)
                         {{$mactividad->ubicaion or ''}}<br>
-                    @endforeach                                
-                    {{-- @include('admin.poa.mproductos.mproductos.show.list') --}}
+                    @endforeach
+                    {{-- @include('poa.mproductos.mproductos.show.list') --}}
                 @endif
-            </div>                
+            </div>
 
             <div class="{{$class['afrecuencia'] or ''}}" title="Frecuencia">
                 @if($mproducto->mactividads->count()>0)
                     @php($mactividads = $mproducto->mactividads)
                     @foreach($mactividads as $mactividad)
                         {{$mactividad->nomfrecuencia or ''}}<br>
-                    @endforeach                                
+                    @endforeach
                 @endif
             </div>
 
@@ -151,7 +151,7 @@
                     @php($mactividads = $mproducto->mactividads)
                     @foreach($mactividads as $mactividad)
                         {{$mactividad->responsable->nombre or ''}}<br>
-                    @endforeach                                
+                    @endforeach
                 @endif
             </div>
 
@@ -160,7 +160,7 @@
                     @php($presupuestarias = $mobjetivo->presupuestarias)
                     @foreach($presupuestarias as $presupuestaria)
                         {{$presupuestaria->programa or ''}}<br>
-                    @endforeach                                
+                    @endforeach
                 @endif
             </div>
 
@@ -169,7 +169,7 @@
                     @php($presupuestarias = $mobjetivo->presupuestarias)
                     @foreach($presupuestarias as $presupuestaria)
                         {{$presupuestaria->asignacion or ''}}<br>
-                    @endforeach                                
+                    @endforeach
                 @endif
             </div>
 
@@ -188,7 +188,7 @@
                                 @for($i=0;$i<$mactividad->frecuencia;++$i)
                                     @php($n=$i+1)
                                     <div class="col-sm-{{ (12 / $mactividad->frecuencia) }} align-middle pr-0 mr-0" align="center">
-                                        <small class="text text-nowrap text-success">{{$n}}</small> 
+                                        <small class="text text-nowrap text-success">{{$n}}</small>
                                             <br>
                                         <small class="text text-nowrap text-primary">
                                             @foreach($afrecuencias as $afrecuencia)
@@ -196,12 +196,12 @@
                                                     {{$afrecuencia->lapso}}
                                                 @endif
                                             @endforeach
-                                        </small>                                                      
-                                    </div>                                                
+                                        </small>
+                                    </div>
                                 @endfor
                             </div>
 
-                        @endif                                        
+                        @endif
                     </div>
 
                     <div class="badge badge-light badge-pill">
@@ -212,7 +212,7 @@
                             @slot('icon','nuevo')
                         @endcomponent
                     </div>
-                @endif                                    
+                @endif
             </div>
 
         </div>

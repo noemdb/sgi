@@ -1,4 +1,4 @@
-@extends('admin.layouts.dashboard.app')
+@extends('poa.layouts.dashboard.app')
 
 @section('main')
 
@@ -11,11 +11,11 @@
                     <small class="text-default">
                         <strong>Total de registros: <span id="objetivos_counter">{{$mobjetivos->count()}}</span></strong>
                     </small>
-                    
+
                     {{-- INI Menu rapido --}}
                     <div class="btn-group float-right pt-2">
 
-                        @include('admin.poa.mobjetivos.mobjetivos.menus.index')
+                        @include('poa.mobjetivos.mobjetivos.menus.index')
 
                     </div>
                     {{-- FIN Menu rapido --}}
@@ -25,10 +25,10 @@
             <div class="card-body">
 
                 {{-- Mensaje session-flash sobre operaciones con base de datos --}}
-                @include('admin.elements.messeges.oper_ok')             
+                @include('elements.messeges.oper_ok')
 
                 {{-- Partial con el listado de los usuarios --}}
-                @include('admin.poa.mobjetivos.mobjetivos.table.list')
+                @include('poa.mobjetivos.mobjetivos.table.list')
 
             </div>
         </div>

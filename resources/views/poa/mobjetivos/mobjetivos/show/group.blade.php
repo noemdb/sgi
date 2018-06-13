@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-sm p-1 text-secondary">
             <strong>Problema:</strong> {{$mproblema->problema or ''}}
-        </div>        
+        </div>
     </div>
 
     <div class="row alert alert-secondary p-1 mb-0">
@@ -23,14 +23,14 @@
 
 
     @foreach($mobjetivos as $mobjetivo)
-        
+
         {{-- @if($mobjetivo->mproductos->count()>0) --}}
             @php($mproductos = $mobjetivo->mproductos)
             {{-- @foreach($mproductos as $mproducto) --}}
                 <div class="row pt-1">
                     <div class="col-sm p-1" title="Objetivo">
                         @php($loop_objetivos++)
-                        {{ $loop_objetivos or '' }}.                                    
+                        {{ $loop_objetivos or '' }}.
                         {{ $mobjetivo->objetivo or ''}}
                         <br>
                         @component('admin.poa.elementos.botones.edit')
@@ -45,7 +45,7 @@
                         @foreach($mproductos as $mproducto)
                             @if($mproducto->pindicadors->count()>0)
                                 @php($pindicadors = $mproducto->pindicadors)
-                                @include('admin.poa.mproductos.pindicadors.show.list')
+                                @include('poa.mproductos.pindicadors.show.list')
                             @endif
                         @endforeach
                         @component('admin.poa.elementos.botones.edit')
@@ -60,7 +60,7 @@
                         @foreach($mproductos as $mproducto)
                             @if($mproducto->pverificadors->count()>0)
                                 @php($pverificadors = $mproducto->pverificadors)
-                                @include('admin.poa.mproductos.pverificadors.show.list')
+                                @include('poa.mproductos.pverificadors.show.list')
                             @endif
                         @endforeach
                         @component('admin.poa.elementos.botones.edit')
@@ -75,7 +75,7 @@
                         @foreach($mproductos as $mproducto)
                             @if($mproducto->psupuestos->count()>0)
                                 @php($psupuestos = $mproducto->psupuestos)
-                                @include('admin.poa.mproductos.psupuestos.show.list')
+                                @include('poa.mproductos.psupuestos.show.list')
                             @endif
                         @endforeach
                         @component('admin.poa.elementos.botones.edit')
@@ -90,9 +90,9 @@
             {{-- @endforeach --}}
         {{-- @endif --}}
     @endforeach
-    
 
-    {{-- 
+
+    {{--
     <div class="row">
         <div class="col-sm-12">
             @component('admin.poa.elementos.botones.edit')
@@ -102,7 +102,7 @@
                 @slot('icon','nuevo')
             @endcomponent
         </div>
-    </div> 
+    </div>
     --}}
 
     <div class="dropdown-divider"></div>

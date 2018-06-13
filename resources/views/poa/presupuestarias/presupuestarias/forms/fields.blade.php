@@ -1,11 +1,11 @@
-@include('admin.elements.forms.errors')
+@include('elements.forms.errors')
 
-@include('admin.elements.messeges.oper_ok')
+@include('elements.messeges.oper_ok')
 
 <div class="input-group mb-3">
      <div class="input-group-prepend">
         <label class="input-group-text" for="mobjetivo_id">Objetivo</label>
-    </div>           
+    </div>
     {!! Form::select('mobjetivo_id',$mobjetivos_list,old('mobjetivo_id'),['class' => 'form-control','id'=>'mobjetivo_id','placeholder' => 'Seleccionar','title'=>'Objetivo']); !!}
 </div>
 
@@ -22,7 +22,7 @@
 <div class="input-group mb-3">
      <div class="input-group-prepend">
         <label class="input-group-text" for="mactividad_id">Asignación</label>
-    </div>           
+    </div>
     {!! Form::select('asignacion',$asignacion_list,old('asignacion'),['class' => 'form-control','id'=>'asignacion','placeholder' => 'Seleccionar','title'=>'Asignación']); !!}
 </div>
 

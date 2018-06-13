@@ -2,8 +2,8 @@
 
 @section('body')
     {{-- <div id="wrapper"> --}}
-    
-        {{-- @include('admin.layouts.dashboard.navbar.app') --}}
+
+        {{-- @include('layouts.dashboard.navbar.app') --}}
 
         {{-- INI navbar --}}
         <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 navbar-expand-md">
@@ -30,15 +30,13 @@
         {{-- INI page-wrappe --}}
         <div class="container-fluid">
 
-
             <div class="row">
-
 
                 {{-- INI sidebar --}}
                 {{-- <nav class="col-md-2 d-md-block bg-light sidebar"> --}}
                 <nav id="sidebar" class="col-md-2 d-none d-md-block bg-light sidebar">
 
-                    @include('admin.layouts.dashboard.sidebar.app')
+                    @include('poa.layouts.dashboard.sidebar.app')
 
                 </nav>
                 {{-- FIN sidebar --}}
@@ -71,7 +69,7 @@
 
      @parent
      <script src="{{ asset("js/accordion.js") }}"></script>
-     
+
      {{-- <script type="text/javascript">
          $(document).ready(function () {
              $('#sidebarCollapse').on('click', function () {

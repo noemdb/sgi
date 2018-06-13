@@ -8,8 +8,8 @@
       {!! Form::model($Mproblema,['route' => ['mproblemas.update', $Mproblema->id], 'method' => 'PUT', 'id'=>'form-update-mproblema_'.$Mproblema->id, 'role'=>'form']) !!}
 
             {{-- partial con el formulario y campos --}}
-            {{-- @include('admin.poa.mproblemas.mproblemas.forms.fields') --}}
-            @include('admin.poa.mproblemas.mproblemas.forms.fields')
+            {{-- @include('poa.mproblemas.mproblemas.forms.fields') --}}
+            @include('poa.mproblemas.mproblemas.forms.fields')
 
             <button type="submit" class="btn-Mproblema-update btn btn-primary btn-block" value="update" data-id="update" id="btn-update-Mproblema-{{$Mproblema->id}}">
 

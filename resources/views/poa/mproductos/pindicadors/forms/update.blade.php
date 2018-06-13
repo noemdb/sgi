@@ -8,7 +8,7 @@
       {!! Form::model($pindicador,['route' => ['pindicadors.update', $pindicador->id], 'method' => 'PUT', 'id'=>'form-update-pindicador_'.$pindicador->id, 'role'=>'form']) !!}
 
             {{-- partial con el formulario y campos --}}
-            @include('admin.poa.mproductos.pindicadors.forms.fields')
+            @include('poa.mproductos.pindicadors.forms.fields')
 
             <button type="submit" class="btn-pindicador-update btn btn-primary btn-block" value="update" data-id="update" id="btn-update-pindicador-{{$pindicador->id}}">
 

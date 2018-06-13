@@ -8,8 +8,8 @@
       {!! Form::model($pcausaefecto,['route' => ['pcausaefectos.update', $pcausaefecto->id], 'method' => 'PUT', 'id'=>'form-update-pcausaefecto_'.$pcausaefecto->id, 'role'=>'form']) !!}
 
             {{-- partial con el formulario y campos --}}
-            {{-- @include('admin.poa.mproblemas.pcausaefectos.forms.fields') --}}
-            @include('admin.poa.mproblemas.pcausaefectos.forms.fields')
+            {{-- @include('poa.mproblemas.pcausaefectos.forms.fields') --}}
+            @include('poa.mproblemas.pcausaefectos.forms.fields')
 
             <button type="submit" class="btn-pcausaefecto-update btn btn-primary btn-block" value="update" data-id="update" id="btn-update-pcausaefecto-{{$pcausaefecto->id}}">
 

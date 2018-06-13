@@ -8,7 +8,7 @@
       {!! Form::open(['route' => 'mactividads.store', 'method' => 'POST', 'id'=>'form-mactividads-create', 'class'=>'form-signin']) !!}
 
             {{-- partial con el formulario y campos --}}
-            @include('admin.poa.mactividads.mactividads.forms.fields')
+            @include('poa.mactividads.mactividads.forms.fields')
 
             <button type="submit" class="btn-mactividads-create btn btn-primary btn-block" value="create" data-id="create" id="btn-create-mactividads">
 

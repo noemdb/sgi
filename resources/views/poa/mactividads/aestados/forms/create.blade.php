@@ -8,7 +8,7 @@
       {!! Form::open(['route' => 'aestados.store', 'method' => 'POST', 'id'=>'form-aestados-create', 'class'=>'form-signin']) !!}
 
             {{-- partial con el formulario y campos --}}
-            @include('admin.poa.mactividads.aestados.forms.fields')
+            @include('poa.mactividads.aestados.forms.fields')
 
             <button type="submit" class="btn-aestados-create btn btn-primary btn-block" value="create" data-id="create" id="btn-create-aestados">
 

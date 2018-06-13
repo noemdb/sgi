@@ -3,7 +3,7 @@
     <ul class="list-group">
 
         @foreach($mobjetivos as $mobjetivo)
-            
+
             <li class="list-group-item d-flex justify-content-between align-items-center pl-2 pr-0">
 
                 <div class="continer">
@@ -20,10 +20,10 @@
                                     @slot('icon','mostrar')
                                 @endcomponent
                             </span>
-            
+
                         </div>
                     </div>
-                    
+
                     @if($mobjetivo->mproductos->count()>0 && empty($not_product))
 
                         <div class="row">
@@ -40,12 +40,12 @@
                                                     <td class="align-middle">
                                                         <div class="vertical-text text-secondary" title="Producto: {{$mproducto->producto or ''}}">
                                                             Productos</td>
-                                                        </div>                                            
+                                                        </div>
                                                     <td>
 
                                                         @php($mproductos = $mobjetivo->mproductos)
-                                            
-                                                        @include('admin.poa.mproductos.mproductos.show.list')
+
+                                                        @include('poa.mproductos.mproductos.show.list')
 
                                                     </td>
 
@@ -54,7 +54,7 @@
                                             </tbody>
 
                                         </table>
-                                    
+
                                 </div>
 
                             </div>

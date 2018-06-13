@@ -17,26 +17,26 @@
   <li class="nav-item">
     <a class="nav-link" id="mactividads-tab" data-toggle="tab" href="#mactividads" role="tab" aria-controls="mactividads" aria-selected="false" title="Matriz de Actividades">Actividades</a>
   </li>
-  {{-- 
+  {{--
   <li class="nav-item">
     <a class="nav-link" id="mpresupuestaria-tab" data-toggle="tab" href="#mpresupuestaria" role="tab" aria-controls="mpresupuestaria" aria-selected="false" title="Matriz de Presupuestaria">Presupuestaria</a>
-  </li> 
+  </li>
   --}}
 </ul>
 
 <div class="tab-content" id="myTabContent">
-  
+
   <div class="tab-pane fade show active pt-2" id="home" role="tabpanel" aria-labelledby="home-tab">
 
-      @include('admin.poa.poas.show.poa')
-      
+      @include('poa.poas.show.poa')
+
   </div>
 
   <div class="tab-pane fade pt-2" id="mlogicos" role="tabpanel" aria-labelledby="profile-tab">
 
     @isset($mlogicos)
         @foreach($mlogicos as $mlogico)
-            @include('admin.poa.mlogicos.show.simple')
+            @include('poa.mlogicos.show.simple')
             <div class="dropdown-divider"></div>
         @endforeach
     @endisset
@@ -49,7 +49,7 @@
       <div class="alert alert-primary mb-1"> Dirección: {{ $direccion->nombre or ''}}</div>
       @if($direccion->mproblemas->count()>0)
         @php($mproblemas = $direccion->mproblemas)
-        @include('admin.poa.mproblemas.mproblemas.show.group')
+        @include('poa.mproblemas.mproblemas.show.group')
       @endif
     @endforeach
 
@@ -65,7 +65,7 @@
           @if($mproblema->mobjetivos->count()>0)
             @php($mobjetivos = $mproblema->mobjetivos)
             @php($loop_objetivos = 0)
-            @include('admin.poa.mobjetivos.mobjetivos.show.group')
+            @include('poa.mobjetivos.mobjetivos.show.group')
           @endif
         @endforeach
       @endif
@@ -83,7 +83,7 @@
                 @if($mobjetivo->mproductos->count()>0)
                   @php($mproductos = $mobjetivo->mproductos)
                   {{-- {{$mproductos}} --}}
-                  @include('admin.poa.mproductos.mproductos.show.group')
+                  @include('poa.mproductos.mproductos.show.group')
                 @endif
           @endforeach
         @endforeach
@@ -102,7 +102,7 @@
             @foreach($mobjetivo->mproductos as $mproducto)
                 @if($mproducto->mactividads->count()>0)
                   @php($mactividads = $mproducto->mactividads)
-                  @include('admin.poa.mactividads.mactividads.show.group')
+                  @include('poa.mactividads.mactividads.show.group')
                 @endif
             @endforeach
           @endforeach
@@ -112,7 +112,7 @@
     @endforeach
 
   </div>
-  {{-- 
+  {{--
   <div class="tab-pane fade pt-2" id="mpresupuestaria" role="tabpanel" aria-labelledby="mpresupuestaria-tab">
 
     @foreach($direccions as $direccion)
@@ -123,15 +123,15 @@
           @if($mproblema->mobjetivos->count()>0)
             @php($mobjetivos = $mproblema->mobjetivos)
             @php($loop_objetivos = 0)
-            @include('admin.poa.presupuestarias.presupuestarias.show.group')
+            @include('poa.presupuestarias.presupuestarias.show.group')
           @endif
         @endforeach
       @endif
     @endforeach
-    
-  </div> 
+
+  </div>
   --}}
-</div> 
+</div>
 
 @section('stylesheet')
     @parent

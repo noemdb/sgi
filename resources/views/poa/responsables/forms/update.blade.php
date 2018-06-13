@@ -8,7 +8,7 @@
       {!! Form::model($responsable,['route' => ['responsables.update', $responsable->id], 'method' => 'PUT', 'id'=>'form-update-poa_'.$responsable->id, 'role'=>'form']) !!}
 
             {{-- partial con el formulario y campos --}}
-            @include('admin.poa.responsables.forms.fields')
+            @include('poa.responsables.forms.fields')
 
             <button type="submit" class="btn-responsable-update btn btn-primary btn-block" value="update" data-id="update" id="btn-update-responsable-{{$responsable->id}}">
 

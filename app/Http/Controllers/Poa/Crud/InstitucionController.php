@@ -5,6 +5,19 @@ namespace App\Http\Controllers\Poa\Crud;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+//validation request
+use App\Http\Requests\Poa\CreateInstitucionRequest;
+use App\Http\Requests\Poa\UpdateInstitucionRequest;
+
+//Helpers
+// use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Session;
+
+//models
+use App\Models\poa\Institucion;
+use App\Models\poa\Direccion;
+use App\Models\poa\Poa;
+
 class InstitucionController extends Controller
 {
     /**
@@ -14,7 +27,14 @@ class InstitucionController extends Controller
      */
     public function index()
     {
-        //
+        $institucions = Institucion::OrderBy('institucions.id','DESC')
+            // ->with('profile')
+            // ->with('rols')
+            ->get();
+
+        // dd($institucions);
+
+        return view('poa.institucions.index', compact('institucions'));
     }
 
     /**
@@ -24,7 +44,9 @@ class InstitucionController extends Controller
      */
     public function create()
     {
-        //
+
+        return view('poa.institucions.create');
+
     }
 
     /**
@@ -33,9 +55,13 @@ class InstitucionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateInstitucionRequest $request)
     {
-        //
+        $institucion = Institucion::create($request->all());
+
+        Session::flash('operp_ok','Registro guardado exitasamente');
+
+        return redirect()->route('institucions.index');
     }
 
     /**
@@ -46,7 +72,15 @@ class InstitucionController extends Controller
      */
     public function show($id)
     {
-        //
+        $institucion = Institucion::findOrFail($id);
+
+        $direccions = Direccion::Where('institucion_id',$institucion->id)->get();
+
+        $poas = Poa::Where('institucion_id',$institucion->id)->get();
+
+        // dd($institucion,$direccions,$poas);
+
+        return view('poa.institucions.show',compact('institucion','direccions','poas'));
     }
 
     /**
@@ -57,7 +91,15 @@ class InstitucionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $institucion = Institucion::findOrFail($id);
+
+        $direccions = Direccion::Where('institucion_id',$institucion->id)->get();
+
+        $poas = Poa::Where('institucion_id',$institucion->id)->get();
+
+        // dd($institucion,$direccions,$poas);
+
+        return view('poa.institucions.edit',compact('institucion','direccions','poas'));
     }
 
     /**
@@ -67,9 +109,21 @@ class InstitucionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateInstitucionRequest $request, $id)
     {
-        //
+        $institucion = Institucion::findOrFail($id);
+
+        $institucion->fill($request->all());
+
+        $institucion->save();
+
+        $messenge = trans('db_oper_result.user_update_ok');
+
+        Session::flash('operp_ok',$messenge);
+
+        Session::flash('class_oper','success');
+
+        return redirect()->route('institucions.edit',$id);
     }
 
     /**
@@ -78,8 +132,29 @@ class InstitucionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
-        //
+        // dd($id);
+
+        $institucion = Institucion::findOrFail($id);
+        // $institucion->Direccion()->delete();
+        // $institucion->Poa()->delete();
+        $institucion->delete();
+
+        $operation= 'delete';
+        $messenge = trans('db_oper_result.delete_ok');
+
+        if($request->ajax()){
+
+            return response()->json([
+                "messenge"=>$messenge,
+                "operation"=>$operation,
+            ]);
+
+        }
+
+        Session::flash('operp_ok',$messenge.' -> ('.$institucion->nombre.')');
+
+        return redirect()->route('institucions.index');
     }
 }

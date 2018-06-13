@@ -1,13 +1,13 @@
-@extends('admin.layouts.dashboard.app')
+@extends('poa.layouts.dashboard.app')
 
-{{-- 
+{{--
 @section('page_heading')
     <div class="col-lg-12">
         <h1 class="page-header">
             Gráficas
         </h1>
     </div>
-@endsection 
+@endsection
 --}}
 
 @section('section')
@@ -32,10 +32,10 @@
 
                     {{-- INI Content pill --}}
                     <div class="tab-content">
-                        
+
                         <div id="tabchart1" class="tab-pane fade in active">
                             {{-- <h3>Tab 1</h3> --}}
-                        
+
                             {{-- INI row chart1 --}}
                             <div class="row">
                                 {{-- INI chart Usuarios Conect./Desconet. --}}
@@ -101,7 +101,7 @@
 
                         <div id="tabchart2" class="tab-pane fade">
                             {{-- <h3>Tab 1</h3> --}}
-                        
+
                             {{-- INI row chart2 --}}
                             <div class="row">
                                 {{-- INI chart Usuarios por Mes --}}
@@ -167,7 +167,7 @@
 
     {{-- INI funciones para generar los Chart --}}
     <script>
- 
+
         //Evento clic para el panel de tab nav-tabs (menu con las opciones)
         $('ul.ranges a').click(function(e){
             e.preventDefault();

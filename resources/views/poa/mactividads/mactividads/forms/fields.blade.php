@@ -1,18 +1,18 @@
-@include('admin.elements.forms.errors')
+@include('elements.forms.errors')
 
-@include('admin.elements.messeges.oper_ok')
+@include('elements.messeges.oper_ok')
 
 <div class="input-group mb-3">
      <div class="input-group-prepend">
         <label class="input-group-text" for="mproducto_id">Producto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-    </div>           
+    </div>
     {!! Form::select('mproducto_id',$mproductos_list,old('mproducto_id'),['class' => 'form-control','id'=>'mproducto_id','placeholder' => 'Seleccionar','title'=>'Objetivo']); !!}
 </div>
 
 <div class="input-group mb-3">
      <div class="input-group-prepend">
         <label class="input-group-text" for="responsable_id">Responsable</label>
-    </div>           
+    </div>
     {!! Form::select('responsable_id',$responsables_list,old('responsable_id'),['class' => 'form-control','id'=>'responsable_id','placeholder' => 'Seleccionar','title'=>'Responsable']); !!}
 </div>
 
@@ -27,7 +27,7 @@
     <label for="ubicaion">Ubicaión</label>
 </div>
 
-{{-- 
+{{--
 <div class="form-label-group pb-1">
         {!! Form::text('finicial', old('finicial'), ['class' => 'form-control datepicker','placeholder'=>'Fecha Inicial','id'=>'finicial','required']); !!}
     <label for="finicial">Fecha Inicial</label>
@@ -36,7 +36,7 @@
 <div class="form-label-group pb-1">
     {!! Form::text('ffinal', old('ffinal'), ['class' => 'form-control datepicker','placeholder'=>'Fecha Final','id'=>'ffinal','required']); !!}
     <label for="ffinal">Fecha Final</label>
-</div> 
+</div>
 --}}
 
 <div class="input-group mb-3">

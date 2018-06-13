@@ -1,11 +1,11 @@
-@include('admin.elements.forms.errors')
+@include('elements.forms.errors')
 
-@include('admin.elements.messeges.oper_ok')
+@include('elements.messeges.oper_ok')
 
 <div class="input-group mb-3">
      <div class="input-group-prepend">
         <label class="input-group-text" for="mproducto_id">Producto</label>
-    </div>           
+    </div>
     {!! Form::select('mproducto_id',$mproductos_list,old('mproducto_id'),['class' => 'form-control','id'=>'mproducto_id','placeholder' => 'Seleccionar','title'=>'Objetivo']); !!}
 </div>
 

@@ -1,9 +1,9 @@
-@include('admin.elements.forms.errors')
+@include('elements.forms.errors')
 
-@include('admin.elements.messeges.oper_ok')
+@include('elements.messeges.oper_ok')
 
 <div class="form-label-group pb-1">
-                
+
     {!! Form::select('institucion_id',$institucions_list,old('institucion_id'),['class' => 'form-control','autofocus','placeholder' => 'Institución','title'=>'Institución']); !!}
 
 </div>

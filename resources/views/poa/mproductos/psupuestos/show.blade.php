@@ -1,15 +1,15 @@
-@extends('admin.layouts.dashboard.app')
+@extends('poa.layouts.dashboard.app')
 
 {{-- @section('page_heading','Listado de Usuarios') --}}
 
 @section('main')
 
     <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
-        
+
         <div class="card mt-2 bd-callout bd-callout-info">
 
             <div class="card-header">
-                
+
                 <h2>
 
                     Información del Supuesto
@@ -17,7 +17,7 @@
                     {{-- INI Menu rapido --}}
                     <div class="btn-group float-right border border-white rounded">
 
-                        @include('admin.poa.mproductos.psupuestos.menus.show')                        
+                        @include('poa.mproductos.psupuestos.menus.show')
 
                     </div>
                     {{-- FIN Menu rapido --}}
@@ -33,9 +33,9 @@
                     <div class="row">
 
                         <div class="col-12">
-                          
+
                             {{-- Partial con los tabs de usuario (perfiles, roles) --}}
-                            @include('admin.poa.mproductos.psupuestos.show.psupuesto')
+                            @include('poa.mproductos.psupuestos.show.psupuesto')
 
                         </div>
                     </div>

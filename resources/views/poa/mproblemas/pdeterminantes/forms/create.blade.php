@@ -8,7 +8,7 @@
       {!! Form::open(['route' => 'pdeterminantes.store', 'method' => 'POST', 'id'=>'form-pdeterminantes-create', 'class'=>'form-signin']) !!}
 
             {{-- partial con el formulario y campos --}}
-            @include('admin.poa.mproblemas.pdeterminantes.forms.fields')
+            @include('poa.mproblemas.pdeterminantes.forms.fields')
 
             <button type="submit" class="btn-pdeterminantes-create btn btn-primary btn-block" value="create" data-id="create" id="btn-create-pdeterminantes">
 

@@ -1,13 +1,13 @@
-@extends('admin.layouts.dashboard.app')
+@extends('poa.layouts.dashboard.app')
 
 @section('main')
 
     <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
-        
+
         <div class="card bd-callout bd-callout-primary mt-2">
 
             <div class="card-header">
-                
+
                 <h2>
 
                     Nuevo Indicador
@@ -15,7 +15,7 @@
                         {{-- INI Menu rapido --}}
                         <div class="btn-group float-right">
 
-                            @include('admin.poa.mproductos.pindicadors.menus.edit')
+                            @include('poa.mproductos.pindicadors.menus.edit')
 
                         </div>
                         {{-- FIN Menu rapido --}}
@@ -26,7 +26,7 @@
 
             <div class="card-body">
 
-                @include('admin.poa.mproductos.pindicadors.forms.create')
+                @include('poa.mproductos.pindicadors.forms.create')
 
             </div>
 

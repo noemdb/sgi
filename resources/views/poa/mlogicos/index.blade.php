@@ -1,4 +1,4 @@
-@extends('admin.layouts.dashboard.app')
+@extends('poa.layouts.dashboard.app')
 
 @section('main')
 
@@ -11,11 +11,11 @@
                     <small class="text-default">
                         <strong><span id="mlogico_counter">{{$mlogicos->count()}}</span> Marcos Lógicos</strong>
                     </small>
-                    
+
                     {{-- INI Menu rapido --}}
                     <div class="btn-group float-right pt-2">
 
-                        @include('admin.poa.mlogicos.menus.index')
+                        @include('poa.mlogicos.menus.index')
 
                     </div>
                     {{-- FIN Menu rapido --}}
@@ -26,10 +26,10 @@
             <div class="card-body">
 
                 {{-- Mensaje session-flash sobre operaciones con base de datos --}}
-                @include('admin.elements.messeges.oper_ok')             
+                @include('elements.messeges.oper_ok')
 
                 {{-- Partial con el listado de los usuarios --}}
-                @include('admin.poa.mlogicos.table.list')
+                @include('poa.mlogicos.table.list')
 
             </div>
         </div>

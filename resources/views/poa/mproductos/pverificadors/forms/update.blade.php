@@ -8,7 +8,7 @@
       {!! Form::model($pverificador,['route' => ['pverificadors.update', $pverificador->id], 'method' => 'PUT', 'id'=>'form-update-presupuestaria_'.$pverificador->id, 'role'=>'form']) !!}
 
             {{-- partial con el formulario y campos --}}
-            @include('admin.poa.mproductos.pverificadors.forms.fields')
+            @include('poa.mproductos.pverificadors.forms.fields')
 
             <button type="submit" class="btn-pverificador-update btn btn-primary btn-block" value="update" data-id="update" id="btn-update-pverificador-{{$pverificador->id}}">
 

@@ -6,9 +6,9 @@
 
       {{-- INI form --}}
       {!! Form::open(['route' => 'institucions.store', 'method' => 'POST', 'id'=>'form-institucion-create', 'class'=>'form-signin']) !!}
-            
+
             {{-- partial con el formulario y campos --}}
-            @include('admin.poa.institucions.forms.fields')
+            @include('poa.institucions.forms.fields')
 
             <button type="submit" class="btn-institucion-create btn btn-primary btn-block" value="create" data-id="create" id="btn-create-institucion">
 
@@ -19,13 +19,13 @@
 
             <button type="reset" class="btn-institucion-reset btn btn-info btn-block" value="Reset">
 
-                <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>Reset 
+                <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>Reset
 
             </button>
 
             {{-- INI Menu modelos realcionados --}}
             <div class="btn-group d-flex pt-2" style="width: 100%;" role="group" aria-label="Basic example">
-              
+
               <a class="btn btn-dark w-100" href="{{ route('direccions.index') }}" role="button">
                 Mostrar
                 <i class="fas fa-warehouse"></i>
@@ -40,9 +40,9 @@
             {{-- FIN Menu modelos realcionados --}}
 
 
-            
-      
-      {!! Form::close() !!}    
+
+
+      {!! Form::close() !!}
       {{-- FIN form --}}
 
   </div>

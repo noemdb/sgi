@@ -41,7 +41,7 @@ class Poa extends Model
 
     public function getTruncDescripcionAttribute()
     {
-      
+
         $string = $this->descripcion;
 
         $length = 15;
@@ -65,7 +65,7 @@ class Poa extends Model
 
     public function getTruncEstrategiaAttribute()
     {
-      
+
         $string = $this->estrategia;
 
         $length = 15;
@@ -89,11 +89,11 @@ class Poa extends Model
 
     public function getFullCodeAttribute()
     {
-      
+
         $cadena = $this->descripcion;
         $token = strtok($cadena, " ");
         $code = '';
-        
+
         while($token !== false) {
             $code .= strtoupper(substr($token,0,2));
             $token = strtok(" ");

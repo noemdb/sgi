@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-sm p-1 text-secondary">
             <strong>Problema:</strong> {{$mproblema->problema or ''}}
-        </div>        
+        </div>
     </div>
 
     <div class="row alert alert-secondary p-1 mb-0">
@@ -24,7 +24,7 @@
     @foreach($mproductos as $mproducto)
         <div class="row pt-1">
             <div class="col-sm p-1" title="Productos">
-                {{ $loop->iteration or '' }}.                                    
+                {{ $loop->iteration or '' }}.
                 {{ $mproducto->producto or ''}}
                 <br>
                 @component('admin.poa.elementos.botones.edit')
@@ -38,7 +38,7 @@
             <div class="col-sm p-1" title="Indicadores">
                 @if($mproducto->pindicadors->count()>0)
                     @php($pindicadors = $mproducto->pindicadors)
-                    @include('admin.poa.mproductos.pindicadors.show.list')
+                    @include('poa.mproductos.pindicadors.show.list')
                 @endif
                 @component('admin.poa.elementos.botones.edit')
                     @slot('title','Nuevo')
@@ -51,7 +51,7 @@
             <div class="col-sm p-1" title="Verificadores">
                 @if($mproducto->pverificadors->count()>0)
                     @php($pverificadors = $mproducto->pverificadors)
-                    @include('admin.poa.mproductos.pverificadors.show.list')
+                    @include('poa.mproductos.pverificadors.show.list')
                 @endif
                 @component('admin.poa.elementos.botones.edit')
                     @slot('title','Nuevo')
@@ -64,7 +64,7 @@
             <div class="col-sm p-1" title="Supuestos">
                 @if($mproducto->psupuestos->count()>0)
                     @php($psupuestos = $mproducto->psupuestos)
-                    @include('admin.poa.mproductos.psupuestos.show.list')
+                    @include('poa.mproductos.psupuestos.show.list')
                 @endif
                 @component('admin.poa.elementos.botones.edit')
                     @slot('title','Nuevo')
@@ -76,9 +76,9 @@
             </div>
         </div>
     @endforeach
-    
 
-    {{-- 
+
+    {{--
 
     <div class="row">
         <div class="col-sm-12">
@@ -89,8 +89,8 @@
                 @slot('icon','nuevo')
             @endcomponent
         </div>
-    </div> 
-    
+    </div>
+
     --}}
 
     <div class="dropdown-divider"></div>

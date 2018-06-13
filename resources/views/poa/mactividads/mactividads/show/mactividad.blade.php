@@ -18,7 +18,7 @@
                 <div class="collapse" id="collapseProducto">
                     <div class="card card-body">
 
-                        @include('admin.poa.mproductos.mproductos.show.producto',['mproducto'=>$mactividad->mproducto])
+                        @include('poa.mproductos.mproductos.show.producto',['mproducto'=>$mactividad->mproducto])
 
                         <div>
                             <a class="btn btn-light float-right" href="{{ route('mproductos.show', $mactividad->mproducto->id) }}" role="button" >Más</a>

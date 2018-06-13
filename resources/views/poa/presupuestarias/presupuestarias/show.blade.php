@@ -1,15 +1,15 @@
-@extends('admin.layouts.dashboard.app')
+@extends('poa.layouts.dashboard.app')
 
 {{-- @section('page_heading','Listado de Usuarios') --}}
 
 @section('main')
 
     <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
-        
+
         <div class="card mt-2 bd-callout bd-callout-info">
 
             <div class="card-header">
-                
+
                 <h2>
 
                     Información del Registro Presupuestario
@@ -17,7 +17,7 @@
                     {{-- INI Menu rapido --}}
                     <div class="btn-group float-right border border-white rounded">
 
-                        @include('admin.poa.presupuestarias.presupuestarias.menus.show')                        
+                        @include('poa.presupuestarias.presupuestarias.menus.show')
 
                     </div>
                     {{-- FIN Menu rapido --}}
@@ -40,9 +40,9 @@
                         {{-- </div> --}}
 
                         <div class="col-12">
-                          
+
                             {{-- Partial con los tabs de usuario (perfiles, roles) --}}
-                            @include('admin.poa.presupuestarias.presupuestarias.show.presupuestaria')
+                            @include('poa.presupuestarias.presupuestarias.show.presupuestaria')
 
                         </div>
                     </div>

@@ -1,9 +1,9 @@
-@include('admin.elements.forms.errors')
+@include('elements.forms.errors')
 
-@include('admin.elements.messeges.oper_ok')
+@include('elements.messeges.oper_ok')
 
 <div class="form-label-group pb-1">
-                
+
     {!! Form::select('poa_id',$poas_list,old('poa_id'),['class' => 'form-control','autofocus','placeholder' => 'POAS','title'=>'POAS']); !!}
 
 </div>

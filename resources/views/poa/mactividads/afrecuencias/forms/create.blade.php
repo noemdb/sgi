@@ -8,7 +8,7 @@
       {!! Form::open(['route' => 'afrecuencias.store', 'method' => 'POST', 'id'=>'form-afrecuencias-create', 'class'=>'form-signin']) !!}
 
             {{-- partial con el formulario y campos --}}
-            @include('admin.poa.mactividads.afrecuencias.forms.fields')
+            @include('poa.mactividads.afrecuencias.forms.fields')
 
             <button type="submit" class="btn-afrecuencias-create btn btn-primary btn-block" value="create" data-id="create" id="btn-create-afrecuencias">
 

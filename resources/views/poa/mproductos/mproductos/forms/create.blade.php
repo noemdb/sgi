@@ -8,7 +8,7 @@
       {!! Form::open(['route' => 'mproductos.store', 'method' => 'POST', 'id'=>'form-mproductos-create', 'class'=>'form-signin']) !!}
 
             {{-- partial con el formulario y campos --}}
-            @include('admin.poa.mproductos.mproductos.forms.fields')
+            @include('poa.mproductos.mproductos.forms.fields')
 
             <button type="submit" class="btn-mproductos-create btn btn-primary btn-block" value="create" data-id="create" id="btn-create-mproductos">
 

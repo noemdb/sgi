@@ -1,6 +1,6 @@
-@include('admin.elements.forms.errors')
+@include('elements.forms.errors')
 
-@include('admin.elements.messeges.oper_ok')
+@include('elements.messeges.oper_ok')
 
 <div class="form-label-group pb-1">
     {!! Form::text('nombre', old('nombre'), ['class' => 'form-control','autofocus','placeholder'=>'Nombre de la Institución','id'=>'nombre']); !!}

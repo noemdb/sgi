@@ -8,7 +8,7 @@
       {!! Form::model($mproducto,['route' => ['mproductos.update', $mproducto->id], 'method' => 'PUT', 'id'=>'form-update-presupuestaria_'.$mproducto->id, 'role'=>'form']) !!}
 
             {{-- partial con el formulario y campos --}}
-            @include('admin.poa.mproductos.mproductos.forms.fields')
+            @include('poa.mproductos.mproductos.forms.fields')
 
             <button type="submit" class="btn-mproducto-update btn btn-primary btn-block" value="update" data-id="update" id="btn-update-mproducto-{{$mproducto->id}}">
 

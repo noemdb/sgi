@@ -1,6 +1,6 @@
-@include('admin.elements.forms.errors')
+@include('elements.forms.errors')
 
-@include('admin.elements.messeges.oper_ok')
+@include('elements.messeges.oper_ok')
 
 {{-- @if(empty($poa_id)) --}}
 @empty($poa)
@@ -8,12 +8,12 @@
     <div class="input-group mb-3">
          <div class="input-group-prepend">
             <label class="input-group-text" for="poa_id">&nbsp;&nbsp;&nbsp;&nbsp;POA&nbsp;&nbsp;&nbsp;&nbsp;</label>
-        </div>           
+        </div>
         {!! Form::select('poa_id',$poa_list,old('poa_id'),['class' => 'form-control','id'=>'poa_id','placeholder' => 'Seleccionar','title'=>'POA']); !!}
     </div>
 
 @endempty
-    
+
 {{-- @else --}}
 @isset($poa)
     <div class="form-label-group pb-1">
@@ -38,7 +38,7 @@
 <div class="input-group mb-3">
     <div class="input-group-prepend">
         <label class="input-group-text" for="direccion_id">Dirección</label>
-    </div>            
+    </div>
     {!! Form::select('direccion_id',$direccion_list,old('direccion_id'),['class' => 'form-control','id'=>'direccion_id','placeholder' => 'Seleccionar','title'=>'Dirección']); !!}
 </div>
 

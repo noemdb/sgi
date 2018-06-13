@@ -5,6 +5,18 @@ namespace App\Http\Controllers\Poa\Crud;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+//validation request
+use App\Http\Requests\Poa\CreateResponsableRequest;
+use App\Http\Requests\Poa\UpdateResponsableRequest;
+
+//Helpers
+// use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Session;
+
+//models
+use App\Models\poa\Direccion;
+use App\Models\poa\Responsable;
+
 class ResponsableController extends Controller
 {
     /**
@@ -14,7 +26,14 @@ class ResponsableController extends Controller
      */
     public function index()
     {
-        //
+        $responsables = Responsable::OrderBy('responsables.id','DESC')
+            ->with('direccion')
+            // ->with('rols')
+            ->get();
+
+        // dd($institucions);
+
+        return view('poa.responsables.index', compact('responsables'));
     }
 
     /**
@@ -24,7 +43,11 @@ class ResponsableController extends Controller
      */
     public function create()
     {
-        //
+        $direccion_list = Direccion::select('direccions.*')
+                ->orderby('direccions.nombre','asc')
+                ->pluck('nombre', 'id');
+
+        return view('poa.responsables.create', compact('direccion_list'));
     }
 
     /**
@@ -33,11 +56,14 @@ class ResponsableController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateResponsableRequest $request)
     {
-        //
-    }
+        $responsable = Responsable::create($request->all());
 
+        Session::flash('operp_ok','Registro guardado exitasamente');
+
+        return redirect()->route('responsables.index');
+    }
     /**
      * Display the specified resource.
      *
@@ -46,7 +72,13 @@ class ResponsableController extends Controller
      */
     public function show($id)
     {
-        //
+        $responsable = Responsable::findOrFail($id);
+
+        $direccions = Direccion::Where('id',$responsable->direccion_id)->first();
+
+        // dd($institucion,$direccions,$poas);
+
+        return view('poa.responsables.show',compact('direccions','responsable'));
     }
 
     /**
@@ -57,7 +89,15 @@ class ResponsableController extends Controller
      */
     public function edit($id)
     {
-        //
+        $responsable = Responsable::findOrFail($id);
+
+        $direccion_list = Direccion::select('direccions.*')
+                ->orderby('direccions.nombre','asc')
+                ->pluck('nombre', 'id');
+
+        // dd($institucion,$direccions,$poas);
+
+        return view('poa.responsables.edit',compact('responsable','direccion_list'));
     }
 
     /**
@@ -67,9 +107,21 @@ class ResponsableController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateResponsableRequest $request, $id)
     {
-        //
+        $responsable = Responsable::findOrFail($id);
+
+        $responsable->fill($request->all());
+
+        $responsable->save();
+
+        $messenge = trans('db_oper_result.user_update_ok');
+
+        Session::flash('operp_ok',$messenge);
+
+        Session::flash('class_oper','success');
+
+        return redirect()->route('responsables.edit',$id);
     }
 
     /**
@@ -78,8 +130,20 @@ class ResponsableController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
-        //
+        $responsable = Responsable::findOrFail($id);
+        $responsable->delete();
+        $operation= 'delete';
+        $messenge = trans('db_oper_result.delete_ok');
+        if($request->ajax()){
+            return response()->json([
+                "messenge"=>$messenge,
+                "operation"=>$operation,
+            ]);
+        }
+        Session::flash('operp_ok',$messenge.' -> ('.$institucion->nombre.')');
+
+        return redirect()->route('responsables.index');
     }
 }

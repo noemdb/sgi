@@ -8,7 +8,7 @@
       {!! Form::open(['route' => 'pindicadors.store', 'method' => 'POST', 'id'=>'form-pindicadors-create', 'class'=>'form-signin']) !!}
 
             {{-- partial con el formulario y campos --}}
-            @include('admin.poa.mproductos.pindicadors.forms.fields')
+            @include('poa.mproductos.pindicadors.forms.fields')
 
             <button type="submit" class="btn-pindicadors-create btn btn-primary btn-block" value="create" data-id="create" id="btn-create-pindicadors">
 

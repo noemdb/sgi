@@ -11,12 +11,12 @@
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active pt-2" id="home" role="tabpanel" aria-labelledby="home-tab">
-      @include('admin.poa.institucions.show.institucion')
+      @include('poa.institucions.show.institucion')
   </div>
   <div class="tab-pane fade pt-2" id="poa" role="tabpanel" aria-labelledby="poa-tab">
-      {{-- @include('admin.profiles.show.poa') --}}
+      {{-- @include('profiles.show.poa') --}}
   </div>
   <div class="tab-pane fade pt-2" id="direcciones" role="tabpanel" aria-labelledby="direcciones-tab">
-      {{-- @include('admin.rols.show.rols') --}}
+      {{-- @include('rols.show.rols') --}}
   </div>
-</div> 
+</div>

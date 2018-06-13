@@ -8,7 +8,7 @@
       {!! Form::open(['route' => 'pverificadors.store', 'method' => 'POST', 'id'=>'form-pverificadors-create', 'class'=>'form-signin']) !!}
 
             {{-- partial con el formulario y campos --}}
-            @include('admin.poa.mproductos.pverificadors.forms.fields')
+            @include('poa.mproductos.pverificadors.forms.fields')
 
             <button type="submit" class="btn-pverificadors-create btn btn-primary btn-block" value="create" data-id="create" id="btn-create-pverificadors">
 
