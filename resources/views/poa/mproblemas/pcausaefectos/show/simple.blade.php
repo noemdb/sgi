@@ -11,7 +11,7 @@
                 <span class="text-pcausaefectos-pcausaefecto-{{ $pcausaefecto->id  or ''}}">
                     {{$pcausaefecto->causaefecto or ''}}<br>
                 </span>
-                @component('admin.poa.elementos.botones.edit')
+                @component('poa.elementos.botones.edit')
                     @slot('title','Mostrar')
                     @slot('btnclass','link')
                     @slot('route',route('pdeterminantes.show',$pcausaefecto->id))

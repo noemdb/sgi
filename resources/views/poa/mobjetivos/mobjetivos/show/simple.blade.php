@@ -16,7 +16,7 @@
                             {{-- [{{$mobjetivo->id}}] --}}
                             {{$mobjetivo->objetivo or ''}}
                         </span>
-                        @component('admin.poa.elementos.botones.edit')
+                        @component('poa.elementos.botones.edit')
                             @slot('title','Mostrar')
                             @slot('btnclass','link')
                             @slot('route',route('mobjetivos.show',$mobjetivo->id))

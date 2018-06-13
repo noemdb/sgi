@@ -9,7 +9,7 @@
 
                 <span class="badge badge-light badge-pill">
 
-                    @component('admin.poa.elementos.botones.edit')
+                    @component('poa.elementos.botones.edit')
                         @slot('title','Mostrar')
                         @slot('btnclass','link')
                         @slot('route',route('pdeterminantes.show',$mproducto->id))

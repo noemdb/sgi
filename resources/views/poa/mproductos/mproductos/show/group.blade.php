@@ -27,7 +27,7 @@
                 {{ $loop->iteration or '' }}.
                 {{ $mproducto->producto or ''}}
                 <br>
-                @component('admin.poa.elementos.botones.edit')
+                @component('poa.elementos.botones.edit')
                     @slot('title','Nuevo')
                     @slot('btnclass','link')
                     @slot('align','right')
@@ -40,7 +40,7 @@
                     @php($pindicadors = $mproducto->pindicadors)
                     @include('poa.mproductos.pindicadors.show.list')
                 @endif
-                @component('admin.poa.elementos.botones.edit')
+                @component('poa.elementos.botones.edit')
                     @slot('title','Nuevo')
                     @slot('btnclass','link')
                     @slot('align','right')
@@ -53,7 +53,7 @@
                     @php($pverificadors = $mproducto->pverificadors)
                     @include('poa.mproductos.pverificadors.show.list')
                 @endif
-                @component('admin.poa.elementos.botones.edit')
+                @component('poa.elementos.botones.edit')
                     @slot('title','Nuevo')
                     @slot('btnclass','link')
                     @slot('align','right')
@@ -66,7 +66,7 @@
                     @php($psupuestos = $mproducto->psupuestos)
                     @include('poa.mproductos.psupuestos.show.list')
                 @endif
-                @component('admin.poa.elementos.botones.edit')
+                @component('poa.elementos.botones.edit')
                     @slot('title','Nuevo')
                     @slot('btnclass','link')
                     @slot('align','right')
@@ -82,7 +82,7 @@
 
     <div class="row">
         <div class="col-sm-12">
-            @component('admin.poa.elementos.botones.edit')
+            @component('poa.elementos.botones.edit')
                 @slot('title','Nuevo')
                 @slot('btnclass','link')
                 @slot('align','right')

@@ -2,7 +2,7 @@
     @slot('title', 'Crear nuevo Responsable')
     @slot('class_bt', 'primary')
     @slot('route', route('responsables.create'))
-    @slot('icon', $icon_menus['responsables'])
+    @slot('icon', $icon_menus['create'])
 @endcomponent
 
 @component('admin.elements.buttons.default')

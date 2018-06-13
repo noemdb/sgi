@@ -2,14 +2,14 @@
     @slot('title', 'Crear nueva Institución')
     @slot('class_bt', 'primary')
     @slot('route', route('institucions.create'))
-    @slot('icon', 'fas fa-plus')
+    @slot('icon', $icon_menus['create'])
 @endcomponent
 
 @component('admin.elements.buttons.default')
     @slot('title', 'CRUD Instituciones')
     @slot('class_bt', 'info')
     @slot('route', route('institucions.index'))
-    @slot('icon', 'fas fa-building')
+    @slot('icon', $icon_menus['institucions'])
 @endcomponent
 
 @component('admin.elements.buttons.default')

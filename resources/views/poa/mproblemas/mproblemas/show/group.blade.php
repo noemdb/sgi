@@ -34,7 +34,7 @@
                     @include('poa.mproblemas.pdeterminantes.show.list')
                 @endif
 
-                @component('admin.poa.elementos.botones.edit')
+                @component('poa.elementos.botones.edit')
                     @slot('title','Nuevo Determinante')
                     @slot('btnclass','link')
                     @slot('align','right')
@@ -51,7 +51,7 @@
                     @include('poa.mproblemas.pcausaefectos.show.list')
                 @endif
 
-                @component('admin.poa.elementos.botones.edit')
+                @component('poa.elementos.botones.edit')
                     @slot('title','Nuevo Causa/Efecto')
                     @slot('btnclass','link')
                     @slot('align','right')
@@ -66,7 +66,7 @@
                     @include('poa.mobjetivos.mobjetivos.show.list',['not_product'=>true])
                 @endif
 
-                @component('admin.poa.elementos.botones.edit')
+                @component('poa.elementos.botones.edit')
                     @slot('title','Nuevo')
                     @slot('btnclass','link')
                     @slot('align','right')
@@ -87,7 +87,7 @@
                     @endforeach
                 @endif
 
-                @component('admin.poa.elementos.botones.edit')
+                @component('poa.elementos.botones.edit')
                     @slot('title','Nuevo')
                     @slot('btnclass','link')
                     @slot('align','right')
@@ -102,7 +102,7 @@
     <div class="row p-1 mb-0">
         <div class="col-sm p-1">
 
-            @component('admin.poa.elementos.botones.edit')
+            @component('poa.elementos.botones.edit')
                 @slot('title','Nuevo Problema')
                 @slot('btnclass','link')
                 @slot('align','right')

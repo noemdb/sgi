@@ -2,33 +2,33 @@
     @slot('title', 'Crear nueva Institución')
     @slot('class_bt', 'primary')
     @slot('route', route('institucions.create'))
-    @slot('icon', 'fas fa-plus')
+    @slot('icon', $icon_menus['institucions'])
 @endcomponent
 
 @component('admin.elements.buttons.default')
     @slot('title', 'CRUD Direcciones')
     @slot('class_bt', 'info')
-    @slot('route', '#')
-    @slot('icon', 'fas fa-warehouse')
+    @slot('route', route('direccions.create'))
+    @slot('icon', $icon_menus['direcciones'])
 @endcomponent
 
 @component('admin.elements.buttons.default')
     @slot('title', 'CRUD POA')
     @slot('class_bt', 'info')
-    @slot('route', '#')
-    @slot('icon', 'fas fa-th')
+    @slot('route', route('poas.create'))
+    @slot('icon', $icon_menus['poas'])
 @endcomponent
 
 @component('admin.elements.buttons.default')
     @slot('title', 'Ir atrás')
     @slot('class_bt', 'dark')
     @slot('route', url()->previous())
-    @slot('icon', 'fas fa-chevron-left')
+    @slot('icon', $icon_menus['back'])
 @endcomponent
 
 @component('admin.elements.buttons.default')
     @slot('title', 'Refrescar la página')
     @slot('class_bt', 'dark')
     @slot('route', url()->current())
-    @slot('icon', 'fas fa-redo')
+    @slot('icon', $icon_menus['refres'])
 @endcomponent

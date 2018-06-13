@@ -32,7 +32,7 @@
 
                         @include('poa.mproductos.pindicadors.show.list')
 
-                        @component('admin.poa.elementos.botones.edit')
+                        @component('poa.elementos.botones.edit')
                             @slot('title','Nuevo')
                             @slot('btnclass','link')
                             @slot('align','right')
@@ -60,7 +60,7 @@
 
                         @include('poa.mproductos.pverificadors.show.list')
 
-                        @component('admin.poa.elementos.botones.edit')
+                        @component('poa.elementos.botones.edit')
                             @slot('title','Nuevo')
                             @slot('btnclass','link')
                             @slot('align','right')
@@ -88,7 +88,7 @@
 
                         @include('poa.mproductos.psupuestos.show.list')
 
-                        @component('admin.poa.elementos.botones.edit')
+                        @component('poa.elementos.botones.edit')
                             @slot('title','Nuevo')
                             @slot('btnclass','link')
                             @slot('align','right')
