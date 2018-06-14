@@ -41,6 +41,7 @@ class AppServiceProvider extends ServiceProvider
             'nuevo'=>'fas fa-plus',
             'mostrar'=>'fas fa-info',
             'btn_ctr'=>'fas fa-bullseye',
+            'crud'=>'fas fa-align-justify',
         ]);
     }
 

@@ -17,6 +17,7 @@
 
 
                     {{-- INI Menu rapido --}}
+
                     <div class="btn-group float-right border border-white rounded">
 
                         @include('poa.poas.menus.show')
