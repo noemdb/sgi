@@ -21,7 +21,7 @@
                 {{ $loop->iteration or '' }}.
                 {{ $mproducto->producto or ''}}
                 <br>
-                @component('poa.elementos.botones.edit')
+                @component('elements.buttons.edit')
                     @slot('title','Nuevo')
                     @slot('btnclass','link')
                     @slot('align','right')
@@ -31,7 +31,7 @@
             </div>
             <div class="col-sm-9 p-1" title="Actividades">
                 @include('poa.mactividads.mactividads.show.listfull')
-                @component('poa.elementos.botones.edit')
+                @component('elements.buttons.edit')
                     @slot('title','Nuevo')
                     @slot('btnclass','link')
                     @slot('align','right')
@@ -45,7 +45,7 @@
     {{--
     <div class="row">
         <div class="col-sm-12">
-            @component('poa.elementos.botones.edit')
+            @component('elements.buttons.edit')
                 @slot('title','Nuevo')
                 @slot('btnclass','link')
                 @slot('align','right')

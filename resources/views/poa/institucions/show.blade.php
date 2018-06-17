@@ -28,44 +28,8 @@
 
             <div class="card-body">
 
-                <div class="container">
-
-                    <div class="row">
-
-                        <div class="col-sm-3 align-self-center">
-
-                            {{-- <img alt="{{$institucion->id}}" class="img-thumbnail img-rounded" src="{{ isset($direccion->url_img) or asset('images/avatar/user_direccion.png') }}"> --}}
-                            <i class="far fa-building fa-w-16 fa-10x" title="Institución"></i>
-
-                        </div>
-
-                        <div class="col-sm-9">
-
-                            {{-- Partial con los tabs de usuario (perfiles, roles) --}}
-                            @include('poa.institucions.show.tabs')
-
-                        </div>
-                    </div>
-
-                    <div class="row">
-
-                        <div class="col-sm-12">
-                            {{-- INI Menu modelos realcionados --}}
-                            <div class="btn-group d-flex pt-2" style="width: 100%;" role="group" aria-label="Basic example">
-
-                              <a class="btn btn-dark w-100" href="{{ route('institucions.edit',$institucion->id) }}" role="button">
-                                Actualzar
-                                <i class="fas fa-building"></i>
-                              </a>
-
-                            </div>
-                            {{-- FIN Menu modelos realcionados --}}
-
-                        </div>
-
-                    </div>
-
-                </div>
+                {{-- Partial con los tabs de institucions (general, direccions, responsables, poas) --}}
+                @include('poa.institucions.show.tabs')
 
             </div>
 

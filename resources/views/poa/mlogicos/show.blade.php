@@ -28,44 +28,9 @@
 
             <div class="card-body p-0">
 
-                <div class="container">
-
-                    <div class="row">
-
-                        {{-- <div class="col-sm-3 align-self-center"> --}}
-
-                            {{-- <img alt="{{$mlogico->id}}" class="img-thumbnail img-rounded" src="{{ isset($direccion->url_img) or asset('images/avatar/user_direccion.png') }}"> --}}
-                            {{-- <i class="fab fa-delicious fa-10x"></i> --}}
-
-                        {{-- </div> --}}
-
-                        <div class="col-12">
-
-                            {{-- Partial con los tabs de usuario (perfiles, roles) --}}
-                            @include('poa.mlogicos.show.mlogico')
-
-                        </div>
-                    </div>
-
-                    <div class="row">
-
-                        <div class="col-sm-12">
-                            {{-- INI Menu modelos realcionados --}}
-                            <div class="btn-group d-flex pt-2" style="width: 100%;" role="group" aria-label="Basic example">
-
-                              <a class="btn btn-dark w-100" href="{{ route('mlogicos.edit',$mlogico->id) }}" role="button">
-                                Actualzar
-                                <i class="fas fa-th"></i>
-                              </a>
-
-                            </div>
-                            {{-- FIN Menu modelos realcionados --}}
-
-                        </div>
-
-                    </div>
-
-                </div>
+                {{-- Partial con los tabs de usuario (perfiles, roles) --}}
+                {{-- @include('poa.mlogicos.show.mlogico') --}}
+                @include('poa.mlogicos.show.tabs')
 
             </div>
 

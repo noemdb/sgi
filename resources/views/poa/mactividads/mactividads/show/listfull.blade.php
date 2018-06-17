@@ -3,11 +3,11 @@
     <ul class="list-group">
 
         @foreach($mactividads as $mactividad)
-            
+
             <li class="list-group-item d-flex justify-content-between align-items-center p-1">
 
                 <span class="pr-2">{{ $loop->iteration or '' }}</span>
-                
+
                 <ul class="list-group">
                     <li class="list-group-item p-1">
 
@@ -60,7 +60,7 @@
                                                 @for($i=0;$i<$mactividad->frecuencia;++$i)
                                                     @php($n=$i+1)
                                                     <div class="col-sm-{{ (12 / $mactividad->frecuencia) }} align-middle pr-0 mr-0" align="center">
-                                                        <small class="text text-nowrap text-success">{{$n}}</small> 
+                                                        <small class="text text-nowrap text-success">{{$n}}</small>
                                                             <br>
                                                         <small class="text text-nowrap text-primary">
                                                             @foreach($afrecuencias as $afrecuencia)
@@ -70,13 +70,13 @@
                                                                     </span>
                                                                 @endif
                                                             @endforeach
-                                                        </small>                                                      
-                                                    </div>                                                
+                                                        </small>
+                                                    </div>
                                                 @endfor
                                             </div>
 
                                             {{-- <div class="row pr-0 mr-0"> --}}
-                                                
+
                                                 {{-- @foreach($afrecuencias as $afrecuencia) --}}
                                                     {{-- <div class="col-sm align-middle border-right border-left" align="center"> --}}
                                                         {{-- <span class="text text-success"> --}}
@@ -89,7 +89,7 @@
                                             {{-- </div> --}}
 
                                             {{-- <div class="row pr-0 mr-0"> --}}
-                                                
+
                                                 {{-- @foreach($afrecuencias as $afrecuencia) --}}
                                                     {{-- <div class="col-sm align-middle border-right border-left" align="center"> --}}
                                                         {{-- <span class="text text-primary"> --}}
@@ -102,27 +102,27 @@
 
                                             {{-- </div> --}}
 
-                                        @endif                                        
+                                        @endif
                                     </div>
 
                                     <div class="badge badge-light badge-pill">
-                                        @component('poa.elementos.botones.edit')
+                                        @component('elements.buttons.edit')
                                             @slot('title','Mostrar')
                                             @slot('btnclass','link')
                                             @slot('route',route('mactividads.show',$mactividad->id))
                                             @slot('icon','nuevo')
                                         @endcomponent
-                                    </div>                                     
+                                    </div>
                                 </div>
-                            </div>    
+                            </div>
                         </div>
 
                     </li>
-                   
+
                 </ul>
 
                 <span class="badge badge-light badge-pill">
-                    @component('poa.elementos.botones.edit')
+                    @component('elements.buttons.edit')
                         @slot('title','Mostrar')
                         @slot('btnclass','link')
                         @slot('route',route('mactividads.show',$mactividad->id))

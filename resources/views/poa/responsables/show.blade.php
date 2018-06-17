@@ -35,18 +35,7 @@
                         <div class="col-12">
 
                             {{-- Partial con los tabs de usuario (perfiles, roles) --}}
-                            @include('poa.responsables.show.responsable')
-
-                            {{-- INI Menu modelos realcionados --}}
-                            <div class="btn-group d-flex pt-2" style="width: 100%;" role="group" aria-label="Basic example">
-
-                              <a class="btn btn-dark w-100" href="{{ route('responsables.edit',$responsable->id) }}" role="button">
-                                Actualzar
-                                <i class="{{ $icon_menus['responsables']}}"></i>
-                              </a>
-
-                            </div>
-                            {{-- FIN Menu modelos realcionados --}}
+                            @include('poa.responsables.show.tabs')
 
                         </div>
                     </div>

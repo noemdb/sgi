@@ -6,8 +6,8 @@
                 <td scope="col">
 
                     <div class="vertical-text text-center p-3 text-center" align="center">
-                        <strong>Productos:</strong>                   
-                    </div>  
+                        <strong>Productos:</strong>
+                    </div>
 
                 </td>
                 <td scope="col">
@@ -27,7 +27,7 @@
                                             {{$mproducto->producto or ''}}
                                         </span>
 
-                                        @component('poa.elementos.botones.edit')
+                                        @component('elements.buttons.edit')
                                             @slot('title','Mostrar')
                                             @slot('btnclass','link')
                                             @slot('route',route('mproductos.show',$mproducto->id))
@@ -68,7 +68,7 @@
                     <strong>{{ $loop->iteration or '' }}.</strong>
                     {{$mproducto->producto or ''}}
                 </span>
-                @component('poa.elementos.botones.edit')
+                @component('elements.buttons.edit')
                     @slot('title','Mostrar')
                     @slot('btnclass','link')
                     @slot('route',route('mproductos.show',$mproducto->id))
@@ -78,7 +78,7 @@
             </li>
 
         @endforeach
-        
+
     </ul>
-    
+
 @endisse --}}

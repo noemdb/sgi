@@ -21,6 +21,10 @@ class Direccion extends Model
     {
         return $this->belongsTo('App\Models\poa\Institucion');
     }
+    public function responsables()
+    {
+        return $this->hasMany('App\Models\poa\Responsable');
+    }
     public function mproblemas()
     {
         return $this->hasMany('App\Models\poa\problema\Mproblema');

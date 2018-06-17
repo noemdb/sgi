@@ -3,20 +3,43 @@
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">General</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Marcos Lógicos</a>
+    <a class="nav-link" id="poa-tab" data-toggle="tab" href="#poa" role="tab" aria-controls="poa" aria-selected="false">POA'S</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Matriz de Problemas</a>
+    <a class="nav-link" id="institucion-tab" data-toggle="tab" href="#institucion" role="tab" aria-controls="institucion" aria-selected="false">Institución</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="direccions-tab" data-toggle="tab" href="#direcciones" role="direcciones" aria-controls="direcciones" aria-selected="false">Dirección</a>
   </li>
 </ul>
+
 <div class="tab-content" id="myTabContent">
+
   <div class="tab-pane fade show active pt-2" id="home" role="tabpanel" aria-labelledby="home-tab">
-      @include('mlogico.mlogicos.show.mlogico')
+      @include('poa.mlogicos.show.mlogico')
   </div>
-  <div class="tab-pane fade pt-2" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      {{-- @include('profiles.show.profile') --}}
+
+  <div class="tab-pane fade pt-2" id="poa" role="tabpanel" aria-labelledby="poa-tab">
+    @if($mlogico->poa->count()>0)
+      @php($poa = $mlogico->poa)
+        @include('poa.poas.show.poa')
+    @endisset
   </div>
-  <div class="tab-pane fade pt-2" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-      {{-- @include('rols.show.rols') --}}
+
+  <div class="tab-pane fade pt-2" id="institucion" role="tabpanel" aria-labelledby="institucion-tab">
+    @if($mlogico->poa->institucion->count()>0)
+      @php($institucion = $mlogico->poa->institucion)
+      @include('poa.institucions.show.institucion')
+    @endisset
   </div>
+
+  <div class="tab-pane fade pt-2" id="direcciones" role="tabpanel" aria-labelledby="direcciones-tab">
+    @if($mlogico->poa->institucion->direccions->count()>0)
+      @php($direccions = $mlogico->poa->institucion->direccions)
+      @foreach($direccions as $direccion)
+        @include('poa.direccions.show.direccion')
+      @endforeach
+    @endisset
+  </div>
+
 </div>

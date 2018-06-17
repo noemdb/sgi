@@ -5,38 +5,34 @@
     @slot('icon', $icon_menus['create'])
 @endcomponent
 
-<div class="dropdown btn btn-info p-0 m-0">
-
-  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <i class="{{ $icon_menus['crud'] }}"></i>
-  </button>
-
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-    @component('elements.buttons.dropdown')
-        @slot('title', 'CRUD POAS')
-        @slot('class_bt', 'info')
-        @slot('route', route('poas.index'))
-        @slot('icon', $icon_menus['poas'])
-    @endcomponent
-    
-    @component('elements.buttons.dropdown')
-        @slot('title', 'CRUD Marcos Logicos')
-        @slot('class_bt', 'info')
-        @slot('route', '#')
-        @slot('icon', $icon_menus['mlogicos'])
-    @endcomponent
-
-    @component('elements.buttons.dropdown')
-        @slot('title', 'CRUD Matriz de Problemas')
-        @slot('class_bt', 'info')
-        @slot('route', '#')
-        @slot('icon', $icon_menus['mproblemas'])
-    @endcomponent
-
-  </div>
-
-</div>
+@component('elements.menus.dropdown')
+    @slot('title', 'CRUD relacionados')
+    @slot('class', 'info')
+    @slot('icon', $icon_menus['crud'])
+    @slot('dropdown')
+        @component('elements.buttons.dropdown')
+            @slot('title', 'CRUD POAS')
+            @slot('text', 'POAS')
+            @slot('class_bt', 'info')
+            @slot('route', route('poas.index'))
+            @slot('icon', $icon_menus['poas'])
+        @endcomponent
+        @component('elements.buttons.dropdown')
+            @slot('title', 'CRUD Marcos Logicos')
+            @slot('text', 'Marcos Logicos')
+            @slot('class_bt', 'info')
+            @slot('route', route('mlogicos.index'))
+            @slot('icon', $icon_menus['mlogicos'])
+        @endcomponent
+        @component('elements.buttons.dropdown')
+            @slot('title', 'CRUD Matriz de Problemas')
+            @slot('text', 'Matriz de Problemas')
+            @slot('class_bt', 'info')
+            @slot('route', route('mproblemas.index'))
+            @slot('icon', $icon_menus['mproblemas'])
+        @endcomponent
+    @endslot
+@endcomponent
 
 @component('elements.buttons.default')
     @slot('title', 'Mostrar/Ocultar botenes de información y creación')

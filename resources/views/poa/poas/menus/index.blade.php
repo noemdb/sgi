@@ -5,25 +5,26 @@
     @slot('icon', $icon_menus['create'])
 @endcomponent
 
-@component('elements.buttons.default')
-    @slot('title', 'CRUD Marcos Logicos')
-    @slot('class_bt', 'info')
-    @slot('route', '#')
-    @slot('icon', $icon_menus['mlogicos'])
-@endcomponent
-
-@component('elements.buttons.default')
-    @slot('title', 'CRUD Matriz de Problemas')
-    @slot('class_bt', 'info')
-    @slot('route', '#')
-    @slot('icon', $icon_menus['mproblemas'])
-@endcomponent
-
-@component('elements.buttons.default')
-    @slot('title', 'CRUD Instituciones')
-    @slot('class_bt', 'info')
-    @slot('route', route('institucions.index'))
-    @slot('icon', $icon_menus['institucions'])
+@component('elements.menus.dropdown')
+    @slot('title', 'CRUD relacionados')
+    @slot('class', 'info')
+    @slot('icon', $icon_menus['crud'])
+    @slot('dropdown')
+        @component('elements.buttons.dropdown')
+            @slot('title', 'CRUD Marcos Logicos')
+            @slot('text', 'Marcos Logicos')
+            @slot('class_bt', 'info')
+            @slot('route', route('mlogicos.index'))
+            @slot('icon', $icon_menus['mlogicos'])
+        @endcomponent
+        @component('elements.buttons.dropdown')
+            @slot('title', 'CRUD Matriz de Problemas')
+            @slot('text', 'Matriz de Problemas')
+            @slot('class_bt', 'info')
+            @slot('route', route('mproblemas.index'))
+            @slot('icon', $icon_menus['mproblemas'])
+        @endcomponent
+    @endslot
 @endcomponent
 
 @component('elements.buttons.default')

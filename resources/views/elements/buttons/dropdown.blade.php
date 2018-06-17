@@ -1,4 +1,4 @@
-<a title="{{ $title or 'default' }}" class="dropdown-item {{ $class_bt }}" href="{{ $route or '#' }}" role="button">
-    <i class="{{ $icon }}"></i>
-    {{ $title or 'default' }}
+<a title="{{ $title or '' }}" class="dropdown-item {{ $class_bt or '' }}" href="{{ $route or '#' }}" role="button">
+    <i class="{{ $icon or '' }}"></i>
+    {{ $text or $title }}
 </a>

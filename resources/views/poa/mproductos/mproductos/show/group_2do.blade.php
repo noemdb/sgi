@@ -19,7 +19,7 @@
             <th class="align-middle w-25">
                 {{ $loop->iteration or '' }}.
                 {{ $mproducto->producto or ''}}
-                @component('poa.elementos.botones.edit')
+                @component('elements.buttons.edit')
                     @slot('title','Nuevo')
                     @slot('btnclass','link')
                     @slot('align','right')
@@ -36,7 +36,7 @@
                     @include('poa.mproductos.pindicadors.show.list')
                 @endif
 
-                @component('poa.elementos.botones.edit')
+                @component('elements.buttons.edit')
                     @slot('title','Nuevo')
                     @slot('btnclass','link')
                     @slot('align','right')
@@ -53,7 +53,7 @@
                     @include('poa.mproductos.pverificadors.show.list')
                 @endif
 
-                @component('poa.elementos.botones.edit')
+                @component('elements.buttons.edit')
                     @slot('title','Nuevo')
                     @slot('btnclass','link')
                     @slot('align','right')
@@ -70,7 +70,7 @@
                     @include('poa.mproductos.psupuestos.show.list')
                 @endif
 
-                @component('poa.elementos.botones.edit')
+                @component('elements.buttons.edit')
                     @slot('title','Nuevo')
                     @slot('btnclass','link')
                     @slot('align','right')

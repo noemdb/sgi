@@ -82,7 +82,7 @@
                 @foreach($mproductos as $mproducto)
                     @include('poa.mproductos.mproductos.show.list')
                 @endforeach
-                @component('poa.elementos.botones.edit')
+                @component('elements.buttons.edit')
                     @slot('title','Nuevo')
                     @slot('btnclass','link')
                     @slot('align','right')
@@ -98,7 +98,7 @@
                         @include('poa.mactividads.mactividads.show.listsimple')
                     @endif
                 @endforeach
-                @component('poa.elementos.botones.edit')
+                @component('elements.buttons.edit')
                     @slot('title','Nuevo')
                     @slot('btnclass','link')
                     @slot('align','right')
@@ -118,7 +118,7 @@
                         {{-- @include('poa.mproductos.pindicadors.show.list') --}}
                     @endif
                 @endforeach
-                @component('poa.elementos.botones.edit')
+                @component('elements.buttons.edit')
                     @slot('title','Nuevo')
                     @slot('btnclass','link')
                     @slot('align','right')
@@ -205,7 +205,7 @@
                     </div>
 
                     <div class="badge badge-light badge-pill">
-                        @component('poa.elementos.botones.edit')
+                        @component('elements.buttons.edit')
                             @slot('title','Mostrar')
                             @slot('btnclass','link')
                             @slot('route',route('mactividads.show',$mactividad->id))

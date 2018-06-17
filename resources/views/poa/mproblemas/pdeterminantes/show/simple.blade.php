@@ -13,7 +13,7 @@
                     {{$pdeterminante->determinante or ''}}<br>
                 </span>
 
-                @component('poa.elementos.botones.edit')
+                @component('elements.buttons.edit')
                     @slot('title','Mostrar')
                     @slot('btnclass','link')
                     @slot('route',route('pdeterminantes.show',$pdeterminante->id))
@@ -21,7 +21,7 @@
                 @endcomponent
 
             </td>
-            
+
         </tr>
 
       </tbody>

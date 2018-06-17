@@ -36,7 +36,7 @@
                                         @include('poa.mproblemas.pdeterminantes.show.list')
                                     @endif
 
-                                    @component('poa.elementos.botones.edit')
+                                    @component('elements.buttons.edit')
                                         @slot('title','Nuevo')
                                         @slot('btnclass','link')
                                         @slot('align','right')
@@ -52,7 +52,7 @@
                                         @include('poa.mproblemas.pcausaefectos.show.list')
                                     @endif
 
-                                    @component('poa.elementos.botones.edit')
+                                    @component('elements.buttons.edit')
                                         @slot('title','Nuevo')
                                         @slot('btnclass','link')
                                         @slot('align','right')
@@ -69,7 +69,7 @@
                                         @include('poa.mobjetivos.mobjetivos.show.list',['not_product'=>true])
                                     @endif
 
-                                    @component('poa.elementos.botones.edit')
+                                    @component('elements.buttons.edit')
                                         @slot('title','Nuevo')
                                         @slot('btnclass','link')
                                         @slot('align','right')
@@ -93,7 +93,7 @@
                                         @endforeach
                                     @endif
 
-                                    @component('poa.elementos.botones.edit')
+                                    @component('elements.buttons.edit')
                                         @slot('title','Nuevo')
                                         @slot('btnclass','link')
                                         @slot('align','right')

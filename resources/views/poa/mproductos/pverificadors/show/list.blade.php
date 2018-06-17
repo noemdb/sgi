@@ -11,7 +11,7 @@
               <li class="list-group-item d-flex justify-content-between align-items-center p-1">
                 {{-- {{ $loop->iteration or '' }}.  --}}{{$pverificador->verificador or ''}}
                 <span class="badge badge-light badge-pill">
-                    @component('poa.elementos.botones.edit')
+                    @component('elements.buttons.edit')
                         @slot('title','Mostrar')
                         @slot('btnclass','link')
                         @slot('route',route('pdeterminantes.show',$pverificador->id))
@@ -19,7 +19,7 @@
                     @endcomponent
                 </span>
               </li>
-            
+
         @endforeach
 
     </ul>

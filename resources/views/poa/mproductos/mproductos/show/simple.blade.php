@@ -11,10 +11,10 @@
                 <span class="text-mobjetivos-mobjetivo-{{ $mobjetivo->id  or ''}}">
                     [{{$mproducto->id}}]
                     {{$mproducto->producto or ''}}<br>
-                    
+
                     <br>
                 </span>
-                @component('poa.elementos.botones.edit')
+                @component('elements.buttons.edit')
                     @slot('title','Mostrar')
                     @slot('btnclass','link')
                     @slot('route',route('mproductos.show',$mproducto->id))
@@ -23,14 +23,14 @@
 
             </td>
         </tr>
-        
+
         <tr>
             <td>
-                
+
             </td>
         </tr>
-        
+
       </tbody>
     </table>
-    
+
 @endisset

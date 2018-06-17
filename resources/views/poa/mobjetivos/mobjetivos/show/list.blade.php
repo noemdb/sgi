@@ -13,7 +13,7 @@
                             {{ $loop->iteration or '' }}. {{$mobjetivo->objetivo or ''}}
 
                             <span class="badge badge-light badge-pill">
-                                @component('poa.elementos.botones.edit')
+                                @component('elements.buttons.edit')
                                     @slot('title','Mostrar')
                                     @slot('btnclass','link')
                                     @slot('route',route('mobjetivos.show',$mobjetivo->id))

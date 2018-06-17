@@ -2,21 +2,36 @@
     @slot('title', 'Crear nueva Institución')
     @slot('class_bt', 'primary')
     @slot('route', route('institucions.create'))
-    @slot('icon', $icon_menus['institucions'])
+    @slot('icon', $icon_menus['create'])
 @endcomponent
 
-@component('elements.buttons.default')
-    @slot('title', 'CRUD Direcciones')
-    @slot('class_bt', 'info')
-    @slot('route', route('direccions.create'))
-    @slot('icon', $icon_menus['direcciones'])
-@endcomponent
-
-@component('elements.buttons.default')
-    @slot('title', 'CRUD POA')
-    @slot('class_bt', 'info')
-    @slot('route', route('poas.create'))
-    @slot('icon', $icon_menus['poas'])
+@component('elements.menus.dropdown')
+    @slot('title', 'CRUD relacionados')
+    @slot('class', 'info')
+    @slot('icon', $icon_menus['crud'])
+    @slot('dropdown')
+        @component('elements.buttons.dropdown')
+            @slot('title', 'CRUD Direcciones')
+            @slot('text', 'Direcciones')
+            @slot('class_bt', 'info')
+            @slot('route', route('direccions.index'))
+            @slot('icon', $icon_menus['direcciones'])
+        @endcomponent
+        @component('elements.buttons.dropdown')
+            @slot('title', 'CRUD Responsables')
+            @slot('text', 'Responsables')
+            @slot('class_bt', 'info')
+            @slot('route', route('responsables.index'))
+            @slot('icon', $icon_menus['responsables'])
+        @endcomponent
+        @component('elements.buttons.dropdown')
+            @slot('title', 'CRUD POA\'S')
+            @slot('text', 'POA\'S')
+            @slot('class_bt', 'info')
+            @slot('route', route('poas.index'))
+            @slot('icon', $icon_menus['poas'])
+        @endcomponent
+    @endslot
 @endcomponent
 
 @component('elements.buttons.default')

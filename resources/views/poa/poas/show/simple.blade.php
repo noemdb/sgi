@@ -1,11 +1,11 @@
 @isset($poa)
 
-    <table class="table table-striped table-bordered {{-- table-sm table-hover --}}">
+    <table class="table table-bordered table-sm {{-- table-sm table-hover --}}">
       <tbody>
         <tr>
             <th scope="col">Descripción</th>
 
-            <th scope="col">
+            <th scope="col" class="text-wrap">
 
                 <span class="text-poas-descripcion-{{ $poa->id  or ''}}">
                     {{$poa->descripcion or ''}}
@@ -50,7 +50,7 @@
             <td>
 
                 <span class="text-poas-username-{{ $poa->id  or ''}}">
-                    {{$poa->user->username or ''}}
+                    {{$user->username or ''}}
                 </span>
 
             </td>

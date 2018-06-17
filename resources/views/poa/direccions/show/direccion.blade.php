@@ -44,7 +44,7 @@
             <td colspan="2">
                 {{-- INI Menu modelos realcionados --}}
                 <div class="btn-group d-flex pt-2" style="width: 100%;" role="group" aria-label="Basic example">
-                  
+
                   <a class="btn btn-dark w-100" href="{{ route('direccions.edit',$direccion->id) }}" role="button">
                     Actualzar
                     <i class="fas fa-warehouse"></i>
