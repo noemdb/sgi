@@ -84,7 +84,7 @@ class MproblemaController extends Controller
      */
     public function store(CreateMproblemaRequest $request)
     {
-        $Mproblema = Mproblema::create($request->all());
+        $mproblema = Mproblema::create($request->all());
 
         Session::flash('operp_ok','Registro guardado exitasamente');
 
@@ -99,14 +99,14 @@ class MproblemaController extends Controller
      */
     public function show($id)
     {
-        $Mproblema = Mproblema::OrderBy('mproblemas.id','DESC')
+        $mproblema = Mproblema::OrderBy('mproblemas.id','DESC')
             // ->join('users', 'users.id', '=', 'poas.user_id')
             ->with('poa')
             ->with('direccion')
             ->where('id',$id)
             ->first();
 
-        return view('poa.mproblemas.mproblemas.show', compact('Mproblema'));
+        return view('poa.mproblemas.mproblemas.show', compact('mproblema'));
     }
 
     /**
@@ -117,7 +117,7 @@ class MproblemaController extends Controller
      */
     public function edit($id)
     {
-        $Mproblema = Mproblema::findOrFail($id);
+        $mproblema = Mproblema::findOrFail($id);
 
         $poa_list = Poa::select('poas.*')
                 ->orderby('poas.descripcion','asc')
@@ -127,9 +127,9 @@ class MproblemaController extends Controller
                 ->orderby('direccions.nombre','asc')
                 ->pluck('nombre', 'id');
 
-        // dd($Mproblema,$poa_list,$direccion_list);
+        // dd($mproblema,$poa_list,$direccion_list);
 
-        return view('poa.mproblemas.mproblemas.edit', compact('Mproblema','poa_list','direccion_list'));
+        return view('poa.mproblemas.mproblemas.edit', compact('mproblema','poa_list','direccion_list'));
     }
 
     /**

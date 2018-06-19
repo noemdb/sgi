@@ -38,14 +38,14 @@ class Institucion extends Model
         return $this->hasMany('App\Models\poa\Responsable');
     }
 
-    
+
     public function getFullCodeAttribute()
     {
-      
+
         $cadena = $this->nombre;
         $token = strtok($cadena, " ");
         $code = '';
-        
+
         while($token !== false) {
             $code .= strtoupper(substr($token,0,2));
             $token = strtok(" ");
@@ -56,7 +56,7 @@ class Institucion extends Model
 
     public function getTruncDescripcionAttribute()
     {
-      
+
         $string = $this->descripcion;
 
         $length = 15;

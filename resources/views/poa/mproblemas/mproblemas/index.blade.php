@@ -7,9 +7,9 @@
         <div class="card card-primary">
             <div class="card-header">
                 <h3>
-                    Listados de Matriz de Problemas Registrados<br>
+                    Listados de Problemas Registrados<br>
                     <small class="text-default">
-                        <strong><span id="user_counter">{{$mproblemas->count()}}</span> Matrices registradas</strong>
+                        <strong><span id="user_counter">{{$mproblemas->count()}}</span> Problemas Registrados</strong>
                     </small>
 
                     {{-- INI Menu rapido --}}

@@ -5,13 +5,13 @@
   <div class="card-body">
 
       {{-- INI form --}}
-      {!! Form::model($Mproblema,['route' => ['mproblemas.update', $Mproblema->id], 'method' => 'PUT', 'id'=>'form-update-mproblema_'.$Mproblema->id, 'role'=>'form']) !!}
+      {!! Form::model($mproblema,['route' => ['mproblemas.update', $mproblema->id], 'method' => 'PUT', 'id'=>'form-update-mproblema_'.$mproblema->id, 'role'=>'form']) !!}
 
             {{-- partial con el formulario y campos --}}
             {{-- @include('poa.mproblemas.mproblemas.forms.fields') --}}
             @include('poa.mproblemas.mproblemas.forms.fields')
 
-            <button type="submit" class="btn-Mproblema-update btn btn-primary btn-block" value="update" data-id="update" id="btn-update-Mproblema-{{$Mproblema->id}}">
+            <button type="submit" class="btn-mproblema-update btn btn-primary btn-block" value="update" data-id="update" id="btn-update-mproblema-{{$mproblema->id}}">
 
                 <i class="far fa-save"></i>
                 Actualizar Matriz de Problema
@@ -21,7 +21,7 @@
             {{-- INI Menu modelos realcionados --}}
             <div class="btn-group d-flex pt-2" style="width: 100%;" role="group" aria-label="Basic example">
 
-              <a class="btn btn-dark w-100" href="{{ route('mproblemas.show',$Mproblema->id) }}" role="button">
+              <a class="btn btn-dark w-100" href="{{ route('mproblemas.show',$mproblema->id) }}" role="button">
                 Mostrar
                 <i class="{{ $icon_menus['mproblemas'] or '' }}"></i>
               </a>

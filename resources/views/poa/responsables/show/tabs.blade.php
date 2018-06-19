@@ -22,21 +22,21 @@
     @if($responsable->direccion->institucion->count()>0)
       @php($institucion = $responsable->direccion->institucion)
       @include('poa.institucions.show.institucion')
-    @endisset
+    @endif
   </div>
 
   <div class="tab-pane fade pt-2" id="direcciones" role="tabpanel" aria-labelledby="direcciones-tab">
     @if($responsable->direccion->count()>0)
       @php($direccion = $responsable->direccion)
       @include('poa.direccions.show.direccion')
-    @endisset
+    @endif
   </div>
 
   <div class="tab-pane fade pt-2" id="poa" role="tabpanel" aria-labelledby="poa-tab">
      @if($responsable->direccion->institucion->poas->count()>0)
       @php($poas = $responsable->direccion->institucion->poas)
       @include('poa.poas.show.list')
-    @endisset
+    @endif
   </div>
 
 </div>

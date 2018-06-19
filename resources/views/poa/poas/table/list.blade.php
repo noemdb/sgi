@@ -25,7 +25,7 @@
     <tbody id="tdatos">
     @php ($n=1)
     @foreach($poas as $poa)
-        
+
         <tr data-poa="{{$poa->id}}">
             <td scope="row" id="td-count" class="{{ $class_N }}">
                 {{$n++}}
@@ -71,11 +71,9 @@
                         <i class="fas fa-info"></i>
                     </a>
 
-                    {{-- 
-                    <a title="Mostrar detalles" class="btn btn-info btn-xs" href="{{ route('poas.show', $poa->id) }}">
-                        <i class="fas fa-info"></i>
-                    </a> 
-                    --}}
+                    <a title="Mostrar Línea de Tiempo" class="btn btn-success btn-xs" href="#">
+                        <i class="{{ $icon_menus['tline'] }}"></i>
+                    </a>
 
                     <a title="Editar resgistro" class="btn btn-warning btn-xs btn-action-group-{{ $poa->id }}" href="{{ route('poas.edit',$poa->id) }}" id="btn-editinstitucion_{{$poa->id}}">
                         <i class="fas fa-pencil-alt"></i>
@@ -84,11 +82,11 @@
                     <a title="Eliminar registro" class="btn-delete btn btn-danger btn-xs" href="{{ route('poas.destroy',$poa->id) }}" id="btn-delete-institucionid_{{$poa->id}}">
                         <i class="fas fa-trash"></i>
                     </a>
-                    
+
                 </div>
             </td>
 
-            
+
         </tr>
         @endforeach
     </tbody>

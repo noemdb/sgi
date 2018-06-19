@@ -42,6 +42,7 @@ class AppServiceProvider extends ServiceProvider
             'mostrar'=>'fas fa-info',
             'btn_ctr'=>'fas fa-bullseye',
             'crud'=>'fas fa-align-justify',
+            'tline'=>'fas fa-history',
         ]);
     }
 

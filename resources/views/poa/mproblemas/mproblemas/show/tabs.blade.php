@@ -3,54 +3,30 @@
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">General</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="mlogicos-tab" data-toggle="tab" href="#mlogicos" role="tab" aria-controls="mlogicos" aria-selected="false" title="Marco Lógico">Lógico</a>
+    <a class="nav-link" id="poa-tab" data-toggle="tab" href="#poa" role="tab" aria-controls="poa" aria-selected="false">POA</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="mproblemas-tab" data-toggle="tab" href="#mproblemas" role="tab" aria-controls="mproblemas" aria-selected="false" title="Matriz de Problemas">Problemas</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="mobjetivos-tab" data-toggle="tab" href="#mobjetivos" role="tab" aria-controls="mobjetivos" aria-selected="false" title="Matriz de Objetivos">Objetivos</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="mproductos-tab" data-toggle="tab" href="#mproductos" role="tab" aria-controls="mproductos" aria-selected="false" title="Matriz de Productos">Productos</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="mactividades-tab" data-toggle="tab" href="#mactividades" role="tab" aria-controls="mactividades" aria-selected="false" title="Matriz de Actividades">Actividades</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="mpresupuestaria-tab" data-toggle="tab" href="#mpresupuestaria" role="tab" aria-controls="mpresupuestaria" aria-selected="false" title="Matriz de Presupuestaria">Presupuestaria</a>
+    <a class="nav-link" id="direccions-tab" data-toggle="tab" href="#direccions" role="direccions" aria-controls="direccions" aria-selected="false">Dirección</a>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
+
   <div class="tab-pane fade show active pt-2" id="home" role="tabpanel" aria-labelledby="home-tab">
+      @include('poa.mproblemas.mproblemas.show.mproblema')
+  </div>
+
+  <div class="tab-pane fade pt-2" id="poa" role="tabpanel" aria-labelledby="poa-tab">
+    @if($mproblema->poa->count()>0)
+      @php($poa = $mproblema->poa)
       @include('poa.poas.show.poa')
+    @endif
   </div>
-  <div class="tab-pane fade pt-2" id="mlogicos" role="tabpanel" aria-labelledby="profile-tab">
 
-    @isset($mlogicos)
+  <div class="tab-pane fade pt-2" id="direccions" role="tabpanel" aria-labelledby="direccions-tab">
+    @if($mproblema->direccion->count()>0)
+      @php($direccion = $mproblema->direccion)
+      @include('poa.direccions.show.direccion')
+    @endif
+  </div>
 
-        @foreach($mlogicos as $mlogico)
-
-            @include('poa.mlogicos.show.mlogico')
-
-        @endforeach
-
-    @endisset
-
-  </div>
-  <div class="tab-pane fade pt-2" id="mproblemas" role="tabpanel" aria-labelledby="mproblemas-tab">
-      {{-- @include('rols.show.rols') --}}
-  </div>
-  <div class="tab-pane fade pt-2" id="mobjetivos" role="tabpanel" aria-labelledby="mobjetivos-tab">
-      {{-- @include('poa.poas.show.poa') --}}
-  </div>
-  <div class="tab-pane fade pt-2" id="mproductos" role="tabpanel" aria-labelledby="mproductos-tab">
-      {{-- @include('profiles.show.profile') --}}
-  </div>
-  <div class="tab-pane fade pt-2" id="mactividades" role="tabpanel" aria-labelledby="mactividades-tab">
-      {{-- @include('rols.show.rols') --}}
-  </div>
-  <div class="tab-pane fade pt-2" id="mpresupuestaria" role="tabpanel" aria-labelledby="mpresupuestaria-tab">
-      {{-- @include('rols.show.rols') --}}
-  </div>
 </div>
