@@ -8,6 +8,9 @@
   <li class="nav-item">
     <a class="nav-link" id="direccions-tab" data-toggle="tab" href="#direccions" role="direccions" aria-controls="direccions" aria-selected="false">Dirección</a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" id="ltime-tab" data-toggle="tab" href="#ltime" role="ltime" aria-controls="ltime" aria-selected="false">Línea de Tiempo</a>
+  </li>
 </ul>
 <div class="tab-content" id="myTabContent">
 
@@ -29,4 +32,10 @@
     @endif
   </div>
 
+  <div class="tab-pane fade pt-2" id="ltime" role="tabpanel" aria-labelledby="ltime-tab">
+
+      @include('poa.mproblemas.mproblemas.show.tline')
+  </div>
+
 </div>
+
