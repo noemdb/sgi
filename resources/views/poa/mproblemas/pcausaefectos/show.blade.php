@@ -42,7 +42,8 @@
                         <div class="col-12">
 
                             {{-- Partial con los tabs de usuario (perfiles, roles) --}}
-                            @include('poa.mproblemas.pcausaefectos.show.pcausaefecto')
+                            {{-- @include('poa.mproblemas.pcausaefectos.show.pcausaefecto') --}}
+                            @include('poa.mproblemas.pcausaefectos.show.tabs')
 
                         </div>
                     </div>

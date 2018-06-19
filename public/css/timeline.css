@@ -96,19 +96,22 @@
       border-left-width: 0;
     }
     .timeline-badge.primary {
-      background-color: #2e6da4 !important;
+      background-color: #007bff !important;
+    }
+    .timeline-badge.secondary {
+      background-color: #6c757d !important;
     }
     .timeline-badge.success {
-      background-color: #3f903f !important;
+      background-color: #28a745 !important;
     }
     .timeline-badge.warning {
-      background-color: #f0ad4e !important;
+      background-color: #ffc107 !important;
     }
     .timeline-badge.danger {
-      background-color: #d9534f !important;
+      background-color: #dc3545 !important;
     }
     .timeline-badge.info {
-      background-color: #5bc0de !important;
+      background-color: #17a2b8 !important;
     }
     .timeline-title {
       margin-top: 0;
@@ -120,34 +123,4 @@
     }
     .timeline-body > p + p {
       margin-top: 5px;
-    }
-    @media (max-width: 767px) {
-      ul.timeline:before {
-        left: 40px;
-      }
-      ul.timeline > li > .timeline-panel {
-        width: calc(10%);
-        width: -moz-calc(10%);
-        width: -webkit-calc(10%);
-      }
-      ul.timeline > li > .timeline-badge {
-        top: 16px;
-        left: 15px;
-        margin-left: 0;
-      }
-      ul.timeline > li > .timeline-panel {
-        float: right;
-      }
-      ul.timeline > li > .timeline-panel:before {
-        right: auto;
-        left: -15px;
-        border-right-width: 15px;
-        border-left-width: 0;
-      }
-      ul.timeline > li > .timeline-panel:after {
-        right: auto;
-        left: -14px;
-        border-right-width: 14px;
-        border-left-width: 0;
-      }
     }

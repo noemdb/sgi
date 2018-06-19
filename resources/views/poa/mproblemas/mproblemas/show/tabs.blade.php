@@ -34,7 +34,8 @@
 
   <div class="tab-pane fade pt-2" id="ltime" role="tabpanel" aria-labelledby="ltime-tab">
 
-      @include('poa.mproblemas.mproblemas.show.tline')
+      @include('elements.widgets.tline')
+      
   </div>
 
 </div>

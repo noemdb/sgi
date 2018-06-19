@@ -1,14 +1,21 @@
 @isset($mproblema)
 
-    <div class="panel panel-info">
-        <div class="panel-heading">
-            <i class="fas fa-history"></i> Línea de Tiempo
-        </div>
-        <!-- /.panel-heading -->
-        <div class="panel-body">
+    <div class="card">
+        
+        <div class="card-body">
+
+            <h5 class="card-title">
+                <i class="{{ $icon_menus['tline'] }}"></i>
+                Línea de Tiempo
+            </h5>
+
+            <h6 class="card-subtitle mb-2 text-muted">
+                Historial cronológico de los eventos registrados.
+            </h6>
+            
             <ul class="timeline">
                 <li>
-                    <div class="timeline-badge"><i class="fa fa-check"></i>
+                    <div class="timeline-badge primary"><i class="fa fa-check"></i>
                     </div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
@@ -66,21 +73,15 @@
                         <div class="timeline-body">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis minus modi quam ipsum alias at est molestiae excepturi delectus nesciunt, quibusdam debitis amet, beatae consequuntur impedit nulla qui! Laborum, atque.</p>
                             <hr>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fas fa-cogs"></i> <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a>
-                                    </li>
-                                    <li><a href="#">Another action</a>
-                                    </li>
-                                    <li><a href="#">Something else here</a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Separated link</a>
-                                    </li>
-                                </ul>
+                            <div class="dropdown">
+                              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Dropdown button
+                              </button>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                              </div>
                             </div>
                         </div>
                     </div>
