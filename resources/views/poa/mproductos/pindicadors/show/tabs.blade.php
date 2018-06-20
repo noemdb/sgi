@@ -3,54 +3,71 @@
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">General</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="mlogicos-tab" data-toggle="tab" href="#mlogicos" role="tab" aria-controls="mlogicos" aria-selected="false" title="Marco Lógico">Lógico</a>
+    <a class="nav-link" id="producto-tab" data-toggle="tab" href="#producto" role="tab" aria-controls="producto" aria-selected="false">Producto</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="mproductos-tab" data-toggle="tab" href="#mproductos" role="tab" aria-controls="mproductos" aria-selected="false" title="Matriz de Problemas">Problemas</a>
+    <a class="nav-link" id="objetivo-tab" data-toggle="tab" href="#objetivo" role="tab" aria-controls="objetivo" aria-selected="false">Objetivos</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="mproductos-tab" data-toggle="tab" href="#mproductos" role="tab" aria-controls="mproductos" aria-selected="false" title="Matriz de Indicatores">Indicatores</a>
+    <a class="nav-link" id="problema-tab" data-toggle="tab" href="#problema" role="tab" aria-controls="problema" aria-selected="false">Problema</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="mproductos-tab" data-toggle="tab" href="#mproductos" role="tab" aria-controls="mproductos" aria-selected="false" title="Matriz de Indicatores">Indicatores</a>
+    <a class="nav-link" id="poa-tab" data-toggle="tab" href="#poa" role="tab" aria-controls="poa" aria-selected="false">POA</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" id="mactividades-tab" data-toggle="tab" href="#mactividades" role="tab" aria-controls="mactividades" aria-selected="false" title="Matriz de Actividades">Actividades</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="mpresupuestaria-tab" data-toggle="tab" href="#mpresupuestaria" role="tab" aria-controls="mpresupuestaria" aria-selected="false" title="Matriz de Indicatores">Indicatores</a>
-  </li>
+  {{-- <li class="nav-item"> --}}
+    {{-- <a class="nav-link" id="ltime-tab" data-toggle="tab" href="#ltime" role="ltime" aria-controls="ltime" aria-selected="false">Línea de Tiempo</a> --}}
+  {{-- </li> --}}
 </ul>
 <div class="tab-content" id="myTabContent">
+
   <div class="tab-pane fade show active pt-2" id="home" role="tabpanel" aria-labelledby="home-tab">
+      @include('poa.mproductos.pindicadors.show.pindicador')
+  </div>
+
+  <div class="tab-pane fade pt-2" id="producto" role="tabpanel" aria-labelledby="producto-tab">
+    @if($pindicador->mproducto->count()>0)
+      @php($mproducto = $pindicador->mproducto)
+      @include('poa.mproductos.mproductos.show.producto')
+    @endif
+  </div>
+
+  <div class="tab-pane fade pt-2" id="objetivo" role="tabpanel" aria-labelledby="objetivo-tab">
+    @if($pindicador->mproducto->mobjetivo->count()>0)
+      @php($mobjetivo = $pindicador->mproducto->mobjetivo)
+      @include('poa.mobjetivos.mobjetivos.show.mobjetivo')
+    @endif
+  </div>
+
+  <div class="tab-pane fade pt-2" id="problema" role="tabpanel" aria-labelledby="problema-tab">
+    @if($pindicador->mproducto->mobjetivo->mproblema->count()>0)
+      @php($mproblema = $pindicador->mproducto->mobjetivo->mproblema)
+      @include('poa.mproblemas.mproblemas.show.mproblema')
+    @endif
+  </div>
+
+  <div class="tab-pane fade pt-2" id="poa" role="tabpanel" aria-labelledby="poa-tab">
+    @if($pindicador->mproducto->mobjetivo->mproblema->poa->count()>0)
+      @php($poa = $pindicador->mproducto->mobjetivo->mproblema->poa)
       @include('poa.poas.show.poa')
+    @endif
   </div>
-  <div class="tab-pane fade pt-2" id="mlogicos" role="tabpanel" aria-labelledby="profile-tab">
 
-    @isset($mlogicos)
+  {{-- <div class="tab-pane fade pt-2" id="ltime" role="tabpanel" aria-labelledby="ltime-tab"> --}}
+      {{-- @include('elements.widgets.tline') --}}
+  {{-- </div> --}}
 
-        @foreach($mlogicos as $mlogico)
+  {{-- <div class="tab-pane fade pt-2" id="mproductos" role="tabpanel" aria-labelledby="mproductos-tab"> --}}
 
-            @include('poa.mlogicos.show.mlogico')
+    {{-- @if($mobjetivo->mproductos->count()>0) --}}
+      {{-- @php($mproductos = $mobjetivo->mproductos) --}}
+      {{-- @foreach($mproductos as $mproducto) --}}
+        {{-- <span class="pt-2"><strong>{{ $loop->iteration or '' }}</strong></span> --}}
+        {{-- @include('poa.mproductos.mproductos.show.producto') --}}
+        {{-- <div class="dropdown-divider"></div> --}}
+      {{-- @endforeach --}}
+   {{-- @endif  --}}
 
-        @endforeach
+  {{-- </div> --}}
 
-    @endisset
-
-  </div>
-  <div class="tab-pane fade pt-2" id="mproductos" role="tabpanel" aria-labelledby="mproductos-tab">
-      {{-- @include('rols.show.rols') --}}
-  </div>
-  <div class="tab-pane fade pt-2" id="mproductos" role="tabpanel" aria-labelledby="mproductos-tab">
-      {{-- @include('poa.poas.show.poa') --}}
-  </div>
-  <div class="tab-pane fade pt-2" id="mproductos" role="tabpanel" aria-labelledby="mproductos-tab">
-      {{-- @include('profiles.show.profile') --}}
-  </div>
-  <div class="tab-pane fade pt-2" id="mactividades" role="tabpanel" aria-labelledby="mactividades-tab">
-      {{-- @include('rols.show.rols') --}}
-  </div>
-  <div class="tab-pane fade pt-2" id="mpresupuestaria" role="tabpanel" aria-labelledby="mpresupuestaria-tab">
-      {{-- @include('rols.show.rols') --}}
-  </div>
 </div>
+

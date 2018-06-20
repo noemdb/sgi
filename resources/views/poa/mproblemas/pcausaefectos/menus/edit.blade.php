@@ -30,7 +30,7 @@
             @slot('class_bt', 'info')
             @slot('route', route('pdeterminantes.index'))
             @slot('icon', $icon_menus['pdeterminantes'])
-        @endcomponent        
+        @endcomponent
         @component('elements.buttons.dropdown')
             @slot('title', 'CRUD de Objetivos')
             @slot('text', 'Objetivos')

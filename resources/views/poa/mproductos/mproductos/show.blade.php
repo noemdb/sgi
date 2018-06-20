@@ -28,28 +28,9 @@
 
             <div class="card-body p-2">
 
-                <div class="container">
-
-                    <div class="row">
-
-                        <div class="col-12">
-
-                            {{-- Partial con los tabs de usuario (perfiles, roles) --}}
-                            @include('poa.mproductos.mproductos.show.producto')
-
-                            {{-- INI Menu modelos realcionados --}}
-                            <div class="btn-group d-flex pt-2" style="width: 100%;" role="group" aria-label="Basic example">
-                              <a class="btn btn-dark w-100" href="{{ route('mproductos.edit',$mproducto->id) }}" role="button">
-                                Actualzar
-                                <i class="{{ $icon_menus['mproductos'] or ''}}"></i>
-                              </a>
-                            </div>
-                            {{-- FIN Menu modelos realcionados --}}
-
-                        </div>
-                    </div>
-
-                </div>
+                {{-- Partial con los tabs de usuario (perfiles, roles) --}}
+                {{-- @include('poa.mproductos.mproductos.show.producto') --}}
+                @include('poa.mproductos.mproductos.show.tabs')
 
             </div>
 

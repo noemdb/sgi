@@ -19,7 +19,7 @@
             <td scope="col">
 
                 <span class="text-mproblemas-direccion-{{ $mproblema->direccion->id  or ''}}">
-                    {{$mproblema->direccion->nombre or ''}}<br>
+                    <strong>{{$mproblema->direccion->nombre or ''}}</strong><br>
                     {{$mproblema->direccion->descripcion or ''}}
                 </span>
 

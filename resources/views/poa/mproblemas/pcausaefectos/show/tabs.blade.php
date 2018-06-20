@@ -10,7 +10,7 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" id="poa-tab" data-toggle="tab" href="#poa" role="tab" aria-controls="poa" aria-selected="false">POA</a>
-  </li>  
+  </li>
 </ul>
 <div class="tab-content" id="myTabContent">
 
@@ -37,7 +37,7 @@
       @php($poa = $pcausaefecto->mproblema->poa)
       @include('poa.poas.show.poa')
     @endif
-  </div>  
+  </div>
 
 </div>
 

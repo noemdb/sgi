@@ -1,16 +1,16 @@
 <div class="card">
-    
+
     <div class="card-body">
 
-        <h5 class="card-title">
-            <i class="{{ $icon_menus['tline'] }}"></i>
+        <h5 class="card-title text-center">
+            <i class="{{ $icon_menus['tline'] }} text-success"></i>
             Línea de Tiempo
         </h5>
 
-        <h6 class="card-subtitle mb-2 text-muted">
+        <h6 class="card-subtitle mb-2 text-muted text-center">
             Historial cronológico de los eventos registrados.
         </h6>
-        
+
         <ul class="timeline">
             <li>
                 <div class="timeline-badge primary"><i class="fa fa-check"></i>

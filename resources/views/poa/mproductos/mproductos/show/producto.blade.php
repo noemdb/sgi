@@ -40,9 +40,21 @@
                 @endif
             </td>
         </tr>
+        {{-- INI Menu modelos realcionados --}}
+        <tr>
+            <td colspan="2">
+                <div class="btn-group d-flex pt-2" style="width: 100%;" role="group" aria-label="Basic example">
+                  <a class="btn btn-dark w-100" href="{{ route('mproductos.edit',$mproducto->id) }}" role="button">
+                    Actualzar
+                    <i class="{{ $icon_menus['mproductos'] or ''}}"></i>
+                  </a>
+                </div>
+            </td>
+        </tr>
+        {{-- FIN Menu modelos realcionados --}}
 
       </tbody>
 
     </table>
-    
+
 @endisset
