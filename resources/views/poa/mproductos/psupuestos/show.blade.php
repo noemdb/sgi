@@ -28,19 +28,9 @@
 
             <div class="card-body p-2">
 
-                <div class="container">
-
-                    <div class="row">
-
-                        <div class="col-12">
-
-                            {{-- Partial con los tabs de usuario (perfiles, roles) --}}
-                            @include('poa.mproductos.psupuestos.show.psupuesto')
-
-                        </div>
-                    </div>
-
-                </div>
+                {{-- Partial con los tabs de usuario (perfiles, roles) --}}
+                {{-- @include('poa.mproductos.psupuestos.show.psupuesto') --}}
+                @include('poa.mproductos.psupuestos.show.tabs')
 
             </div>
 

@@ -9,6 +9,7 @@
 
                 <span class="text-mproductos-poa-{{ $pindicador->mproducto->id  or ''}}">
                     {{$pindicador->mproducto->producto or ''}}
+                    <a class="link" href="{{ route('mproductos.show',$pindicador->mproducto->id) }}">Mas...</a>
                 </span>
 
             </th>

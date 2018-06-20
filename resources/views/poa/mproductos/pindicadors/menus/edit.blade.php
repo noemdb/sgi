@@ -18,6 +18,20 @@
             @slot('icon', $icon_menus['pindicadors'])
         @endcomponent
         @component('elements.buttons.dropdown')
+            @slot('title', 'CRUD Supuestos')
+            @slot('text', 'Supuestos')
+            @slot('class_bt', 'info')
+            @slot('route', route('psupuestos.index'))
+            @slot('icon', $icon_menus['psupuestos'])
+        @endcomponent
+        @component('elements.buttons.dropdown')
+            @slot('title', 'CRUD Verificadores')
+            @slot('text', 'Verificadores')
+            @slot('class_bt', 'info')
+            @slot('route', route('pverificadors.index'))
+            @slot('icon', $icon_menus['pverificadors'])
+        @endcomponent
+        @component('elements.buttons.dropdown')
             @slot('title', 'CRUD Productos')
             @slot('text', 'Productos')
             @slot('class_bt', 'info')
