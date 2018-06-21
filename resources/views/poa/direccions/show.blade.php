@@ -28,24 +28,8 @@
 
             <div class="card-body">
 
-                <div class="container">
-
-                    <div class="row">
-
-                        {{-- <div class="col-sm-3 align-self-center"> --}}
-                            {{-- <img alt="{{$direccion->id}}" class="img-thumbnail img-rounded" src="{{ isset($direccion->url_img) or asset('images/avatar/user_direccion.png') }}"> --}}
-                            {{-- <i class="fas fa-th fa-w-16 fa-10x"></i> --}}
-                        {{-- </div> --}}
-
-                        <div class="col-12">
-
-                            {{-- Partial con los tabs de usuario (perfiles, roles) --}}
-                            @include('poa.direccions.show.tabs')
-
-                        </div>
-                    </div>
-
-                </div>
+                {{-- Partial con los tabs de usuario (perfiles, roles) --}}
+                @include('poa.direccions.show.tabs')
 
             </div>
 
