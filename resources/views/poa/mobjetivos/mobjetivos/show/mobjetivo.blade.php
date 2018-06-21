@@ -44,7 +44,7 @@
         <tr>
             <td colspan="2">
                 <div class="btn-group d-flex pt-2" style="width: 100%;" role="group" aria-label="Basic example">
-                  <a class="btn btn-dark w-100" href="{{ route('mobjetivos.edit',$mobjetivo->id) }}" role="button">
+                  <a class="btn btn-active w-100" href="{{ route('mobjetivos.edit',$mobjetivo->id) }}" role="button">
                     Actualzar
                     <i class="{{ $icon_menus['mobjetivos'] or ''}}"></i>
                   </a>

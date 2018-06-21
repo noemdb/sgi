@@ -76,7 +76,11 @@
             <tr>
                 <td colspan="2">
                     <div class="btn-group d-flex pt-2" style="width: 100%;" role="group" aria-label="Basic example">
-                      <a class="btn btn-dark w-100" href="{{ route('poas.edit',$poa->id) }}" role="button">
+                    <a class="btn btn-info w-100" href="{{ route('poas.showfull', $poa->id) }}" role="button">
+                        Detalles
+                        <i class="{{ $icon_menus['info'] or ''}}"></i>
+                      </a>
+                      <a class="btn btn-warning w-100" href="{{ route('poas.edit',$poa->id) }}" role="button">
                         Actualzar
                         <i class="{{ $icon_menus['poas'] or ''}}"></i>
                       </a>

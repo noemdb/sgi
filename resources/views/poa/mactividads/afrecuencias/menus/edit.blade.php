@@ -11,7 +11,7 @@
     @slot('title', 'CRUD Frecuencias')
     @slot('class_bt', 'info')
     @slot('route', route('afrecuencias.index'))
-    @slot('icon', $icon_menus['btn_frecuencias'])
+    @slot('icon', $icon_menus['afrecuencias'])
 @endcomponent
 
 @component('elements.buttons.default')

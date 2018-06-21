@@ -23,16 +23,16 @@ class Afrecuencia extends Model
     {
         switch ($this->lapso) {
             case '1': return '1er'; break;
-            case '2': return '2do'; break; 
+            case '2': return '2do'; break;
             case '3': return '3er'; break;
             case '4': return '4to'; break;
             case '5': return '5to'; break;
-            case '6': return '6to'; break;          
+            case '6': return '6to'; break;
             case '7': return '7mo'; break;
             case '8': return '8vo'; break;
             case '9': return '9no'; break;
             case '10': return '10mo'; break;
-            case '11': return '11vo'; break;          
+            case '11': return '11vo'; break;
             case '12': return '12vo'; break;
             default: return $this->frecuencia;break;
         }
@@ -41,11 +41,11 @@ class Afrecuencia extends Model
 
     //1er trimestre
     public function getTriemestre1erAttribute()
-    {        
+    {
         $ano = substr($this->finicial, 0, 4);
         $finicial = new Carbon($this->finicial);
         $lapsos= ['ini_1er'=> new Carbon($ano.'0101'),'fin_1er'=> new Carbon($ano.'0331')];
-        if ($finicial->gte($lapsos['ini_1er']) && $finicial->lte($lapsos['fin_1er'])) 
+        if ($finicial->gte($lapsos['ini_1er']) && $finicial->lte($lapsos['fin_1er']))
             // return true;
             return $this->frecuencia;
 
@@ -54,11 +54,11 @@ class Afrecuencia extends Model
 
     //2do trimestre
     public function getTriemestre2doAttribute()
-    {        
+    {
         $ano = substr($this->finicial, 0, 4);
         $finicial = new Carbon($this->finicial);
         $lapsos= ['ini_1er'=> new Carbon($ano.'0401'),'fin_1er'=> new Carbon($ano.'0630')];
-        if ($finicial->gte($lapsos['ini_1er']) && $finicial->lte($lapsos['fin_1er'])) 
+        if ($finicial->gte($lapsos['ini_1er']) && $finicial->lte($lapsos['fin_1er']))
             // return true;
             return $this->frecuencia;
 
@@ -67,11 +67,11 @@ class Afrecuencia extends Model
 
     //3er trimestre
     public function getTriemestre3erAttribute()
-    {        
+    {
         $ano = substr($this->finicial, 0, 4);
         $finicial = new Carbon($this->finicial);
         $lapsos= ['ini_1er'=> new Carbon($ano.'0701'),'fin_1er'=> new Carbon($ano.'0930')];
-        if ($finicial->gte($lapsos['ini_1er']) && $finicial->lte($lapsos['fin_1er'])) 
+        if ($finicial->gte($lapsos['ini_1er']) && $finicial->lte($lapsos['fin_1er']))
             // return true;
             return $this->frecuencia;
 
@@ -80,11 +80,11 @@ class Afrecuencia extends Model
 
     //4to trimestre
     public function getTriemestre4toAttribute()
-    {        
+    {
         $ano = substr($this->finicial, 0, 4);
         $finicial = new Carbon($this->finicial);
         $lapsos= ['ini_1er'=> new Carbon($ano.'1001'),'fin_1er'=> new Carbon($ano.'1231')];
-        if ($finicial->gte($lapsos['ini_1er']) && $finicial->lte($lapsos['fin_1er'])) 
+        if ($finicial->gte($lapsos['ini_1er']) && $finicial->lte($lapsos['fin_1er']))
             // return true;
             return $this->frecuencia;
 

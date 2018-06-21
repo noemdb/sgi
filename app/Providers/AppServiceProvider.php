@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
             'pverificadors'=>'fas fa-check',
             'pindicadors'=>'fas fa-info-circle',
             'mactividads'=>'fas fa-tasks',
-            'btn_frecuencias'=>'fas fa-hockey-puck',
+            'afrecuencias'=>'fas fa-circle-notch',
             'aestados'=>'fas fa-tag',
             'responsables'=>'far fa-address-card',
             'editar'=>'fas fa-edit',
@@ -43,6 +43,8 @@ class AppServiceProvider extends ServiceProvider
             'btn_ctr'=>'fas fa-bullseye',
             'crud'=>'fas fa-align-justify',
             'tline'=>'fas fa-history',
+            'matrices'=>'fas fa-table',
+            'info'=>'fas fa-info',
         ]);
     }
 

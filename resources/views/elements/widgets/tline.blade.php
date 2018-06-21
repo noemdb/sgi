@@ -8,7 +8,7 @@
         </h5>
 
         <h6 class="card-subtitle mb-2 text-muted text-center">
-            Historial cronológico de los eventos registrados.
+            Cronología de los eventos registrados.
         </h6>
 
         <ul class="timeline">
@@ -18,7 +18,8 @@
                 <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h4 class="timeline-title">Lorem ipsum dolor</h4>
-                        <p><small class="text-muted"><i class="fa fa-clock-o"></i> 11 hours ago via Twitter</small>
+                        <small class="timeline-subtitle">User: admin</small>
+                        <p><small class="text-muted"><i class="far fa-clock"></i> 11 hours ago via SGI</small>
                         </p>
                     </div>
                     <div class="timeline-body">

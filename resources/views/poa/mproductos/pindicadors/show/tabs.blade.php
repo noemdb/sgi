@@ -14,9 +14,6 @@
   <li class="nav-item">
     <a class="nav-link" id="poa-tab" data-toggle="tab" href="#poa" role="tab" aria-controls="poa" aria-selected="false">POA</a>
   </li>
-  {{-- <li class="nav-item"> --}}
-    {{-- <a class="nav-link" id="ltime-tab" data-toggle="tab" href="#ltime" role="ltime" aria-controls="ltime" aria-selected="false">Línea de Tiempo</a> --}}
-  {{-- </li> --}}
 </ul>
 <div class="tab-content" id="myTabContent">
 
@@ -51,23 +48,6 @@
       @include('poa.poas.show.poa')
     @endif
   </div>
-
-  {{-- <div class="tab-pane fade pt-2" id="ltime" role="tabpanel" aria-labelledby="ltime-tab"> --}}
-      {{-- @include('elements.widgets.tline') --}}
-  {{-- </div> --}}
-
-  {{-- <div class="tab-pane fade pt-2" id="mproductos" role="tabpanel" aria-labelledby="mproductos-tab"> --}}
-
-    {{-- @if($mobjetivo->mproductos->count()>0) --}}
-      {{-- @php($mproductos = $mobjetivo->mproductos) --}}
-      {{-- @foreach($mproductos as $mproducto) --}}
-        {{-- <span class="pt-2"><strong>{{ $loop->iteration or '' }}</strong></span> --}}
-        {{-- @include('poa.mproductos.mproductos.show.producto') --}}
-        {{-- <div class="dropdown-divider"></div> --}}
-      {{-- @endforeach --}}
-   {{-- @endif  --}}
-
-  {{-- </div> --}}
 
 </div>
 

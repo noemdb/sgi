@@ -47,9 +47,9 @@
         <tr>
             <td colspan="2">
                 <div class="btn-group d-flex pt-2" style="width: 100%;" role="group" aria-label="Basic example">
-                  <a class="btn btn-dark w-100" href="{{ route('afrecuencias.edit',$afrecuencia->id) }}" role="button">
+                  <a class="btn btn-warning w-100" href="{{ route('afrecuencias.edit',$afrecuencia->id) }}" role="button">
                     Actualizar
-                    <i class="{{ $icon_menus['btn_frecuencias'] or ''}}"></i>
+                    <i class="{{ $icon_menus['afrecuencias'] or ''}}"></i>
                   </a>
                 </div>
             </td>
