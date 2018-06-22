@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('poa.layouts.app')
 
 @section('body')
     {{-- <div id="wrapper"> --}}

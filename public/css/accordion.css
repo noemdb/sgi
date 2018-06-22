@@ -12,7 +12,7 @@
 }
 
 .accordion_active, .accordion:hover {
-    background-color: #ccc; 
+    background-color: #ccc;
 }
 
 .accordion_panel {
@@ -23,13 +23,36 @@
 }
 
 .accordion:after {
-    content: '\02795'; /* Unicode (\02795) character for "plus" sign (+) */
-    font-size: 13px;
+  content: "\f067";
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-ligatures: normal;
+  font-weight: 900;
+  /*height: 16px;*/
+  /*line-height: 16px;*/
+  text-rendering: auto;
+  /*width: 16px;*/
+  -webkit-font-smoothing: antialiased;
+
+    /*content: '\02795'; /* Unicode (\02795) character for "plus" sign (+) */
+    font-size: 12px;
     color: #777;
     float: right;
     margin-left: 5px;
 }
 
 .accordion_active:after {
-    content: "\02796"; /* Unicode (\2796) character for "minus" sign (-) */
+    /*content: "\02796"; /* Unicode (\2796) character for "minus" sign (-) */
+    content: "\f068";
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-ligatures: normal;
+    font-weight: 900;
+    /*height: 16px;*/
+    /*line-height: 16px;*/
+    text-rendering: auto;
+    /*width: 16px;*/
+    -webkit-font-smoothing: antialiased;
 }

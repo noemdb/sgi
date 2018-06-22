@@ -14,7 +14,8 @@
     <link href="{{ asset('css/docs.min.css') }}" rel="stylesheet">
 
     {{-- <link href="{{ asset('css/floating-labels.css') }}" rel="stylesheet"> --}}
-    <script defer src="{{ asset('vendor/fontawesome/5.0.8/svg-with-js/js/fontawesome-all.js') }}"></script>
+    <link href="{{ asset('vendor/fontawesome/5.0.8/css/fontawesome-all.css') }}" rel="stylesheet">
+    {{-- <script defer src="{{ asset('vendor/fontawesome/5.0.8/svg-with-js/js/fontawesome-all.js') }}"></script> --}}
 
     <!-- stylesheet for page -->
     @yield('stylesheet')
@@ -42,7 +43,7 @@
 
     <!-- scripts for page -->
     @yield('scripts')
-    
+
 
 </body>
 </html>
