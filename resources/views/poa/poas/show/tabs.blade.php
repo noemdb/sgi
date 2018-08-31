@@ -17,6 +17,11 @@
   <li class="nav-item">
     <a class="nav-link" id="mactividads-tab" data-toggle="tab" href="#mactividads" role="tab" aria-controls="mactividads" aria-selected="false" title="Matriz de Actividades">Actividades</a>
   </li>
+
+  <li class="nav-item">
+    <a class="nav-link" id="ltime-tab" data-toggle="tab" href="#ltime" role="ltime" aria-controls="ltime" aria-selected="false">Línea de Tiempo</a>
+  </li>
+  
   {{--
   <li class="nav-item">
     <a class="nav-link" id="mpresupuestaria-tab" data-toggle="tab" href="#mpresupuestaria" role="tab" aria-controls="mpresupuestaria" aria-selected="false" title="Matriz de Presupuestaria">Presupuestaria</a>
@@ -112,6 +117,7 @@
     @endforeach
 
   </div>
+
   {{--
   <div class="tab-pane fade pt-2" id="mpresupuestaria" role="tabpanel" aria-labelledby="mpresupuestaria-tab">
 
@@ -131,6 +137,12 @@
 
   </div>
   --}}
+
+  <div class="tab-pane fade pt-2" id="ltime" role="tabpanel" aria-labelledby="ltime-tab">
+      @include('elements.widgets.tline')
+  </div>
+
+
 </div>
 
 @section('stylesheet')

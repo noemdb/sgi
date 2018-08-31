@@ -1,35 +1,35 @@
 @extends('poa.layouts.dashboard.app')
 
-
-@section('page_heading')
-    {{-- <div class="col-lg-12"> --}}
-        <h1 class="page-header">
-            Dashboard
-        </h1>
-    {{-- </div> --}}
-@endsection
-
-
-@section('section')
+@section('main')
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <h1 class="page-header">
-                Dashboard
+                Bienvenido al Dashboard
         </h1>
+
+        {{-- labels --}}
+        {{-- @includeIf('poa.home.partials.labels') --}}
+
+        {{-- listas --}}
+        {{-- @includeIf('poa.home.partials.list') --}}
+
+        {{-- graficas --}}
+        {{-- @includeIf('poa.home.partials.graphics') --}}
+
     </main>
 
 @endsection
 {{-- FIN section--}}
 
-@section('stylesheet')
-    @parent
+{{-- @section('stylesheet') --}}
+    {{-- @parent --}}
 
     {{-- <link rel="stylesheet" href="{{ asset('css/timeline.css') }}"> --}}
 
-@endsection
+{{-- @endsection --}}
 
 
-@section('scripts')
-    @parent
+{{-- @section('scripts') --}}
+    {{-- @parent --}}
 
-@endsection
+{{-- @endsection --}}
