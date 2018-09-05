@@ -10,12 +10,12 @@ $factory->define(App\Models\poa\actividades\Mactividad::class, function (Faker $
 
     return [
         'descripcion' => $faker->realText,
-        // 'finicial'=>$finicial,
-        // 'ffinal'=>$ffinal,
+        'finicial'=>$finicial,
+        'ffinal'=>$ffinal,
         'ubicaion' => $faker->city,
         // 'frecuencia' => $faker->randomNumber(1),
         // 'frecuencia' => rand(1,12),
-        'frecuencia' => $faker->randomElement($arr_frecuencia),
+        // 'frecuencia' => $faker->randomElement($arr_frecuencia),
         
         'mproducto_id' => function () { 
         	return 

@@ -32,6 +32,7 @@
 
             </div>
         </div>
+        
     </main>
 
     {!! Form::open(['route' => ['mactividads.destroy',':MACTIVIDAD_ID'], 'method' => 'DELETE', 'id'=>'form-delete', 'role'=>'form']) !!}

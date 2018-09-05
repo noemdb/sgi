@@ -41,9 +41,9 @@ class DatabaseSeeder extends Seeder
         $this->call(PverificadorTableSeeder::class);
         $this->call(PsupuestoTableSeeder::class);
         $this->call(MactividadTableSeeder::class);
-        $this->call(AfrecuenciaTableSeeder::class);
+        // $this->call(AfrecuenciaTableSeeder::class);
         // $this->call(FunidadTableSeeder::class);        
-        $this->call(AestadoTableSeeder::class);
+        // $this->call(AestadoTableSeeder::class);
         
         $this->call(PresupuestariaTableSeeder::class);
     }

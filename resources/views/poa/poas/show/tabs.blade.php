@@ -107,7 +107,7 @@
             @foreach($mobjetivo->mproductos as $mproducto)
                 @if($mproducto->mactividads->count()>0)
                   @php($mactividads = $mproducto->mactividads)
-                  @include('poa.mactividads.mactividads.show.group')
+                  @include('poa.mactividads.mactividads.show.listfull')
                 @endif
             @endforeach
           @endforeach

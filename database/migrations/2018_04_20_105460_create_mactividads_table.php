@@ -21,10 +21,10 @@ class CreateMactividadsTable extends Migration
             $table->integer('ractividada_id')->unsigned()->nullable();
             $table->string('descripcion');
             $table->string('ubicaion');
-            // $table->date('finicial');
-            // $table->date('ffinal');
+            $table->date('finicial');
+            $table->date('ffinal');
             // $table->integer('frecuencia');
-            $table->enum('frecuencia', ["1", "2", "3", "4", "6", "12"]);
+            // $table->enum('frecuencia', ["1", "2", "3", "4", "6", "12"]);
             $table->timestamps();
             $table->foreign('mproducto_id')
                   ->references('id')

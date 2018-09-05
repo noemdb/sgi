@@ -3,9 +3,9 @@
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">General</a>
   </li>
 
-  <li class="nav-item">
-    <a class="nav-link" id="afrecuencias-tab" data-toggle="tab" href="#afrecuencias" role="tab" aria-controls="afrecuencias" aria-selected="false">Frecuencia</a>
-  </li>
+  {{-- <li class="nav-item"> --}}
+    {{-- <a class="nav-link" id="afrecuencias-tab" data-toggle="tab" href="#afrecuencias" role="tab" aria-controls="afrecuencias" aria-selected="false">Frecuencia</a> --}}
+  {{-- </li> --}}
   <li class="nav-item">
     <a class="nav-link" id="aestados-tab" data-toggle="tab" href="#aestados" role="tab" aria-controls="aestados" aria-selected="false">Estado</a>
   </li>
@@ -32,7 +32,7 @@
       @include('poa.mactividads.mactividads.show.mactividad')
   </div>
 
-  <div class="tab-pane fade pt-2" id="afrecuencias" role="tabpanel" aria-labelledby="afrecuencias-tab">
+  {{-- <div class="tab-pane fade pt-2" id="afrecuencias" role="tabpanel" aria-labelledby="afrecuencias-tab">
     @if($mactividad->afrecuencias->count()>0)
       @php($afrecuencias = $mactividad->afrecuencias)
       @foreach($afrecuencias as $afrecuencia)
@@ -40,7 +40,7 @@
         @include('poa.mactividads.afrecuencias.show.afrecuencia')
       @endforeach
     @endif
-  </div>
+  </div> --}}
 
   <div class="tab-pane fade pt-2" id="aestados" role="tabpanel" aria-labelledby="aestados-tab">
     {{-- @if($mactividad->afrecuencias->count()>0) --}}

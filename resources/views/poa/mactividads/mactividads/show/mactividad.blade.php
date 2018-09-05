@@ -41,6 +41,7 @@
 
             </td>
         </tr>
+        {{-- 
         <tr>
             <th scope="col">Frecuencia</th>
 
@@ -51,7 +52,8 @@
                 </span>
 
             </td>
-        </tr>
+        </tr> 
+        --}}
         <tr>
             <th scope="col">Reprogramada</th>
 
@@ -79,18 +81,18 @@
                 </span>
             </th>
         </tr>
-        {{-- <tr> --}}
-            {{-- <th scope="row">Fecha Inicial</th> --}}
-            {{-- <td> --}}
-                {{-- {{ (isset($mactividad->finicial)) ? Carbon\Carbon::parse($mactividad->finicial)->format('d-m-Y') : '' }} --}}
-            {{-- </td> --}}
-        {{-- </tr> --}}
-        {{-- <tr> --}}
-            {{-- <th scope="row">Fecha Final</th> --}}
-            {{-- <td> --}}
-                {{-- {{ (isset($mactividad->ffinal)) ? Carbon\Carbon::parse($mactividad->ffinal)->format('d-m-Y') : '' }} --}}
-            {{-- </td> --}}
-        {{-- </tr> --}}
+        <tr>
+            <th scope="row">Fecha Inicial</th>
+            <td>
+                {{ (isset($mactividad->finicial)) ? Carbon\Carbon::parse($mactividad->finicial)->format('d-m-Y') : '' }}
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Fecha Final</th>
+            <td>
+                {{ (isset($mactividad->ffinal)) ? Carbon\Carbon::parse($mactividad->ffinal)->format('d-m-Y') : '' }}
+            </td>
+        </tr>
         <tr>
             <th scope="row">Creado</th>
             <td>

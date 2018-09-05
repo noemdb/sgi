@@ -24,10 +24,10 @@
             <th scope="col" class="{{ $class['descripcion'] }}">Descripción</th>
             <th scope="col" class="{{ $class['responsable'] }}">Responsable</th>
             <th scope="col" class="{{ $class['ractividada'] }}">Reprogramada</th>
-            <th scope="col" class="{{ $class['frecuencia'] }}">Frecuencia</th>            
+            {{-- <th scope="col" class="{{ $class['frecuencia'] }}">Frecuencia</th>             --}}
             {{-- <th scope="col" class="{{ $class['ubicaion'] }}">Ubicaión</th> --}}
-            {{-- <th scope="col" class="{{ $class['finicial'] }}">F.Inicial</th> --}}
-            {{-- <th scope="col" class="{{ $class['ffinal'] }}">F.Final</th> --}}
+            <th scope="col" class="{{ $class['finicial'] }}">F.Inicial</th>
+            <th scope="col" class="{{ $class['ffinal'] }}">F.Final</th>
             {{--
             <th scope="col" class="{{ $class['created_at'] }}">&nbsp;&nbsp;Creado&nbsp;&nbsp;</th>
             <th scope="col" class="{{ $class['updated_at'] }}">Actualizado</th> 
@@ -62,14 +62,13 @@
                 {{(isset($mactividad->ractividada_id)) ? 'Reprograma':''}}
             </td>
 
-            <td class="{{ $class['frecuencia'] }}" title="{{ $mactividad->frecuencia or ''}}">
+            {{-- <td class="{{ $class['frecuencia'] }}" title="{{ $mactividad->frecuencia or ''}}">
                 {{$mactividad->NomFrecuencia or ''}}
-            </td>            
-
-            {{--
-            <td class="{{ $class['ubicaion'] }}" title="{{ $mactividad->ubicaion or ''}}">
+            </td>    --}}
+            
+            {{-- <td class="{{ $class['ubicaion'] }}" title="{{ $mactividad->ubicaion or ''}}">
                 {{$mactividad->ubicaion or ''}}
-            </td>
+            </td> --}}
 
              
             <td class="{{ $class['finicial'] }}">
@@ -78,8 +77,7 @@
 
             <td class="{{ $class['ffinal'] }}">
                 {{ (isset($mactividad->ffinal)) ? Carbon\Carbon::parse($mactividad->ffinal)->format('d-m-Y') : '' }}
-            </td> 
-            --}}
+            </td>            
 
             {{-- 
             <td class="{{ $class['created_at'] }}">

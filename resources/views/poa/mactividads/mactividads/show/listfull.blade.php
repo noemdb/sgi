@@ -17,6 +17,7 @@
                                 @isset($mactividad->ractividada_id)
                                     {{-- <div class="col-sm">{{$mactividad->ractividada_id}}</div> --}}
                                 @endisset
+                                {{-- 
                                 <div class="col-sm-8 font-weight-bold" align="center" title="{{$mactividad->frecuencia or ""}}">
                                     <div class="container pr-0 mr-0">
                                         <div class="row pr-0 mr-0">
@@ -31,9 +32,9 @@
                                         </div>
                                         @endif
                                     </div>
-                                </div>
+                                </div> 
+                                --}}
                             </div>
-                            {{-- </div> --}}
 
                             <div class="row pr-0 mr-0">
                                 <div class="col-sm-4" title="{{$mactividad->id or ''}}">
