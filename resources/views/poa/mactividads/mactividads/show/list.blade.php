@@ -2,6 +2,15 @@
 
     <ul class="list-group p-1">
 
+        {{-- <li class="list-group-item">
+
+            <div class="text-secondary">
+                <strong>Problema:</strong> 
+                {{$mproblema->problema or ''}}                 
+            </div>
+                       
+        </li> --}}
+
         @foreach($mactividads as $mactividad)
 
             <li class="list-group-item d-flex justify-content-between align-items-center pr-1">
@@ -10,20 +19,34 @@
 
                 <ul class="list-group p-1">
                     <li class="list-group-item p-1">
-                        Descripción: {{$mactividad->descripcion or ''}}
+                        <strong>Descripción: </strong>
+                        {{$mactividad->descripcion or ''}}
                     </li>
                     <li class="list-group-item p-1">
-                        Responsable: {{$mactividad->responsable->nombre or ''}}
+                        <strong>Responsable: </strong>
+                        {{$mactividad->responsable->nombre or ''}}
                     </li>
                     @isset($mactividad->ractividada_id)
 
                         <li class="list-group-item">
-                            Reprogramada: {{$mactividad->ractividada_id or ''}}
+                            <strong>Reprogramada: </strong>
+                            {{$mactividad->ractividada_id or ''}}
                         </li>
 
                     @endisset
                     <li class="list-group-item  p-1">
-                        Ubicación: {{$mactividad->ubicaion or ''}}
+                        <strong>Ubicación:</strong>
+                        {{$mactividad->ubicaion or ''}}
+                    </li>
+
+                    <li class="list-group-item  p-1">
+                        <strong>Fecha Inicial:</strong>                        
+                        {{ (isset($mactividad->finicial)) ? Carbon\Carbon::parse($mactividad->finicial)->format('d-m-Y') : '' }}
+                    </li>
+
+                    <li class="list-group-item  p-1">
+                        <strong>Fecha Final:</strong>
+                        {{ (isset($mactividad->ffinal)) ? Carbon\Carbon::parse($mactividad->ffinal)->format('d-m-Y') : '' }}
                     </li>
 
                 </ul>

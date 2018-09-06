@@ -14,6 +14,11 @@
     <link href="{{ asset('vendor/bootstrap/4.0.0/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
     <link href="{{ asset('css/floating-labels.css') }}" rel="stylesheet">
+
+    {{-- @yield('stylesheet') --}}
+
+    @stack('stylesheet')
+
     <script defer src="{{ asset('vendor/fontawesome/5.0.8/svg-with-js/js/fontawesome-all.js') }}"></script>
 
 </head>
