@@ -30,7 +30,7 @@
                 @endcomponent
             </div>
             <div class="col-sm-9 p-1" title="Actividades">
-                @include('poa.mactividads.mactividads.show.list')
+                @include('poa.mactividads.mactividads.show.subgrupo')
                 @component('elements.buttons.edit')
                     @slot('title','Nuevo')
                     @slot('btnclass','link')

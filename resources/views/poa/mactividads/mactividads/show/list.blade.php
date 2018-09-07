@@ -2,14 +2,16 @@
 
     <ul class="list-group p-1">
 
-        {{-- <li class="list-group-item">
+        {{--
+        <li class="list-group-item">
 
             <div class="text-secondary">
                 <strong>Problema:</strong> 
                 {{$mproblema->problema or ''}}                 
             </div>
                        
-        </li> --}}
+        </li>
+        --}}
 
         @foreach($mactividads as $mactividad)
 
@@ -20,20 +22,20 @@
                 <ul class="list-group p-1">
                     <li class="list-group-item p-1">
                         <strong>Descripción: </strong>
-                        {{$mactividad->descripcion or ''}}
+                        {{ $mactividad->descripcion or '' }}
                     </li>
                     <li class="list-group-item p-1">
                         <strong>Responsable: </strong>
                         {{$mactividad->responsable->nombre or ''}}
                     </li>
-                    @isset($mactividad->ractividada_id)
 
+                    @isset($mactividad->ractividada_id)
                         <li class="list-group-item">
                             <strong>Reprogramada: </strong>
                             {{$mactividad->ractividada_id or ''}}
                         </li>
-
                     @endisset
+
                     <li class="list-group-item  p-1">
                         <strong>Ubicación:</strong>
                         {{$mactividad->ubicaion or ''}}
