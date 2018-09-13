@@ -42,6 +42,11 @@ Route::group(['prefix'=>'poa','middleware'=>['auth','is_admin','is_poa'],'namesp
     require (__DIR__ . '/poa/crud/createwithid.php');
     //FIN CRUD modelos
 
+    //INI Charts modelos
+    // require (__DIR__ . '/poa/charts/poas.php');
+    require (__DIR__ . '/poa/charts/mactividades.php');
+    //FIN Charts modelos
+
 });
 //FIN rutas para Poa
 
@@ -57,5 +62,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','is_admin'],'namespace'=>'
     require (__DIR__ . '/admin/crud/showfull.php');
     require (__DIR__ . '/admin/crud/createwithid.php');
     //FIN CRUD modelos
+
+
 
 });

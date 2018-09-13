@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MactividadTableSeeder::class);
         // $this->call(AfrecuenciaTableSeeder::class);
         // $this->call(FunidadTableSeeder::class);        
-        // $this->call(AestadoTableSeeder::class);
+        $this->call(AestadoTableSeeder::class);
         
         $this->call(PresupuestariaTableSeeder::class);
     }

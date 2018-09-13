@@ -13,7 +13,7 @@ class AestadoTableSeeder extends Seeder
     {
         //
         
-        for ($i=0; $i < 40; $i++) { 
+        for ($i=0; $i < 180; $i++) { 
             factory(App\Models\poa\actividades\Aestado::class)->times(1)->create();
         }
     }

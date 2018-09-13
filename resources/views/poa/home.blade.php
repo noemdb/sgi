@@ -8,13 +8,13 @@
         </h1>
 
         {{-- labels --}}
-        {{-- @includeIf('poa.home.partials.labels') --}}
+        @includeIf('poa.home.partials.labels')
 
         {{-- listas --}}
         {{-- @includeIf('poa.home.partials.list') --}}
 
         {{-- graficas --}}
-        {{-- @includeIf('poa.home.partials.graphics') --}}
+        @includeIf('poa.home.partials.graphics')
 
     </main>
 
@@ -27,7 +27,6 @@
     {{-- <link rel="stylesheet" href="{{ asset('css/timeline.css') }}"> --}}
 
 {{-- @endsection --}}
-
 
 {{-- @section('scripts') --}}
     {{-- @parent --}}

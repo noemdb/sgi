@@ -22,13 +22,15 @@
             <strong>Responsable</strong>
         </div>
 
-        {{-- <div class="col-sm p-1">
+        {{-- 
+        <div class="col-sm p-1">
             <strong>Reprogramada: </strong>
         </div>
         
         <div class="col-sm p-1">
             <strong>Ubicación: </strong>
-        </div> --}}
+        </div> 
+        --}}
 
         <div class="col-sm-2 p-1" title="Fecha Inicial">
             <strong>F.Inicial</strong>

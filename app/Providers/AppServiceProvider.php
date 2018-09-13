@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
             'psupuestos'=>'fab fa-slack-hash',
             'pverificadors'=>'fas fa-check',
             'pindicadors'=>'fas fa-info-circle',
-            'mactividads'=>'fas fa-tasks',
+            'mactividads'=>'fas fa-th-list',
             'afrecuencias'=>'fas fa-circle-notch',
             'aestados'=>'fas fa-tag',
             'responsables'=>'far fa-address-card',
@@ -45,6 +45,27 @@ class AppServiceProvider extends ServiceProvider
             'tline'=>'fas fa-history',
             'matrices'=>'fas fa-table',
             'info'=>'fas fa-info',
+
+            'user'=>'fas fa-user',
+            'userplus'=>'fas fa-user-plus',
+            'profile'=>'fas fa-id-card',
+            'rol'=>'far fa-id-badge',
+
+            'alert'=>'fas fa-bell',
+            'task'=>'fas fa-tasks',
+            'messege'=>'fas fa-comments',
+            'loginout'=>'fas fa-external-link-alt',
+            'logdb'=>'fas fa-database',
+            'setting'=>'fas fa-sliders-h',
+            'selectopt'=>'fas fa-list-alt',
+            'tma'=>'fas fa-boxes',
+
+            'chartpie'=>'fas fa-chart-pie',
+            'chartbar'=>'fas fa-chart-bar',
+            'chartarea'=>'fas fa-chart-area',
+            'chartline'=>'fas fa-chart-line',
+
+
         ]);
     }
 

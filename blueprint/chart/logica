@@ -1,0 +1,2 @@
+php artisan make:controller 'Poa\Chart\PoasController'
+php artisan make:controller 'Poa\Chart\MactividadController'
