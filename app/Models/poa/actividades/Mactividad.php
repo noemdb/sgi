@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 // Modelos
 use App\User;
+use App\Models\poa\Poa;
 
 class Mactividad extends Model
 {
@@ -56,7 +57,6 @@ class Mactividad extends Model
         return ($data) ? $data : 0;
     }
 
-
     public static function getCountTotal($arr_user_id,$finicial,$ffinal, $estado)
     {
         //INI array con los totales de las mactividads
@@ -70,13 +70,39 @@ class Mactividad extends Model
                     ->groupBy('mactividads.responsable_id')
                     // ->orderby('aestados.created_at','desc')
                     ->get([ DB::raw('COUNT(*) as value') ]);
-            // dd($mactividads);
             if( $mactividads->count()>0){
               $arr_total[] = $mactividads->first()->value;
             }
         }
         //FIN array con los totales de las mactividads
 
+        return (isset($arr_total)) ? $arr_total : 0;
+    }
+
+    public static function getCountPoa($arr_id,$finicial,$ffinal, $estado)
+    {        
+        foreach ($arr_id as $key => $value) {
+            $data = Mactividad::select(/*'poas.id',*/'mproblemas.poa_id',DB::raw('count(mactividads.id) as value'))
+                ->join('aestados', 'mactividads.id', '=', 'aestados.mactividad_id')
+                ->join('mproductos', 'mproductos.id', '=', 'mactividads.mproducto_id')
+                ->join('mobjetivos', 'mobjetivos.id', '=', 'mproductos.mobjetivo_id')
+                ->join('mproblemas', 'mproblemas.id', '=', 'mobjetivos.mproblema_id')
+                ->join('poas', 'poas.id', '=', 'mproblemas.poa_id')
+                ->Where('mactividads.created_at', '>=', $finicial)
+                ->Where('mactividads.created_at', '<=', $ffinal)
+                ->where('aestados.estado', 'like', '%'.$estado.'%')
+                ->where('poas.id',$value)
+                ->groupby('poas.id')
+                ->orderBy('value', 'desc')
+                ->get()
+                // ->take($limit);
+                ;
+            if( $data->count()>0){
+              $arr_total[] = $data->first()->value;
+            }
+        }
+
+        // return ($arr_total) ? $arr_total : 0;
         return (isset($arr_total)) ? $arr_total : 0;
     }
 
@@ -127,7 +153,6 @@ class Mactividad extends Model
             case '12': return 'Mensual'; break;
             default: return $this->frecuencia; break;
         }
-
     }
 
     public function getUniFrecuenciaAttribute()
@@ -141,7 +166,6 @@ class Mactividad extends Model
             case '12': return 'Mes'; break;            
             default: return $this->frecuencia; break;
         }
-
     }
 
 }

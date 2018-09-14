@@ -12,6 +12,7 @@ Route::get('models/charts/poas', 'Chart\MactividadController@index')->name('poas
 Route::get('models/charts/activresp', 'Chart\MactividadController@ActivResp')->name('poa.activresp.chart');
 Route::get('models/charts/mactividadsmonths', 'Chart\MactividadController@ActivMonths')->name('poa.activmonths.chart');
 Route::get('models/charts/mactividadsestado', 'Chart\MactividadController@ActivEstado')->name('poa.mactividadsestado.chart');
+Route::get('models/charts/mactividadspoa', 'Chart\MactividadController@ActivPoa')->name('poa.mactividadspoa.chart');
 // Route::get('models/charts/expedientesmonths', 'Chart\ExpedientesController@ExpedienteMonth')->name('expedientes.months.chart');
 // Route::get('models/charts/estudiantesestados', 'Chart\EstudiantesController@EstudianteEstado')->name('estudiantes.estados.chart');
 // Route::get('models/charts/profiles', 'Chart\ProfileController@index')->name('viewchartprofiles');

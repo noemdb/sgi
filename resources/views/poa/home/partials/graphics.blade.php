@@ -27,7 +27,7 @@
 
         <div class="col-lg-6 col-md-6 col-sm-12">
 
-               {{-- @include('poa.estudiantes.chart.estudiantesestados') --}}
+               @includeIf('poa.mactividads.mactividads.chart.mactividadspoa')
 
         </div>
 

@@ -41,65 +41,59 @@ class Poa extends Model
 
     public function getTruncDescripcionAttribute()
     {
-
         $string = $this->descripcion;
-
         $length = 15;
-
         $ellipsis = "...";
-
         $words = explode(' ', $string);
-
         if (count($words) > $length){
-
             return implode(' ', array_slice($words, 0, $length)) ." ". $ellipsis;
-
         }
         else{
-
             return $string;
-
         }
 
     }
 
     public function getTruncEstrategiaAttribute()
     {
-
         $string = $this->estrategia;
-
         $length = 15;
-
         $ellipsis = "...";
-
         $words = explode(' ', $string);
-
         if (count($words) > $length){
-
             return implode(' ', array_slice($words, 0, $length)) ." ". $ellipsis;
-
         }
         else{
-
             return $string;
-
         }
-
     }
 
     public function getFullCodeAttribute()
     {
-
         $cadena = $this->descripcion;
         $token = strtok($cadena, " ");
         $code = '';
-
-        while($token !== false) {
-            $code .= strtoupper(substr($token,0,2));
+        $i=0;
+        while($token !== false && $i<=6) {
+            $i++;
+            $code .= strtoupper(substr($token,0,1));
             $token = strtok(" ");
         }
 
+        // dd($cadena,$token,$code);
+
         return $code;
+    }
+
+    public static function getActPoa($finicial,$ffinal,$limit=10)
+    {
+        $poas = Poa::Select('poas.*')
+                ->Where('poas.created_at', '>=', $finicial)
+                ->Where('poas.created_at', '<=', $ffinal)
+                ->get()
+                ->take($limit);
+
+        return ($poas) ? $poas : 0;
     }
 
 }

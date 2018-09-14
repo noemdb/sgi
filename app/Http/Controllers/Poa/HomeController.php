@@ -38,10 +38,10 @@ class HomeController extends Controller
                     ->get();
 
         $mactividads = Mactividad::select('mactividads.*','aestados.estado as estado')
-            ->join('aestados', 'mactividads.id', '=', 'aestados.mactividad_id')
-            ->OrderBy('mactividads.created_at', 'desc')
-            //->where('destino_user_id',\Auth::user()->id)
-            ->get();
+                    ->join('aestados', 'mactividads.id', '=', 'aestados.mactividad_id')
+                    ->OrderBy('mactividads.created_at', 'desc')
+                    //->where('destino_user_id',\Auth::user()->id)
+                    ->get();
 
         return view('poa.home',compact('tasks','alerts','mactividads'));
 

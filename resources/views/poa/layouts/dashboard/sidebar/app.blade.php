@@ -421,28 +421,28 @@
                   </div>
               </li>
 
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                   <a class="accordion nav-link pr-2" href="#">
                     <span data-feather="home"></span>
-                    Frecuencia {{-- <span class="sr-only">(current)</span> --}}
+                    Frecuencia
                   </a>
                   <div class="accordion_panel">
                       <ul class="nav flex-column">
                           <li class="nav-item">
                               <a class="nav-link pr-2" href="{{ route('afrecuencias.index') }}">
                                 <span data-feather="home"></span>
-                                CRUD {{-- <span class="sr-only">(current)</span> --}}
+                                CRUD
                               </a>
                           </li>
                           <li class="nav-item">
                               <a class="nav-link pr-2" href="#">
                                 <span data-feather="home"></span>
-                                Gráficas {{-- <span class="sr-only">(current)</span> --}}
+                                Gráficas
                               </a>
                           </li>
                       </ul>
                   </div>
-              </li>
+              </li> --}}
 
               <li class="nav-item">
                   <a class="accordion nav-link pr-2" href="#">
