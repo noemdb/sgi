@@ -85,7 +85,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pr-2" href="#">
+                            <a class="nav-link pr-2" href="{{ route('poas.charts.home') }}">
                               <span data-feather="home"></span>
                               Gráficas {{-- <span class="sr-only">(current)</span> --}}
                             </a>
@@ -125,7 +125,7 @@
                 <div class="accordion_panel">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link pr-2" href="{{ route('responsables.index') }}">
+                            <a class="nav-link pr-2" href="{{-- {{ route('responsables.index') }} --}}">
                               <span data-feather="home"></span>
                               CRUD {{-- <span class="sr-only">(current)</span> --}}
                             </a>
@@ -412,7 +412,7 @@
                               </a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link pr-2" href="#">
+                              <a class="nav-link pr-2" href="{{ route('mactividads.charts.home') }}">
                                 <span data-feather="home"></span>
                                 Gráficas {{-- <span class="sr-only">(current)</span> --}}
                               </a>

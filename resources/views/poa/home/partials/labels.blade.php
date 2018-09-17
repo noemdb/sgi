@@ -64,7 +64,7 @@
         <div class="col-lg-6 col-md-6 col-sm-12">
             {{-- INI card-collapse mactividads REPROGRAMADA--}}
             @component('elements.widgets.label')
-                @slot('class', 'warning')
+                @slot('class', 'primary')
                 @slot('iconTitle', $icon_menus['mactividads'].' fa-3x')
                 @slot('total', $mactividads->where('estado','INICIADA')->count())
                 @slot('title', 'Actividades Reprogramadas')

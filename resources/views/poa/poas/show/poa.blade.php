@@ -14,6 +14,32 @@
             </th>
         </tr>
         <tr>
+            <th scope="col">Completado</th>
+
+            <td scope="col">
+
+                <span class="text-poas-periodo-{{ $poa->id  or ''}}">
+                    @php
+                        $iniciadas       = $poa->countact($poa->id,'INICIADA')->value;
+                        $reprogramadas  = $poa->countact($poa->id,'REPROGRAMADA')->value;
+                        $finalizadas    = $poa->countact($poa->id,'FINALIZADA')->value;
+                        $asignadas      = $poa->countact($poa->id,'')->value;
+                        $porcentaje     = round($finalizadas / $asignadas * 100,2);
+                    @endphp
+
+                    {{-- {{ $iniciadas or ''}} --}}
+                    {{-- {{ $reprogramadas or ''}} --}}
+                    {{-- {{ $finalizadas or ''}} --}}
+                    {{-- {{ $asignadas or ''}} --}}
+                    {{ $porcentaje or ''}}%
+                    [{{ $finalizadas or ''}} Actividades finalizadas de {{ $asignadas or ''}} asignadas]
+                    
+                </span>
+
+            </td>
+        </tr>
+
+        <tr>
             <th scope="col">Período</th>
 
             <td scope="col">
@@ -24,6 +50,8 @@
 
             </td>
         </tr>
+
+
         <tr>
             <th scope="col">Área</th>
 

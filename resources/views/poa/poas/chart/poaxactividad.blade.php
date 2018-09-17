@@ -1,4 +1,4 @@
-@php ($chart = ['range'=>'Todos','id_chart'=>'mactividadsmonthschart','urlapi'=>route('mactividads.charts.mactividadsmonths'),'tipo'=>'bar','limit'=>8, 'legend'=>false ])
+@php ($chart = ['range'=>'Todos','id_chart'=>'poaxactividadchart','urlapi'=>route('poas.charts.poaxactividad'),'tipo'=>'bar','limit'=>8, 'legend'=>true ])
 @section('scripts')
     @parent
     {{-- Llamado a la funcion responsable de inicilizar el Chart --}}
@@ -6,10 +6,10 @@
 @endsection
 
 @component('elements.card.panel')
-    @slot('class', 'info')
+    @slot('class', 'danger')
     @slot('panelControls', 'true')
     @slot('id', $chart['id_chart'])
-    @slot('header', 'Reg. Actividades por Mes')
+    @slot('header', "Poa's por Actividades")
     @slot('iconTitle', $icon_menus['chartline'])
     @slot('body')
         @component('elements.canvas.chart')

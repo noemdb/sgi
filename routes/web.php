@@ -44,7 +44,8 @@ Route::group(['prefix'=>'poa','middleware'=>['auth','is_admin','is_poa'],'namesp
 
     //INI Charts modelos
     // require (__DIR__ . '/poa/charts/poas.php');
-    require (__DIR__ . '/poa/charts/mactividades.php');
+    require (__DIR__ . '/poa/charts/poas.php');
+    require (__DIR__ . '/poa/charts/mactividades.php');    
     //FIN Charts modelos
 
 });

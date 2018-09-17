@@ -4,6 +4,13 @@ namespace App\Models\poa;
 
 use Illuminate\Database\Eloquent\Model;
 
+// Helpers
+use Illuminate\Support\Carbon;
+use Jenssegers\Date\Date;
+use Illuminate\Support\Facades\DB;
+
+use App\Models\poa\actividades\Mactividad;
+
 class Poa extends Model
 {
 
@@ -94,6 +101,32 @@ class Poa extends Model
                 ->take($limit);
 
         return ($poas) ? $poas : 0;
+    }
+
+
+    public static function CountAct($id,$estado='')
+    {
+        $data =
+            Mactividad::select('mproblemas.poa_id',DB::raw('count(mactividads.id) as value'))
+            ->join('aestados', 'mactividads.id', '=', 'aestados.mactividad_id')
+            ->join('mproductos', 'mproductos.id', '=', 'mactividads.mproducto_id')
+            ->join('mobjetivos', 'mobjetivos.id', '=', 'mproductos.mobjetivo_id')
+            ->join('mproblemas', 'mproblemas.id', '=', 'mobjetivos.mproblema_id')
+            ->join('poas', 'poas.id', '=', 'mproblemas.poa_id')
+            // ->Where('mactividads.finicial', '>=', $finicial)
+            // ->Where('mactividads.finicial', '<=', $ffinal)
+            ->where('aestados.estado', 'like', '%'.$estado.'%')
+            ->where('poas.id',$id)
+            ->groupby('poas.id')
+            ->orderBy('value', 'desc')
+            // ->get()
+            ->first()
+            // ->toArray()
+            ;
+
+        // dd($data);
+
+        return $data;
     }
 
 }

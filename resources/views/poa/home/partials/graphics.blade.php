@@ -9,7 +9,7 @@
 
         <div class="col-lg-6 col-md-6 col-sm-12">
 
-               @includeIf('poa.mactividads.mactividads.chart.activresponsable')
+               @includeIf('poa.mactividads.mactividads.chart.activixrespon')
 
         </div>
 
@@ -27,7 +27,7 @@
 
         <div class="col-lg-6 col-md-6 col-sm-12">
 
-               @includeIf('poa.mactividads.mactividads.chart.mactividadspoa')
+               @includeIf('poa.poas.chart.poaxactividad')
 
         </div>
 

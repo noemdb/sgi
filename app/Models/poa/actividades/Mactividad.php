@@ -47,8 +47,8 @@ class Mactividad extends Model
     {
         $data = Mactividad::select('responsables.nombre','mactividads.responsable_id',DB::raw('count(mactividads.id) as count'))
           ->join('responsables', 'responsables.id', '=', 'mactividads.responsable_id')
-          ->Where('mactividads.created_at', '>=', $finicial)
-          ->Where('mactividads.created_at', '<=', $ffinal)
+          ->Where('mactividads.finicial', '>=', $finicial)
+          ->Where('mactividads.finicial', '<=', $ffinal)
           ->groupby('responsables.id')
           ->orderBy('count', 'desc')
           ->get()
@@ -63,12 +63,12 @@ class Mactividad extends Model
         foreach ($arr_user_id as $key => $value) {
             $mactividads =
                 Mactividad::join('aestados', 'mactividads.id', '=', 'aestados.mactividad_id')
-                    ->Where('mactividads.created_at', '>=', $finicial)
-                    ->where('mactividads.created_at', '<=', $ffinal)
+                    ->Where('mactividads.finicial', '>=', $finicial)
+                    ->where('mactividads.finicial', '<=', $ffinal)
                     ->where('aestados.estado', 'like', '%'.$estado.'%')
                     ->where('mactividads.responsable_id',$value)
                     ->groupBy('mactividads.responsable_id')
-                    // ->orderby('aestados.created_at','desc')
+                    // ->orderby('aestados.finicial','desc')
                     ->get([ DB::raw('COUNT(*) as value') ]);
             if( $mactividads->count()>0){
               $arr_total[] = $mactividads->first()->value;
@@ -88,8 +88,8 @@ class Mactividad extends Model
                 ->join('mobjetivos', 'mobjetivos.id', '=', 'mproductos.mobjetivo_id')
                 ->join('mproblemas', 'mproblemas.id', '=', 'mobjetivos.mproblema_id')
                 ->join('poas', 'poas.id', '=', 'mproblemas.poa_id')
-                ->Where('mactividads.created_at', '>=', $finicial)
-                ->Where('mactividads.created_at', '<=', $ffinal)
+                ->Where('mactividads.finicial', '>=', $finicial)
+                ->Where('mactividads.finicial', '<=', $ffinal)
                 ->where('aestados.estado', 'like', '%'.$estado.'%')
                 ->where('poas.id',$value)
                 ->groupby('poas.id')

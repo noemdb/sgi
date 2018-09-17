@@ -1,4 +1,4 @@
-@php ($chart = ['range'=>'Todos','id_chart'=>'mactividadsestadochart','urlapi'=>route('poa.mactividadsestado.chart'),'tipo'=>'pie','limit'=>8, 'legend'=>false ])
+@php ($chart = ['range'=>'Todos','id_chart'=>'mactividadsestadochart','urlapi'=>route('mactividads.charts.mactividadsestado'),'tipo'=>'pie','limit'=>8, 'legend'=>false ])
 @section('scripts')
     @parent
     {{-- Llamado a la funcion responsable de inicilizar el Chart --}}
