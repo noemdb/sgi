@@ -43,7 +43,8 @@
     </div>
 
     @foreach($mactividads as $mactividad)
-        <div class="row pt-1" title="Actividades">
+    
+        <div class="row pt-1" title="Actividad - {{$mactividad->id or ''}}">
 
             <div class="col-sm-1 p-1" >
                 {{ $loop->iteration or '' }}
