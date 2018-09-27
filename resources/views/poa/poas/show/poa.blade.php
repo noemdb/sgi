@@ -19,41 +19,12 @@
             <td scope="col">
 
                 <span class="text-poas-periodo-{{ $poa->id  or ''}}">
-                    @php
-                        $iniciadas       = $poa->countact($poa->id,'INICIADA')->value;
-                        $reprogramadas  = $poa->countact($poa->id,'REPROGRAMADA')->value;
-                        $finalizadas    = $poa->countact($poa->id,'FINALIZADA')->value;
-                        $asignadas      = $poa->countact($poa->id,'')->value;
-                        $porcentaje     = round($finalizadas / $asignadas * 100,2);
-                    @endphp
 
-
-                    @if ($porcentaje <= 25)
-                        @php($pregres_class = 'danger')
-                    @endif
-
-                    @if ($porcentaje > 25 && $porcentaje <= 50)
-                        @php($pregres_class = 'warning')
-                    @endif
-
-                    @if ($porcentaje > 50 && $porcentaje <= 75)
-                        @php($pregres_class = 'info')
-                    @endif
-
-                    @if ($porcentaje > 75 && $porcentaje <= 99.99)
-                        @php($pregres_class = 'primary')
-                    @endif
-
-                    @if ($porcentaje > 99.99)
-                        @php($pregres_class = 'success')
-                    @endif
-
-
-                    {{ $porcentaje or ''}}%
-                    [{{ $finalizadas or ''}} Actividades finalizadas de {{ $asignadas or ''}} asignadas]
+                    {{ $poa->porcetanje or ''}}%
+                    [{{ $poa->countact($poa->id,'FINALIZADA')->value or ''}} Actividades finalizadas de {{ $poa->countact($poa->id,'')->value or ''}} asignadas]
 
                     <div class="progress"  style="height: 3px;">
-                        <div class="progress-bar progress-bar-striped bg-{{$pregres_class or 'secondary'}}" role="progressbar" style="width: {{ $porcentaje or '0'}}%" aria-valuenow="{{ $porcentaje or '0'}}" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-{{$poa->ClassProgressBar or 'secondary'}}" role="progressbar" style="width: {{ $poa->porcetanje or '0'}}%" aria-valuenow="{{ $poa->porcetanje or '0'}}" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     
                 </span>

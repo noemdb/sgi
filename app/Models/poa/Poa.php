@@ -86,9 +86,6 @@ class Poa extends Model
             $code .= strtoupper(substr($token,0,1));
             $token = strtok(" ");
         }
-
-        // dd($cadena,$token,$code);
-
         return $code;
     }
 
@@ -121,12 +118,63 @@ class Poa extends Model
             ->orderBy('value', 'desc')
             // ->get()
             ->first()
+            // ->value
             // ->toArray()
             ;
 
         // dd($data);
 
         return $data;
+    }
+
+    /*
+    Funcion para obtener la class bootstrap para el progressbar
+    del estado general del POA relacionado al porcentaje de finalizacion de
+    sus actividades registradas
+    */
+    public function getClassProgressBarAttribute()
+    {
+        // $iniciadas      = $this->countact($this->id,'INICIADA')->value;
+        // $reprogramadas  = $this->countact($this->id,'REPROGRAMADA')->value;
+        $finalizadas    = $this->countact($this->id,'FINALIZADA')->value;
+        $asignadas      = $this->countact($this->id,'')->value;
+        $porcentaje     = round($finalizadas / $asignadas * 100,2);
+
+        if ($porcentaje <= 25) {
+            $pregress_class = 'danger';
+        }
+
+        if ($porcentaje > 25 && $porcentaje <= 50) {
+            $pregress_class = 'warning';
+        }
+
+        if ($porcentaje > 50 && $porcentaje <= 75) {
+            $pregress_class = 'info';
+        }
+
+        if ($porcentaje > 75 && $porcentaje <= 99.99) {
+            $pregress_class = 'primary';
+        }
+
+        if ($porcentaje > 99.99) {
+            $pregress_class = 'success';
+        }
+
+        return $pregress_class;
+    }
+
+    
+    /*
+    Funcion para la obtencion del porcentaje de finilazacion de un POA
+    segun sus actividades finalizadas
+    */
+    public function getPorcetanjeAttribute()
+    {
+        $finalizadas    = $this->countact($this->id,'FINALIZADA')->value;
+        $asignadas      = $this->countact($this->id,'')->value;
+        $porcentaje     = round($finalizadas / $asignadas * 100,2);
+
+        return $porcentaje;
     }
 
 }
