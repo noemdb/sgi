@@ -11,7 +11,10 @@ $factory->define(App\Models\poa\Poa::class, function (Faker $faker) {
     return [
     	'descripcion' => $faker->realText,
     	'area' => $faker->jobTitle,
-    	'estrategia' => $faker->realText,
+        'estrategia' => $faker->realText,
+        'objhistorico' => $faker->realText,
+        'objnacional' => $faker->realText,
+    	'objestrategico' => $faker->realText,
         'periodo' => $faker->dateTimeThisDecade->format('Y'),
         'created_at'=>$finicial,
         'updated_at'=>$ffinal,

@@ -34,9 +34,12 @@ class UpdatePoaRequest extends FormRequest
     public function rules()
     {
         return [
-            'descripcion' => 'required|max:255|min:5',
-            'area' => 'required|max:255|min:5',
-            'estrategia' => 'required|max:255|min:5',
+            'descripcion' => 'required|max:1024|min:5',
+            'objhistorico' => 'required|max:1024|min:5',
+            'objnacional' => 'required|max:1024|min:5',
+            'objestrategico' => 'required|max:1024|min:5',
+            'area' => 'max:1024|min:5',
+            'estrategia' => 'max:1024|min:5',
             'user_id' => 'required',
         ];
     }

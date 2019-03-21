@@ -20,7 +20,7 @@ class Poa extends Model
      * @var array
      */
     protected $fillable = [
-        'descripcion', 'area', 'estrategia', 'user_id','periodo', 'institucion_id'
+        'descripcion', 'area', 'estrategia','objhistorico', 'objnacional', 'objestrategico','user_id','periodo', 'institucion_id'
     ];
 
 	/*INI relaciones entre modelos*/
@@ -64,6 +64,48 @@ class Poa extends Model
     public function getTruncEstrategiaAttribute()
     {
         $string = $this->estrategia;
+        $length = 15;
+        $ellipsis = "...";
+        $words = explode(' ', $string);
+        if (count($words) > $length){
+            return implode(' ', array_slice($words, 0, $length)) ." ". $ellipsis;
+        }
+        else{
+            return $string;
+        }
+    }
+
+    public function getTruncObjhistoricoAttribute()
+    {
+        $string = $this->objhistorico;
+        $length = 15;
+        $ellipsis = "...";
+        $words = explode(' ', $string);
+        if (count($words) > $length){
+            return implode(' ', array_slice($words, 0, $length)) ." ". $ellipsis;
+        }
+        else{
+            return $string;
+        }
+    }
+
+    public function getTruncObjnacionalAttribute()
+    {
+        $string = $this->objnacional;
+        $length = 15;
+        $ellipsis = "...";
+        $words = explode(' ', $string);
+        if (count($words) > $length){
+            return implode(' ', array_slice($words, 0, $length)) ." ". $ellipsis;
+        }
+        else{
+            return $string;
+        }
+    }
+
+    public function getTruncObjestrategicoAttribute()
+    {
+        $string = $this->objestrategico;
         $length = 15;
         $ellipsis = "...";
         $words = explode(' ', $string);

@@ -1,7 +1,12 @@
 @php ($class_N="")
 @php ($class_descripcion="")
 @php ($class_periodo="")
-@php ($class_area="")
+
+@php ($class_objhistorico="")
+@php ($class_objnacional="d-none d-xl-table-cell")
+@php ($class_objestrategico="d-none d-xl-table-cell")
+
+@php ($class_area="d-none d-xl-table-cell")
 @php ($class_estrategia="d-none d-xl-table-cell")
 @php ($class_username="d-none d-xl-table-cell")
 @php ($class_created_at="d-none d-md-table-cell")
@@ -14,10 +19,15 @@
             <th scope="col" class="{{ $class_N }}">N</th>
             <th scope="col" class="{{ $class_descripcion }}">Descripción</th>
             <th scope="col" class="{{ $class_periodo }}">Período</th>
-            <th scope="col" class="{{ $class_area }}">Aréa</th>
-            <th scope="col" class="{{ $class_estrategia }}">Estratégia</th>
+
+            <th scope="col" class="{{ $class_objhistorico }}">Obj.Histórico</th>
+            <th scope="col" class="{{ $class_objnacional }}">Obj.Nacional</th>
+            <th scope="col" class="{{ $class_objestrategico }}">Obj.Estratégico</th>
+
+            {{-- <th scope="col" class="{{ $class_area }}">Aréa</th> --}}
+            {{-- <th scope="col" class="{{ $class_estrategia }}">Estratégia</th> --}}
             <th scope="col" class="{{ $class_created_at }}">&nbsp;&nbsp;Creado&nbsp;&nbsp;</th>
-            <th scope="col" class="{{ $class_updated_at }}">Actualizado</th>
+            {{-- <th scope="col" class="{{ $class_updated_at }}">Actualizado</th> --}}
             <th scope="col" class="{{ $class_action }}">Aciones</th>
         </tr>
     </thead>
@@ -35,22 +45,47 @@
                     {{$poa->truncdescripcion}}
                 </span>
             </td>
+
             <td id="td-poa-periodo-{{ $poa->id }}" class="{{ $class_periodo }}" title="Período: {{ $poa->periodo or ''}}">
                 <span class="text-poas-periodo-{{ $poa->id }}">
                     {{$poa->periodo}}
                 </span>
             </td>
-            <td id="td-poa-area-{{ $poa->id }}" class="{{ $class_area }}" title="{{ $poa->area or ''}}">
+
+
+
+            {{-- INI nuevo formato--}}
+            <td id="td-poa-objhistorico-{{ $poa->id }}" class="{{ $class_objhistorico }}" title="{{ $poa->objhistorico or ''}}">
+                <span class="text-poas-objhistorico-{{ $poa->id }}">
+                    {{$poa->TruncObjhistorico or ''}}
+                </span>
+            </td>
+            <td id="td-poa-objnacional-{{ $poa->id }}" class="{{ $class_objnacional }}" title="Estratégia: {{ $poa->objnacional or ''}}">
+                <span class="text-poa-objnacional-{{ $poa->id or ''}}">
+                    {{-- {{ $poa->objnacional or ''}} --}}
+                    {{ $poa->TruncObjnacional or ''}}
+                </span>
+            </td>
+            <td id="td-poa-objestrategico-{{ $poa->id }}" class="{{ $class_objestrategico }}" title="Estratégia: {{ $poa->objestrategico or ''}}">
+                <span class="text-poa-objestrategico-{{ $poa->id or ''}}">
+                    {{-- {{ $poa->estrategia or ''}} --}}
+                    {{ $poa->TruncObjestrategico or ''}}
+                </span>
+            </td>
+            {{-- INI nuevo formato--}}
+
+
+            {{-- <td id="td-poa-area-{{ $poa->id }}" class="{{ $class_area }}" title="{{ $poa->area or ''}}">
                 <span class="text-poas-area-{{ $poa->id }}">
                     {{$poa->area}}
                 </span>
             </td>
             <td id="td-poa-estrategia-{{ $poa->id }}" class="{{ $class_estrategia }}" title="Estratégia: {{ $poa->estrategia or ''}}">
                 <span class="text-poa-estrategia-{{ $poa->id or ''}}">
-                    {{-- {{ $poa->estrategia or ''}} --}}
                     {{ $poa->TruncEstrategia or ''}}
                 </span>
-            </td>
+            </td> --}}
+            
 
             <td id="td-poa-created_at-{{ $poa->id or ''}}" class="{{ $class_created_at }}">
                     <span class="text-poa-created_at-{{$poa->id}}">
@@ -58,11 +93,11 @@
                     </span>
                 </td>
 
-            <td id="td-poas-updated_at-{{ $poa->id or ''}}" class="{{ $class_updated_at }}">
+            {{-- <td id="td-poas-updated_at-{{ $poa->id or ''}}" class="{{ $class_updated_at }}">
                 <span class="text-poas-updated_at-{{$poa->id}}">
                     {{ (isset($poa->updated_at)) ? Carbon\Carbon::parse($poa->updated_at)->format('d-m-Y') : '' }}
                 </span>
-            </td>
+            </td> --}}
 
             <td class="{{ $class_action }}" id="btn-action-{{ $poa->id }}">
                 <div class="btn-group btn-group-sm">

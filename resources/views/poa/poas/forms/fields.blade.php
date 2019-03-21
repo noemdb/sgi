@@ -15,18 +15,30 @@
 </div>
 
 <div class="form-label-group pb-1">
-
-    {!! Form::text('area', old('area'), ['class' => 'form-control','id'=>'area','placeholder'=>'Área']); !!}
-    <label for="area">Área</label>
-
+    {!! Form::text('objhistorico', old('objhistorico'), ['class' => 'form-control','id'=>'objhistorico','placeholder'=>'Objetivo Histórico']); !!}
+    <label for="objhistorico">Gran Objetivo Histórico</label>
 </div>
 
 <div class="form-label-group pb-1">
+    {!! Form::text('objnacional', old('objnacional'), ['class' => 'form-control','id'=>'objnacional','placeholder'=>'Objetivo Nacional']); !!}
+    <label for="objnacional">Objetivo Nacional</label>
+</div>
 
+<div class="form-label-group pb-1">
+    {!! Form::text('objestrategico', old('objestrategico'), ['class' => 'form-control','id'=>'objestrategico','placeholder'=>'Objetivo Estratégico']); !!}
+    <label for="objestrategico">Objetivo Estratégico</label>
+</div>
+
+
+{{-- <div class="form-label-group pb-1">
+    {!! Form::text('area', old('area'), ['class' => 'form-control','id'=>'area','placeholder'=>'Área']); !!}
+    <label for="area">Área</label>
+</div>
+
+<div class="form-label-group pb-1">
     {!! Form::text('estrategia', old('estrategia'), ['class' => 'form-control','id'=>'estrategia','placeholder'=>'Estratégia']); !!}
     <label for="estrategia">Estratégia</label>
-
-</div>
+</div> --}}
 
 <div class="form-label-group pb-1">
     {!! Form::text('periodo', old('periodo'), ['class' => 'form-control datepicker','placeholder'=>'Período','id'=>'periodo','required','readonly']); !!}

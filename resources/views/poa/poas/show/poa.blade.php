@@ -45,11 +45,37 @@
         </tr>
 
 
+        {{-- INI Nuevo formato --}}
         <tr>
-            <th scope="col">Área</th>
-
+            <th scope="col">Gran Objetivo Histórico</th>
             <td scope="col">
+                <span class="text-poas-objhistorico-{{ $poa->id  or ''}}">
+                    {{$poa->objhistorico or ''}}
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <th scope="col">Objetivo Nacional</th>
+            <td scope="col">
+                <span class="text-poas-objnacional-{{ $poa->id  or ''}}">
+                    {{$poa->objnacional or ''}}
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <th scope="col">Objetivo Estratégico</th>
+            <td scope="col">
+                <span class="text-poas-objestrategico-{{ $poa->id  or ''}}">
+                    {{$poa->objestrategico or ''}}
+                </span>
+            </td>
+        </tr>
+        {{-- INI Nuevo formato --}}
 
+
+        {{-- <tr>
+            <th scope="col">Área</th>
+            <td scope="col">
                 <span class="text-poas-area-{{ $poa->id  or ''}}">
                     {{$poa->area or ''}}
                 </span>
@@ -59,13 +85,12 @@
         <tr>
             <th scope="row">Estratégia</th>
             <td>
-
                 <span class="text-poas-estrategia-{{ $poa->id  or ''}}">
                     {{$poa->estrategia or ''}}
                 </span>
-
             </td>
-        </tr>
+        </tr> --}}
+
         <tr>
             <th scope="row">Usuario</th>
             <td>
