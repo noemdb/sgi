@@ -2,6 +2,7 @@
 
     <table class="table table-striped table-bordered {{-- table-sm table-hover --}}">
       <tbody>
+
         <tr>
             <th scope="col">Descripción</th>
 
@@ -13,6 +14,8 @@
 
             </th>
         </tr>
+
+        {{-- falta validacion, cuando el poa no tiene actividades registradas
         <tr>
             <th scope="col">Completado</th>
 
@@ -20,8 +23,13 @@
 
                 <span class="text-poas-periodo-{{ $poa->id  or ''}}">
 
-                    {{ $poa->porcetanje or ''}}%
-                    [{{ $poa->countact($poa->id,'FINALIZADA')->value or ''}} Actividades finalizadas de {{ $poa->countact($poa->id,'')->value or ''}} asignadas]
+                    @isset($poa->countact($poa->id,'')->value)
+
+                        {{ $poa->porcetanje or ''}}%                    
+                    
+                        [{{ $poa->countact($poa->id,'FINALIZADA')->value or ''}} Actividades finalizadas de {{ $poa->countact($poa->id,'')->value or ''}} asignadas]
+
+                    @endisset
 
                     <div class="progress"  style="height: 3px;">
                         <div class="progress-bar bg-{{$poa->ClassProgressBar or 'secondary'}}" role="progressbar" style="width: {{ $poa->porcetanje or '0'}}%" aria-valuenow="{{ $poa->porcetanje or '0'}}" aria-valuemin="0" aria-valuemax="100"></div>
@@ -30,7 +38,8 @@
                 </span>
 
             </td>
-        </tr>
+        </tr> 
+        --}}
 
         <tr>
             <th scope="col">Período</th>

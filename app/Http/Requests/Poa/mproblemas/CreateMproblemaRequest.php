@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\poa\mproblemas;
+namespace App\Http\Requests\Poa\mproblemas;
 
 use Illuminate\Foundation\Http\FormRequest;
 

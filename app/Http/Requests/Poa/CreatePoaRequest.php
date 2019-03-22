@@ -43,6 +43,7 @@ class CreatePoaRequest extends FormRequest
             'area' => 'max:1024|min:5',
             'estrategia' => 'max:1024|min:5',
             'user_id' => 'required',
+            'periodo' => 'required|min:2000',
         ];
     }
 }

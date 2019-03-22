@@ -1,6 +1,6 @@
 <div class="card bd-callout bd-callout-{{ $class_form_create_institucion or 'form' }}">
   <div class="card-header">
-    Formulario para el Registro de un Nuevo POA.
+    Formulario para el Registro de un Nuevo Marco Lógico.
   </div>
   <div class="card-body">
 
@@ -13,7 +13,7 @@
             <button type="submit" class="btn-mlogico-create btn btn-primary btn-block" value="create" data-id="create" id="btn-create-mlogico">
 
                 <i class="far fa-save"></i>
-                Registrar POA
+                Registrar Marco Lógico
 
             </button>
 

@@ -10,7 +10,7 @@
 
                 <h2>
 
-                    Nueva POA
+                    Nuevo Marco Lógico
 
                         {{-- INI Menu rapido --}}
                         <div class="btn-group float-right">

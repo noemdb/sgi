@@ -176,10 +176,16 @@ class Poa extends Model
     */
     public function getClassProgressBarAttribute()
     {
+
         // $iniciadas      = $this->countact($this->id,'INICIADA')->value;
         // $reprogramadas  = $this->countact($this->id,'REPROGRAMADA')->value;
+
         $finalizadas    = $this->countact($this->id,'FINALIZADA')->value;
         $asignadas      = $this->countact($this->id,'')->value;
+
+        //$finalizadas = (empty($this->countact($this->id,'FINALIZADA')->value)) ? "0": $this->countact($this->id,'FINALIZADA')->value;        
+        //asignadas = (empty($this->countact($this->id,'')->value)) ? "1": $this->countact($this->id,'')->value;
+        
         $porcentaje     = round($finalizadas / $asignadas * 100,2);
 
         if ($porcentaje <= 25) {
@@ -212,8 +218,13 @@ class Poa extends Model
     */
     public function getPorcetanjeAttribute()
     {
+        
         $finalizadas    = $this->countact($this->id,'FINALIZADA')->value;
         $asignadas      = $this->countact($this->id,'')->value;
+
+        //$finalizadas = (empty($this->countact($this->id,'FINALIZADA')->value)) ? "0": $this->countact($this->id,'FINALIZADA')->value;        
+        //$asignadas = (empty($this->countact($this->id,'')->value)) ? "1": $this->countact($this->id,'')->value;
+
         $porcentaje     = round($finalizadas / $asignadas * 100,2);
 
         return $porcentaje;
