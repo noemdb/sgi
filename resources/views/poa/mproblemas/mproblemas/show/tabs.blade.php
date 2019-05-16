@@ -31,22 +31,33 @@
       @include('poa.mproblemas.mproblemas.show.mproblema')
   </div>
 
-
   <div class="tab-pane fade pt-2" id="pdeterminantes" role="tabpanel" aria-labelledby="pdeterminantes-tab">
     @if($mproblema->pdeterminantes->count()>0)
       @php($pdeterminantes = $mproblema->pdeterminantes)
       @include('poa.mproblemas.pdeterminantes.show.pdeterminantes')
+    @else
+      <div class="btn-group float-right border border-white rounded">
+        <a class="btn btn-primary" href="{{ route('mproblemas.createWithid',$mproblema->id) }}" role="button">
+          <i class="{{ $icon_menus['create'] or ''}}"></i>
+        </a>
+      </div>
     @endif
   </div>
 
-  <div class="tab-pane fade pt-2" id="poa" role="tabpanel" aria-labelledby="poa-tab">
-    @if($mproblema->poa->count()>0)
-      @php($poa = $mproblema->poa)
-      @include('poa.poas.show.poa')
+  <div class="tab-pane fade pt-2" id="mobjetivos" role="tabpanel" aria-labelledby="mobjetivos-tab">
+    @if($mproblema->mobjetivos->count()>0)
+      @php($mobjetivos = $mproblema->mobjetivos)
+      @include('poa.mobjetivos.mobjetivos.show.mobjetivos')
+    @else
+      <div class="btn-group float-right border border-white rounded">
+        <a class="btn btn-primary" href="{{ route('mproblemas.createWithid',$mproblema->id) }}" role="button">
+          <i class="{{ $icon_menus['create'] or ''}}"></i>
+        </a>
+      </div>
     @endif
   </div>
 
-  <div class="tab-pane fade pt-2" id="poa" role="tabpanel" aria-labelledby="poa-tab">
+  <div class="tab-pane fade pt-2" id="mproductos" role="tabpanel" aria-labelledby="mproductos-tab">
     @if($mproblema->poa->count()>0)
       @php($poa = $mproblema->poa)
       @include('poa.poas.show.poa')
